@@ -18,6 +18,7 @@ package ocm
 
 import (
 	"errors"
+	"fmt"
 	"net"
 	"net/http"
 	"regexp"
@@ -28,7 +29,10 @@ import (
 	ocmerrors "github.com/openshift-online/ocm-sdk-go/errors"
 )
 
-const ANY = "any"
+const (
+	ANY                 = "any"
+	HibernateCapability = "capability.organization.hibernate_cluster"
+)
 
 // Regular expression to used to make sure that the identifier or name given by the user is
 // safe and that it there is no risk of SQL injection:
@@ -131,4 +135,46 @@ func (c *Client) GetCurrentAccount() (*amsv1.Account, error) {
 		return nil, handleErr(response.Error(), err)
 	}
 	return response.Body(), nil
+}
+
+func (c *Client) GetCurrentOrganization() (string, error) {
+	acctResponse, err := c.GetCurrentAccount()
+
+	if err != nil {
+		return "", err
+	}
+	return acctResponse.Organization().ID(), nil
+}
+
+func (c *Client) IsHibernateCapabilityEnabled() error {
+	organizationID, err := c.GetCurrentOrganization()
+	if err != nil {
+		return err
+	}
+	isCapabilityEnable, err := c.IsCapabilityEnabled(HibernateCapability, organizationID)
+
+	if err != nil {
+		return err
+	}
+	if !isCapabilityEnable {
+		return fmt.Errorf("The '%s' capability is not set for org '%s'", HibernateCapability, organizationID)
+	}
+	return nil
+}
+
+func (c *Client) IsCapabilityEnabled(capabilityName string, orgID string) (bool, error) {
+	capabilityResponse, err := c.ocm.AccountsMgmt().V1().Organizations().
+		Organization(orgID).Get().Parameter("fetchCapabilities", true).Send()
+
+	if err != nil {
+		return false, handleErr(capabilityResponse.Error(), err)
+	}
+	if len(capabilityResponse.Body().Capabilities()) > 0 {
+		for _, capability := range capabilityResponse.Body().Capabilities() {
+			if capability.Name() == capabilityName {
+				return capability.Value() == "true", nil
+			}
+		}
+	}
+	return false, nil
 }

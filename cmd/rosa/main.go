@@ -30,19 +30,20 @@ import (
 	"github.com/openshift/rosa/cmd/download"
 	"github.com/openshift/rosa/cmd/edit"
 	"github.com/openshift/rosa/cmd/grant"
+	"github.com/openshift/rosa/cmd/hibernate"
 	"github.com/openshift/rosa/cmd/initialize"
 	"github.com/openshift/rosa/cmd/install"
 	"github.com/openshift/rosa/cmd/list"
 	"github.com/openshift/rosa/cmd/login"
 	"github.com/openshift/rosa/cmd/logout"
 	"github.com/openshift/rosa/cmd/logs"
+	"github.com/openshift/rosa/cmd/resume"
 	"github.com/openshift/rosa/cmd/revoke"
 	"github.com/openshift/rosa/cmd/uninstall"
 	"github.com/openshift/rosa/cmd/upgrade"
 	"github.com/openshift/rosa/cmd/verify"
 	"github.com/openshift/rosa/cmd/version"
 	"github.com/openshift/rosa/cmd/whoami"
-
 	"github.com/openshift/rosa/pkg/arguments"
 )
 
@@ -78,6 +79,8 @@ func init() {
 	root.AddCommand(verify.Cmd)
 	root.AddCommand(version.Cmd)
 	root.AddCommand(whoami.Cmd)
+	root.AddCommand(hibernate.Cmd)
+	root.AddCommand(resume.Cmd)
 }
 
 func main() {

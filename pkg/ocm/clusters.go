@@ -572,3 +572,29 @@ func (c *Client) createClusterSpec(config Spec, awsClient aws.Client) (*cmv1.Clu
 
 	return clusterSpec, nil
 }
+
+func (c *Client) HibernateCluster(clusterID string) error {
+	err := c.IsHibernateCapabilityEnabled()
+	if err != nil {
+		return err
+	}
+	_, err = c.ocm.ClustersMgmt().V1().Clusters().Cluster(clusterID).Hibernate().Send()
+	if err != nil {
+		return fmt.Errorf("Failed to hibernate the cluster: %v", err)
+	}
+
+	return nil
+}
+
+func (c *Client) ResumeCluster(clusterID string) error {
+	err := c.IsHibernateCapabilityEnabled()
+	if err != nil {
+		return err
+	}
+	_, err = c.ocm.ClustersMgmt().V1().Clusters().Cluster(clusterID).Resume().Send()
+	if err != nil {
+		return fmt.Errorf("Failed to resume the cluster: %v", err)
+	}
+
+	return nil
+}
