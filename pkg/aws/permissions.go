@@ -1,37 +1,81 @@
 package aws
 
 import (
-	"encoding/json"
 	"fmt"
 
 	"github.com/aws/aws-sdk-go/aws"
+	"github.com/aws/aws-sdk-go/aws/arn"
 	"github.com/aws/aws-sdk-go/service/iam"
-	"github.com/openshift/rosa/assets"
 )
-
-// PolicyStatement models an AWS policy statement entry.
-type PolicyStatement struct {
-	Sid string `json:"sid,omitempty"`
-	// Effect indicates if this policy statement is to Allow or Deny.
-	Effect string `json:"effect"`
-	// Action describes the particular AWS service actions that should be allowed or denied.
-	// (i.e. ec2:StartInstances, iam:ChangePassword)
-	Action []string `json:"action"`
-	// Resource specifies the object(s) this statement should apply to. (or "*" for all)
-	Resource interface{} `json:"resource"`
-}
-
-// PolicyDocument models an AWS IAM policy document
-type PolicyDocument struct {
-	Version   string            `json:"version,omitempty"`
-	ID        string            `json:"id,omitempty"`
-	Statement []PolicyStatement `json:"statement"`
-}
 
 // SimulateParams captures any additional details that should be used
 // when simulating permissions.
 type SimulateParams struct {
 	Region string
+}
+
+// ValidateSCP attempts to validate SCP policies by ensuring we have the correct permissions
+func (c *awsClient) ValidateSCP(target *string) (bool, error) {
+	scpPolicyPath := "templates/policies/osd_scp_policy.json"
+
+	sParams := &SimulateParams{
+		Region: *c.awsSession.Config.Region,
+	}
+
+	// Read installer permissions and OSD SCP Policy permissions
+	osdPolicyDocument := readPolicyDocument(scpPolicyPath)
+	policyDocuments := []PolicyDocument{osdPolicyDocument}
+
+	// Get Creator details
+	creator, err := c.GetCreator()
+	if err != nil {
+		return false, err
+	}
+
+	// Find target user
+	var targetUserARN arn.ARN
+	if target == nil {
+		var err error
+		callerIdentity, _, err := getClientDetails(c)
+		if err != nil {
+			return false, fmt.Errorf("getClientDetails: %v\n"+
+				"Run 'rosa init' and try again", err)
+		}
+		targetUserARN, err = arn.Parse(*callerIdentity.Arn)
+		if err != nil {
+			return false, fmt.Errorf("unable to parse caller ARN %v", err)
+		}
+		// If the client is using STS credentials want to validate the role
+		// the user has assumed. GetCreator() resolves that for us and updates
+		// the ARN
+		if creator.IsSTS {
+			targetUserARN, err = arn.Parse(creator.ARN)
+			if err != nil {
+				return false, err
+			}
+		}
+	} else {
+		targetIAMOutput, err := c.iamClient.GetUser(&iam.GetUserInput{UserName: target})
+		if err != nil {
+			return false, fmt.Errorf("iamClient.GetUser: %v\n"+
+				"To reset the '%s' account, run 'rosa init --delete-stack' and try again", *target, err)
+		}
+		targetUserARN, err = arn.Parse(*targetIAMOutput.User.Arn)
+		if err != nil {
+			return false, fmt.Errorf("unable to parse caller ARN %v", err)
+		}
+	}
+
+	// Validate permissions
+	hasPermissions, err := validatePolicyDocuments(c, targetUserARN.String(), policyDocuments, sParams)
+	if err != nil {
+		return false, err
+	}
+	if !hasPermissions {
+		return false, err
+	}
+
+	return true, nil
 }
 
 // checkPermissionsUsingQueryClient will use queryClient to query whether the credentials in targetClient can perform
@@ -105,23 +149,4 @@ func validatePolicyDocuments(queryClient *awsClient, targetUserARN string, polic
 	}
 
 	return true, nil
-}
-
-// readSCPPolicy reads a SCP policy from file into a Policy Document
-// SCP policies are structured the same as a IAM Policy Document the contain
-// IAM Policy Statements
-func readSCPPolicy(policyDocumentPath string) PolicyDocument {
-	policyDocumentFile, err := assets.Asset(policyDocumentPath)
-	if err != nil {
-		fmt.Println(fmt.Errorf("Unable to load file: %s", policyDocumentPath))
-	}
-
-	policyDocument := PolicyDocument{}
-
-	err = json.Unmarshal(policyDocumentFile, &policyDocument)
-	if err != nil {
-		fmt.Println(fmt.Errorf("Error unmarshalling statement: %v", err))
-	}
-
-	return policyDocument
 }
