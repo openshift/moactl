@@ -31,6 +31,7 @@ import (
 
 	"github.com/openshift/rosa/pkg/aws"
 	"github.com/openshift/rosa/pkg/aws/region"
+	"github.com/openshift/rosa/pkg/interactive/confirm"
 	"github.com/openshift/rosa/pkg/logging"
 	"github.com/openshift/rosa/pkg/ocm"
 	rprtr "github.com/openshift/rosa/pkg/reporter"
@@ -94,6 +95,8 @@ func init() {
 
 	arguments.AddProfileFlag(flags)
 	arguments.AddRegionFlag(flags)
+
+	confirm.AddFlag(flags)
 }
 
 func run(cmd *cobra.Command, argv []string) {
@@ -159,6 +162,9 @@ func run(cmd *cobra.Command, argv []string) {
 
 	// Delete CloudFormation stack and exit
 	if args.dlt {
+		if !confirm.Confirm("delete cluster administrator user '%s'", aws.AdminUserName) {
+			os.Exit(0)
+		}
 		reporter.Infof("Deleting cluster administrator user '%s'...", aws.AdminUserName)
 		err = deleteStack(cfClient, ocmClient)
 		if err != nil {
