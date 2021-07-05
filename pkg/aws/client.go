@@ -63,7 +63,7 @@ type Client interface {
 	CheckStackReadyOrNotExisting(stackName string) (stackReady bool, stackStatus *string, err error)
 	GetIAMCredentials() (credentials.Value, error)
 	GetRegion() string
-	ValidateCredentials() (isValid bool, isSTS bool, err error)
+	ValidateCredentials() (isValid bool, err error)
 	EnsureOsdCcsAdminUser(stackName string, adminUserName string, awsRegion string) (bool, error)
 	DeleteOsdCcsAdminUser(stackName string) error
 	GetAWSAccessKeys() (*AccessKey, error)
@@ -319,17 +319,17 @@ func (c *awsClient) GetCreator() (*Creator, error) {
 }
 
 // Checks if given credentials are valid.
-func (c *awsClient) ValidateCredentials() (bool, bool, error) {
+func (c *awsClient) ValidateCredentials() (bool, error) {
 	// Validate the AWS credentials by calling STS GetCallerIdentity
 	// This will fail if the AWS access key and secret key are invalid. This
 	// will also work for STS credentials with access key, secret key and session
 	// token
 	_, err := c.stsClient.GetCallerIdentity(&sts.GetCallerIdentityInput{})
 	if err != nil {
-		return false, false, err
+		return false, err
 	}
 
-	return true, false, nil
+	return true, nil
 }
 
 func (c *awsClient) CheckAdminUserNotExisting(userName string) (err error) {

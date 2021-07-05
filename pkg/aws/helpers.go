@@ -38,7 +38,7 @@ func GetRegion(region string) (string, error) {
 func getClientDetails(awsClient *awsClient) (*sts.GetCallerIdentityOutput, bool, error) {
 	rootUser := false
 
-	_, _, err := awsClient.ValidateCredentials()
+	_, err := awsClient.ValidateCredentials()
 	if err != nil {
 		return nil, rootUser, err
 	}

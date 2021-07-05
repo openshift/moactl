@@ -37,7 +37,7 @@ import (
 )
 
 var args struct {
-	deleteStack      bool
+	dlt              bool
 	disableSCPChecks bool
 	sts              bool
 	region           string
@@ -61,10 +61,18 @@ func init() {
 	flags.SortFlags = false
 
 	flags.BoolVar(
-		&args.deleteStack,
+		&args.dlt,
 		"delete-stack",
 		false,
 		"Deletes stack template applied to your AWS account during the 'init' command.\n",
+	)
+	flags.MarkDeprecated("delete-stack", "use --delete instead")
+
+	flags.BoolVar(
+		&args.dlt,
+		"delete",
+		false,
+		"",
 	)
 
 	flags.BoolVar(
@@ -95,46 +103,10 @@ func run(cmd *cobra.Command, argv []string) {
 	// If necessary, call `login` as part of `init`. We do this before
 	// other validations to get the prompt out of the way before performing
 	// longer checks.
-	loginFlags := []string{"token-url", "client-id", "client-secret", "scope", "env", "token", "insecure"}
-	hasLoginFlags := false
-	// Check if the user set login flags
-	for _, loginFlag := range loginFlags {
-		if cmd.Flags().Changed(loginFlag) {
-			hasLoginFlags = true
-			break
-		}
-	}
-	if hasLoginFlags {
-		// Always force login if user sets login flags
-		login.Cmd.Run(cmd, argv)
-	} else {
-		// Verify if user is already logged in:
-		isLoggedIn := false
-		cfg, err := ocm.Load()
-		if err != nil {
-			reporter.Errorf("Failed to load config file: %v", err)
-			os.Exit(1)
-		}
-		if cfg != nil {
-			// Check that credentials in the config file are valid
-			isLoggedIn, err = cfg.Armed()
-			if err != nil {
-				reporter.Errorf("Failed to determine if user is logged in: %v", err)
-				os.Exit(1)
-			}
-		}
-
-		if isLoggedIn {
-			username, err := cfg.GetData("username")
-			if err != nil {
-				reporter.Errorf("Failed to get username: %v", err)
-				os.Exit(1)
-			}
-
-			reporter.Infof("Logged in as '%s' on '%s'", username, cfg.URL)
-		} else {
-			login.Cmd.Run(cmd, argv)
-		}
+	err := ocmLogin(cmd, argv, reporter)
+	if err != nil {
+		reporter.Errorf("Failed to login to OCM: %v", err)
+		os.Exit(1)
 	}
 
 	// Create the client for the OCM API:
@@ -170,12 +142,9 @@ func run(cmd *cobra.Command, argv []string) {
 
 	// Validate AWS credentials for current user
 	reporter.Infof("Validating AWS credentials...")
-	ok, isSTS, err := client.ValidateCredentials()
+	ok, err := client.ValidateCredentials()
 	if err != nil {
 		ocmClient.LogEvent("ROSAInitCredentialsFailed")
-		if isSTS {
-			ocmClient.LogEvent("ROSAInitCredentialsSTS")
-		}
 		reporter.Errorf("Error validating AWS credentials: %v", err)
 		os.Exit(1)
 	}
@@ -189,35 +158,11 @@ func run(cmd *cobra.Command, argv []string) {
 	cfClient := aws.GetAWSClientForUserRegion(reporter, logger)
 
 	// Delete CloudFormation stack and exit
-	if args.deleteStack {
+	if args.dlt {
 		reporter.Infof("Deleting cluster administrator user '%s'...", aws.AdminUserName)
-		// Get creator ARN to determine existing clusters:
-		awsCreator, err := cfClient.GetCreator()
+		err = deleteStack(cfClient, ocmClient)
 		if err != nil {
-			ocmClient.LogEvent("ROSAInitGetCreatorFailed")
-			reporter.Errorf("Failed to get AWS creator: %v", err)
-			os.Exit(1)
-		}
-
-		// Check whether the account has clusters:
-		hasClusters, err := ocmClient.HasClusters(awsCreator)
-		if err != nil {
-			reporter.Errorf("Failed to check for clusters: %v", err)
-			os.Exit(1)
-		}
-
-		if hasClusters {
-			reporter.Errorf(
-				"Failed to delete '%s': User still has clusters.",
-				aws.AdminUserName)
-			os.Exit(1)
-		}
-
-		// Delete the CloudFormation stack
-		err = cfClient.DeleteOsdCcsAdminUser(aws.OsdCcsAdminStackName)
-		if err != nil {
-			ocmClient.LogEvent("ROSAInitDeleteStackFailed")
-			reporter.Errorf("Failed to delete user '%s': %v", aws.AdminUserName, err)
+			reporter.Errorf("%v", err)
 			os.Exit(1)
 		}
 
@@ -284,7 +229,80 @@ func run(cmd *cobra.Command, argv []string) {
 		}
 	}
 
+	// Verify version of `oc`
 	oc.Cmd.Run(cmd, argv)
+}
+
+func ocmLogin(cmd *cobra.Command, argv []string, reporter *rprtr.Object) error {
+	loginFlags := []string{"token-url", "client-id", "client-secret", "scope", "env", "token", "insecure"}
+	hasLoginFlags := false
+	// Check if the user set login flags
+	for _, loginFlag := range loginFlags {
+		if cmd.Flags().Changed(loginFlag) {
+			hasLoginFlags = true
+			break
+		}
+	}
+	if hasLoginFlags {
+		// Always force login if user sets login flags
+		login.Cmd.Run(cmd, argv)
+		return nil
+	}
+
+	// Verify if user is already logged in:
+	isLoggedIn := false
+	cfg, err := ocm.Load()
+	if err != nil {
+		return fmt.Errorf("Failed to load config file: %v", err)
+	}
+	if cfg != nil {
+		// Check that credentials in the config file are valid
+		isLoggedIn, err = cfg.Armed()
+		if err != nil {
+			return fmt.Errorf("Failed to determine if user is logged in: %v", err)
+		}
+	}
+
+	if isLoggedIn {
+		username, err := cfg.GetData("username")
+		if err != nil {
+			return fmt.Errorf("Failed to get username: %v", err)
+		}
+
+		reporter.Infof("Logged in as '%s' on '%s'", username, cfg.URL)
+		return nil
+	}
+
+	login.Cmd.Run(cmd, argv)
+	return nil
+}
+
+func deleteStack(awsClient aws.Client, ocmClient *ocm.Client) error {
+	// Get creator ARN to determine existing clusters:
+	awsCreator, err := awsClient.GetCreator()
+	if err != nil {
+		ocmClient.LogEvent("ROSAInitGetCreatorFailed")
+		return fmt.Errorf("Failed to get AWS creator: %v", err)
+	}
+
+	// Check whether the account has clusters:
+	hasClusters, err := ocmClient.HasClusters(awsCreator)
+	if err != nil {
+		return fmt.Errorf("Failed to check for clusters: %v", err)
+	}
+
+	if hasClusters {
+		return fmt.Errorf("Failed to delete '%s': User still has clusters", aws.AdminUserName)
+	}
+
+	// Delete the CloudFormation stack
+	err = awsClient.DeleteOsdCcsAdminUser(aws.OsdCcsAdminStackName)
+	if err != nil {
+		ocmClient.LogEvent("ROSAInitDeleteStackFailed")
+		return fmt.Errorf("Failed to delete user '%s': %v", aws.AdminUserName, err)
+	}
+
+	return nil
 }
 
 func simulateCluster(ocmClient *ocm.Client, region string) error {
