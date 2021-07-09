@@ -25,6 +25,7 @@ import (
 	"github.com/spf13/cobra"
 
 	"github.com/openshift/rosa/pkg/aws"
+	"github.com/openshift/rosa/pkg/aws/tags"
 	"github.com/openshift/rosa/pkg/interactive"
 	"github.com/openshift/rosa/pkg/interactive/confirm"
 	"github.com/openshift/rosa/pkg/logging"
@@ -209,7 +210,7 @@ func run(cmd *cobra.Command, _ []string) {
 		reporter.Infof("All policy files saved to the current directory")
 		reporter.Infof("Run the following commands to create the account roles and policies:\n")
 
-		commands := buildCommands(prefix)
+		commands := buildCommands(prefix, version)
 		fmt.Println(commands)
 	}
 }
@@ -337,15 +338,22 @@ func saveDocument(doc []byte, filename string) error {
 	return nil
 }
 
-func buildCommands(prefix string) string {
+func buildCommands(prefix string, version string) string {
 	commands := []string{}
 
 	for file, role := range aws.AccountRoles {
 		name := getRoleName(prefix, role)
+		iamTags := fmt.Sprintf(
+			"Key=%s,Value=%s Key=%s,Value=%s Key=%s,Value=%s",
+			tags.OpenShiftVersion, version,
+			tags.RolePrefix, prefix,
+			tags.RoleType, file,
+		)
 		createRole := fmt.Sprintf("aws iam create-role \\\n"+
 			"\t--role-name %s \\\n"+
-			"\t--assume-role-policy-document file://sts_%s_trust_policy.json",
-			name, file)
+			"\t--assume-role-policy-document file://sts_%s_trust_policy.json \\\n"+
+			"\t--tags %s",
+			name, file, iamTags)
 		putRolePolicy := fmt.Sprintf("aws iam put-role-policy \\\n"+
 			"\t--role-name %s \\\n"+
 			"\t--policy-name %s-Policy \\\n"+
@@ -356,10 +364,18 @@ func buildCommands(prefix string) string {
 
 	for credrequest, operator := range aws.CredentialRequests {
 		name := getPolicyName(prefix, operator.Namespace, operator.Name)
+		iamTags := fmt.Sprintf(
+			"Key=%s,Value=%s Key=%s,Value=%s Key=%s,Value=%s Key=%s,Value=%s",
+			tags.OpenShiftVersion, version,
+			tags.RolePrefix, prefix,
+			"operator_namespace", operator.Namespace,
+			"operator_name", operator.Name,
+		)
 		createPolicy := fmt.Sprintf("aws iam create-policy \\\n"+
 			"\t--policy-name %s \\\n"+
-			"\t--policy-document file://openshift_%s_policy.json",
-			name, credrequest)
+			"\t--policy-document file://openshift_%s_policy.json \\\n"+
+			"\t--tags %s",
+			name, credrequest, iamTags)
 		commands = append(commands, createPolicy)
 	}
 
@@ -385,7 +401,11 @@ func createRoles(reporter *rprtr.Object, awsClient aws.Client, prefix string, ve
 		}
 
 		reporter.Infof("Creating role '%s'", name)
-		err = awsClient.EnsureRole(name, string(policy))
+		err = awsClient.EnsureRole(name, string(policy), map[string]string{
+			tags.OpenShiftVersion: version,
+			tags.RolePrefix:       prefix,
+			tags.RoleType:         file,
+		})
 		if err != nil {
 			return err
 		}
@@ -421,7 +441,12 @@ func createRoles(reporter *rprtr.Object, awsClient aws.Client, prefix string, ve
 		}
 
 		reporter.Infof("Creating policy '%s'", name)
-		err = awsClient.EnsurePolicy(name, string(policy))
+		err = awsClient.EnsurePolicy(name, string(policy), map[string]string{
+			tags.OpenShiftVersion: version,
+			tags.RolePrefix:       prefix,
+			"operator_namespace":  operator.Namespace,
+			"operator_name":       operator.Name,
+		})
 		if err != nil {
 			return err
 		}

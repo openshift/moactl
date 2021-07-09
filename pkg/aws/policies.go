@@ -106,10 +106,11 @@ type PolicyStatementPrincipal struct {
 	AWS []string `json:"AWS"`
 }
 
-func (c *awsClient) EnsureRole(name string, policy string) error {
+func (c *awsClient) EnsureRole(name string, policy string, tagList map[string]string) error {
 	_, err := c.iamClient.CreateRole(&iam.CreateRoleInput{
 		RoleName:                 aws.String(name),
 		AssumeRolePolicyDocument: aws.String(policy),
+		Tags:                     getTags(tagList),
 	})
 	if err != nil {
 		if aerr, ok := err.(awserr.Error); ok {
@@ -135,10 +136,11 @@ func (c *awsClient) PutRolePolicy(roleName string, policyName string, policy str
 	return nil
 }
 
-func (c *awsClient) EnsurePolicy(name string, document string) error {
+func (c *awsClient) EnsurePolicy(name string, document string, tagList map[string]string) error {
 	_, err := c.iamClient.CreatePolicy(&iam.CreatePolicyInput{
 		PolicyName:     aws.String(name),
 		PolicyDocument: aws.String(document),
+		Tags:           getTags(tagList),
 	})
 	if err != nil {
 		if aerr, ok := err.(awserr.Error); ok {
@@ -150,6 +152,17 @@ func (c *awsClient) EnsurePolicy(name string, document string) error {
 		return err
 	}
 	return nil
+}
+
+func getTags(tagList map[string]string) []*iam.Tag {
+	iamTags := []*iam.Tag{}
+	for k, v := range tagList {
+		iamTags = append(iamTags, &iam.Tag{
+			Key:   aws.String(k),
+			Value: aws.String(v),
+		})
+	}
+	return iamTags
 }
 
 func ReadPolicyDocument(path string, args ...map[string]string) ([]byte, error) {
