@@ -5,34 +5,35 @@
 package mocks
 
 import (
-	gomock "github.com/golang/mock/gomock"
 	reflect "reflect"
+
+	gomock "github.com/golang/mock/gomock"
 )
 
-// MockIdentityProvider is a mock of IdentityProvider interface
+// MockIdentityProvider is a mock of IdentityProvider interface.
 type MockIdentityProvider struct {
 	ctrl     *gomock.Controller
 	recorder *MockIdentityProviderMockRecorder
 }
 
-// MockIdentityProviderMockRecorder is the mock recorder for MockIdentityProvider
+// MockIdentityProviderMockRecorder is the mock recorder for MockIdentityProvider.
 type MockIdentityProviderMockRecorder struct {
 	mock *MockIdentityProvider
 }
 
-// NewMockIdentityProvider creates a new mock instance
+// NewMockIdentityProvider creates a new mock instance.
 func NewMockIdentityProvider(ctrl *gomock.Controller) *MockIdentityProvider {
 	mock := &MockIdentityProvider{ctrl: ctrl}
 	mock.recorder = &MockIdentityProviderMockRecorder{mock}
 	return mock
 }
 
-// EXPECT returns an object that allows the caller to indicate expected use
+// EXPECT returns an object that allows the caller to indicate expected use.
 func (m *MockIdentityProvider) EXPECT() *MockIdentityProviderMockRecorder {
 	return m.recorder
 }
 
-// Name mocks base method
+// Name mocks base method.
 func (m *MockIdentityProvider) Name() string {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "Name")
@@ -40,7 +41,7 @@ func (m *MockIdentityProvider) Name() string {
 	return ret0
 }
 
-// Name indicates an expected call of Name
+// Name indicates an expected call of Name.
 func (mr *MockIdentityProviderMockRecorder) Name() *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Name", reflect.TypeOf((*MockIdentityProvider)(nil).Name))

@@ -6,36 +6,37 @@ package mocks
 
 import (
 	context "context"
+	reflect "reflect"
+
 	request "github.com/aws/aws-sdk-go/aws/request"
 	servicequotas "github.com/aws/aws-sdk-go/service/servicequotas"
 	gomock "github.com/golang/mock/gomock"
-	reflect "reflect"
 )
 
-// MockServiceQuotasAPI is a mock of ServiceQuotasAPI interface
+// MockServiceQuotasAPI is a mock of ServiceQuotasAPI interface.
 type MockServiceQuotasAPI struct {
 	ctrl     *gomock.Controller
 	recorder *MockServiceQuotasAPIMockRecorder
 }
 
-// MockServiceQuotasAPIMockRecorder is the mock recorder for MockServiceQuotasAPI
+// MockServiceQuotasAPIMockRecorder is the mock recorder for MockServiceQuotasAPI.
 type MockServiceQuotasAPIMockRecorder struct {
 	mock *MockServiceQuotasAPI
 }
 
-// NewMockServiceQuotasAPI creates a new mock instance
+// NewMockServiceQuotasAPI creates a new mock instance.
 func NewMockServiceQuotasAPI(ctrl *gomock.Controller) *MockServiceQuotasAPI {
 	mock := &MockServiceQuotasAPI{ctrl: ctrl}
 	mock.recorder = &MockServiceQuotasAPIMockRecorder{mock}
 	return mock
 }
 
-// EXPECT returns an object that allows the caller to indicate expected use
+// EXPECT returns an object that allows the caller to indicate expected use.
 func (m *MockServiceQuotasAPI) EXPECT() *MockServiceQuotasAPIMockRecorder {
 	return m.recorder
 }
 
-// AssociateServiceQuotaTemplate mocks base method
+// AssociateServiceQuotaTemplate mocks base method.
 func (m *MockServiceQuotasAPI) AssociateServiceQuotaTemplate(arg0 *servicequotas.AssociateServiceQuotaTemplateInput) (*servicequotas.AssociateServiceQuotaTemplateOutput, error) {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "AssociateServiceQuotaTemplate", arg0)
@@ -44,13 +45,13 @@ func (m *MockServiceQuotasAPI) AssociateServiceQuotaTemplate(arg0 *servicequotas
 	return ret0, ret1
 }
 
-// AssociateServiceQuotaTemplate indicates an expected call of AssociateServiceQuotaTemplate
+// AssociateServiceQuotaTemplate indicates an expected call of AssociateServiceQuotaTemplate.
 func (mr *MockServiceQuotasAPIMockRecorder) AssociateServiceQuotaTemplate(arg0 interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "AssociateServiceQuotaTemplate", reflect.TypeOf((*MockServiceQuotasAPI)(nil).AssociateServiceQuotaTemplate), arg0)
 }
 
-// AssociateServiceQuotaTemplateRequest mocks base method
+// AssociateServiceQuotaTemplateRequest mocks base method.
 func (m *MockServiceQuotasAPI) AssociateServiceQuotaTemplateRequest(arg0 *servicequotas.AssociateServiceQuotaTemplateInput) (*request.Request, *servicequotas.AssociateServiceQuotaTemplateOutput) {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "AssociateServiceQuotaTemplateRequest", arg0)
@@ -59,13 +60,13 @@ func (m *MockServiceQuotasAPI) AssociateServiceQuotaTemplateRequest(arg0 *servic
 	return ret0, ret1
 }
 
-// AssociateServiceQuotaTemplateRequest indicates an expected call of AssociateServiceQuotaTemplateRequest
+// AssociateServiceQuotaTemplateRequest indicates an expected call of AssociateServiceQuotaTemplateRequest.
 func (mr *MockServiceQuotasAPIMockRecorder) AssociateServiceQuotaTemplateRequest(arg0 interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "AssociateServiceQuotaTemplateRequest", reflect.TypeOf((*MockServiceQuotasAPI)(nil).AssociateServiceQuotaTemplateRequest), arg0)
 }
 
-// AssociateServiceQuotaTemplateWithContext mocks base method
+// AssociateServiceQuotaTemplateWithContext mocks base method.
 func (m *MockServiceQuotasAPI) AssociateServiceQuotaTemplateWithContext(arg0 context.Context, arg1 *servicequotas.AssociateServiceQuotaTemplateInput, arg2 ...request.Option) (*servicequotas.AssociateServiceQuotaTemplateOutput, error) {
 	m.ctrl.T.Helper()
 	varargs := []interface{}{arg0, arg1}
@@ -78,14 +79,14 @@ func (m *MockServiceQuotasAPI) AssociateServiceQuotaTemplateWithContext(arg0 con
 	return ret0, ret1
 }
 
-// AssociateServiceQuotaTemplateWithContext indicates an expected call of AssociateServiceQuotaTemplateWithContext
+// AssociateServiceQuotaTemplateWithContext indicates an expected call of AssociateServiceQuotaTemplateWithContext.
 func (mr *MockServiceQuotasAPIMockRecorder) AssociateServiceQuotaTemplateWithContext(arg0, arg1 interface{}, arg2 ...interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	varargs := append([]interface{}{arg0, arg1}, arg2...)
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "AssociateServiceQuotaTemplateWithContext", reflect.TypeOf((*MockServiceQuotasAPI)(nil).AssociateServiceQuotaTemplateWithContext), varargs...)
 }
 
-// DeleteServiceQuotaIncreaseRequestFromTemplate mocks base method
+// DeleteServiceQuotaIncreaseRequestFromTemplate mocks base method.
 func (m *MockServiceQuotasAPI) DeleteServiceQuotaIncreaseRequestFromTemplate(arg0 *servicequotas.DeleteServiceQuotaIncreaseRequestFromTemplateInput) (*servicequotas.DeleteServiceQuotaIncreaseRequestFromTemplateOutput, error) {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "DeleteServiceQuotaIncreaseRequestFromTemplate", arg0)
@@ -94,13 +95,13 @@ func (m *MockServiceQuotasAPI) DeleteServiceQuotaIncreaseRequestFromTemplate(arg
 	return ret0, ret1
 }
 
-// DeleteServiceQuotaIncreaseRequestFromTemplate indicates an expected call of DeleteServiceQuotaIncreaseRequestFromTemplate
+// DeleteServiceQuotaIncreaseRequestFromTemplate indicates an expected call of DeleteServiceQuotaIncreaseRequestFromTemplate.
 func (mr *MockServiceQuotasAPIMockRecorder) DeleteServiceQuotaIncreaseRequestFromTemplate(arg0 interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "DeleteServiceQuotaIncreaseRequestFromTemplate", reflect.TypeOf((*MockServiceQuotasAPI)(nil).DeleteServiceQuotaIncreaseRequestFromTemplate), arg0)
 }
 
-// DeleteServiceQuotaIncreaseRequestFromTemplateRequest mocks base method
+// DeleteServiceQuotaIncreaseRequestFromTemplateRequest mocks base method.
 func (m *MockServiceQuotasAPI) DeleteServiceQuotaIncreaseRequestFromTemplateRequest(arg0 *servicequotas.DeleteServiceQuotaIncreaseRequestFromTemplateInput) (*request.Request, *servicequotas.DeleteServiceQuotaIncreaseRequestFromTemplateOutput) {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "DeleteServiceQuotaIncreaseRequestFromTemplateRequest", arg0)
@@ -109,13 +110,13 @@ func (m *MockServiceQuotasAPI) DeleteServiceQuotaIncreaseRequestFromTemplateRequ
 	return ret0, ret1
 }
 
-// DeleteServiceQuotaIncreaseRequestFromTemplateRequest indicates an expected call of DeleteServiceQuotaIncreaseRequestFromTemplateRequest
+// DeleteServiceQuotaIncreaseRequestFromTemplateRequest indicates an expected call of DeleteServiceQuotaIncreaseRequestFromTemplateRequest.
 func (mr *MockServiceQuotasAPIMockRecorder) DeleteServiceQuotaIncreaseRequestFromTemplateRequest(arg0 interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "DeleteServiceQuotaIncreaseRequestFromTemplateRequest", reflect.TypeOf((*MockServiceQuotasAPI)(nil).DeleteServiceQuotaIncreaseRequestFromTemplateRequest), arg0)
 }
 
-// DeleteServiceQuotaIncreaseRequestFromTemplateWithContext mocks base method
+// DeleteServiceQuotaIncreaseRequestFromTemplateWithContext mocks base method.
 func (m *MockServiceQuotasAPI) DeleteServiceQuotaIncreaseRequestFromTemplateWithContext(arg0 context.Context, arg1 *servicequotas.DeleteServiceQuotaIncreaseRequestFromTemplateInput, arg2 ...request.Option) (*servicequotas.DeleteServiceQuotaIncreaseRequestFromTemplateOutput, error) {
 	m.ctrl.T.Helper()
 	varargs := []interface{}{arg0, arg1}
@@ -128,14 +129,14 @@ func (m *MockServiceQuotasAPI) DeleteServiceQuotaIncreaseRequestFromTemplateWith
 	return ret0, ret1
 }
 
-// DeleteServiceQuotaIncreaseRequestFromTemplateWithContext indicates an expected call of DeleteServiceQuotaIncreaseRequestFromTemplateWithContext
+// DeleteServiceQuotaIncreaseRequestFromTemplateWithContext indicates an expected call of DeleteServiceQuotaIncreaseRequestFromTemplateWithContext.
 func (mr *MockServiceQuotasAPIMockRecorder) DeleteServiceQuotaIncreaseRequestFromTemplateWithContext(arg0, arg1 interface{}, arg2 ...interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	varargs := append([]interface{}{arg0, arg1}, arg2...)
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "DeleteServiceQuotaIncreaseRequestFromTemplateWithContext", reflect.TypeOf((*MockServiceQuotasAPI)(nil).DeleteServiceQuotaIncreaseRequestFromTemplateWithContext), varargs...)
 }
 
-// DisassociateServiceQuotaTemplate mocks base method
+// DisassociateServiceQuotaTemplate mocks base method.
 func (m *MockServiceQuotasAPI) DisassociateServiceQuotaTemplate(arg0 *servicequotas.DisassociateServiceQuotaTemplateInput) (*servicequotas.DisassociateServiceQuotaTemplateOutput, error) {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "DisassociateServiceQuotaTemplate", arg0)
@@ -144,13 +145,13 @@ func (m *MockServiceQuotasAPI) DisassociateServiceQuotaTemplate(arg0 *servicequo
 	return ret0, ret1
 }
 
-// DisassociateServiceQuotaTemplate indicates an expected call of DisassociateServiceQuotaTemplate
+// DisassociateServiceQuotaTemplate indicates an expected call of DisassociateServiceQuotaTemplate.
 func (mr *MockServiceQuotasAPIMockRecorder) DisassociateServiceQuotaTemplate(arg0 interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "DisassociateServiceQuotaTemplate", reflect.TypeOf((*MockServiceQuotasAPI)(nil).DisassociateServiceQuotaTemplate), arg0)
 }
 
-// DisassociateServiceQuotaTemplateRequest mocks base method
+// DisassociateServiceQuotaTemplateRequest mocks base method.
 func (m *MockServiceQuotasAPI) DisassociateServiceQuotaTemplateRequest(arg0 *servicequotas.DisassociateServiceQuotaTemplateInput) (*request.Request, *servicequotas.DisassociateServiceQuotaTemplateOutput) {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "DisassociateServiceQuotaTemplateRequest", arg0)
@@ -159,13 +160,13 @@ func (m *MockServiceQuotasAPI) DisassociateServiceQuotaTemplateRequest(arg0 *ser
 	return ret0, ret1
 }
 
-// DisassociateServiceQuotaTemplateRequest indicates an expected call of DisassociateServiceQuotaTemplateRequest
+// DisassociateServiceQuotaTemplateRequest indicates an expected call of DisassociateServiceQuotaTemplateRequest.
 func (mr *MockServiceQuotasAPIMockRecorder) DisassociateServiceQuotaTemplateRequest(arg0 interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "DisassociateServiceQuotaTemplateRequest", reflect.TypeOf((*MockServiceQuotasAPI)(nil).DisassociateServiceQuotaTemplateRequest), arg0)
 }
 
-// DisassociateServiceQuotaTemplateWithContext mocks base method
+// DisassociateServiceQuotaTemplateWithContext mocks base method.
 func (m *MockServiceQuotasAPI) DisassociateServiceQuotaTemplateWithContext(arg0 context.Context, arg1 *servicequotas.DisassociateServiceQuotaTemplateInput, arg2 ...request.Option) (*servicequotas.DisassociateServiceQuotaTemplateOutput, error) {
 	m.ctrl.T.Helper()
 	varargs := []interface{}{arg0, arg1}
@@ -178,14 +179,14 @@ func (m *MockServiceQuotasAPI) DisassociateServiceQuotaTemplateWithContext(arg0 
 	return ret0, ret1
 }
 
-// DisassociateServiceQuotaTemplateWithContext indicates an expected call of DisassociateServiceQuotaTemplateWithContext
+// DisassociateServiceQuotaTemplateWithContext indicates an expected call of DisassociateServiceQuotaTemplateWithContext.
 func (mr *MockServiceQuotasAPIMockRecorder) DisassociateServiceQuotaTemplateWithContext(arg0, arg1 interface{}, arg2 ...interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	varargs := append([]interface{}{arg0, arg1}, arg2...)
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "DisassociateServiceQuotaTemplateWithContext", reflect.TypeOf((*MockServiceQuotasAPI)(nil).DisassociateServiceQuotaTemplateWithContext), varargs...)
 }
 
-// GetAWSDefaultServiceQuota mocks base method
+// GetAWSDefaultServiceQuota mocks base method.
 func (m *MockServiceQuotasAPI) GetAWSDefaultServiceQuota(arg0 *servicequotas.GetAWSDefaultServiceQuotaInput) (*servicequotas.GetAWSDefaultServiceQuotaOutput, error) {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "GetAWSDefaultServiceQuota", arg0)
@@ -194,13 +195,13 @@ func (m *MockServiceQuotasAPI) GetAWSDefaultServiceQuota(arg0 *servicequotas.Get
 	return ret0, ret1
 }
 
-// GetAWSDefaultServiceQuota indicates an expected call of GetAWSDefaultServiceQuota
+// GetAWSDefaultServiceQuota indicates an expected call of GetAWSDefaultServiceQuota.
 func (mr *MockServiceQuotasAPIMockRecorder) GetAWSDefaultServiceQuota(arg0 interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "GetAWSDefaultServiceQuota", reflect.TypeOf((*MockServiceQuotasAPI)(nil).GetAWSDefaultServiceQuota), arg0)
 }
 
-// GetAWSDefaultServiceQuotaRequest mocks base method
+// GetAWSDefaultServiceQuotaRequest mocks base method.
 func (m *MockServiceQuotasAPI) GetAWSDefaultServiceQuotaRequest(arg0 *servicequotas.GetAWSDefaultServiceQuotaInput) (*request.Request, *servicequotas.GetAWSDefaultServiceQuotaOutput) {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "GetAWSDefaultServiceQuotaRequest", arg0)
@@ -209,13 +210,13 @@ func (m *MockServiceQuotasAPI) GetAWSDefaultServiceQuotaRequest(arg0 *servicequo
 	return ret0, ret1
 }
 
-// GetAWSDefaultServiceQuotaRequest indicates an expected call of GetAWSDefaultServiceQuotaRequest
+// GetAWSDefaultServiceQuotaRequest indicates an expected call of GetAWSDefaultServiceQuotaRequest.
 func (mr *MockServiceQuotasAPIMockRecorder) GetAWSDefaultServiceQuotaRequest(arg0 interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "GetAWSDefaultServiceQuotaRequest", reflect.TypeOf((*MockServiceQuotasAPI)(nil).GetAWSDefaultServiceQuotaRequest), arg0)
 }
 
-// GetAWSDefaultServiceQuotaWithContext mocks base method
+// GetAWSDefaultServiceQuotaWithContext mocks base method.
 func (m *MockServiceQuotasAPI) GetAWSDefaultServiceQuotaWithContext(arg0 context.Context, arg1 *servicequotas.GetAWSDefaultServiceQuotaInput, arg2 ...request.Option) (*servicequotas.GetAWSDefaultServiceQuotaOutput, error) {
 	m.ctrl.T.Helper()
 	varargs := []interface{}{arg0, arg1}
@@ -228,14 +229,14 @@ func (m *MockServiceQuotasAPI) GetAWSDefaultServiceQuotaWithContext(arg0 context
 	return ret0, ret1
 }
 
-// GetAWSDefaultServiceQuotaWithContext indicates an expected call of GetAWSDefaultServiceQuotaWithContext
+// GetAWSDefaultServiceQuotaWithContext indicates an expected call of GetAWSDefaultServiceQuotaWithContext.
 func (mr *MockServiceQuotasAPIMockRecorder) GetAWSDefaultServiceQuotaWithContext(arg0, arg1 interface{}, arg2 ...interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	varargs := append([]interface{}{arg0, arg1}, arg2...)
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "GetAWSDefaultServiceQuotaWithContext", reflect.TypeOf((*MockServiceQuotasAPI)(nil).GetAWSDefaultServiceQuotaWithContext), varargs...)
 }
 
-// GetAssociationForServiceQuotaTemplate mocks base method
+// GetAssociationForServiceQuotaTemplate mocks base method.
 func (m *MockServiceQuotasAPI) GetAssociationForServiceQuotaTemplate(arg0 *servicequotas.GetAssociationForServiceQuotaTemplateInput) (*servicequotas.GetAssociationForServiceQuotaTemplateOutput, error) {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "GetAssociationForServiceQuotaTemplate", arg0)
@@ -244,13 +245,13 @@ func (m *MockServiceQuotasAPI) GetAssociationForServiceQuotaTemplate(arg0 *servi
 	return ret0, ret1
 }
 
-// GetAssociationForServiceQuotaTemplate indicates an expected call of GetAssociationForServiceQuotaTemplate
+// GetAssociationForServiceQuotaTemplate indicates an expected call of GetAssociationForServiceQuotaTemplate.
 func (mr *MockServiceQuotasAPIMockRecorder) GetAssociationForServiceQuotaTemplate(arg0 interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "GetAssociationForServiceQuotaTemplate", reflect.TypeOf((*MockServiceQuotasAPI)(nil).GetAssociationForServiceQuotaTemplate), arg0)
 }
 
-// GetAssociationForServiceQuotaTemplateRequest mocks base method
+// GetAssociationForServiceQuotaTemplateRequest mocks base method.
 func (m *MockServiceQuotasAPI) GetAssociationForServiceQuotaTemplateRequest(arg0 *servicequotas.GetAssociationForServiceQuotaTemplateInput) (*request.Request, *servicequotas.GetAssociationForServiceQuotaTemplateOutput) {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "GetAssociationForServiceQuotaTemplateRequest", arg0)
@@ -259,13 +260,13 @@ func (m *MockServiceQuotasAPI) GetAssociationForServiceQuotaTemplateRequest(arg0
 	return ret0, ret1
 }
 
-// GetAssociationForServiceQuotaTemplateRequest indicates an expected call of GetAssociationForServiceQuotaTemplateRequest
+// GetAssociationForServiceQuotaTemplateRequest indicates an expected call of GetAssociationForServiceQuotaTemplateRequest.
 func (mr *MockServiceQuotasAPIMockRecorder) GetAssociationForServiceQuotaTemplateRequest(arg0 interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "GetAssociationForServiceQuotaTemplateRequest", reflect.TypeOf((*MockServiceQuotasAPI)(nil).GetAssociationForServiceQuotaTemplateRequest), arg0)
 }
 
-// GetAssociationForServiceQuotaTemplateWithContext mocks base method
+// GetAssociationForServiceQuotaTemplateWithContext mocks base method.
 func (m *MockServiceQuotasAPI) GetAssociationForServiceQuotaTemplateWithContext(arg0 context.Context, arg1 *servicequotas.GetAssociationForServiceQuotaTemplateInput, arg2 ...request.Option) (*servicequotas.GetAssociationForServiceQuotaTemplateOutput, error) {
 	m.ctrl.T.Helper()
 	varargs := []interface{}{arg0, arg1}
@@ -278,14 +279,14 @@ func (m *MockServiceQuotasAPI) GetAssociationForServiceQuotaTemplateWithContext(
 	return ret0, ret1
 }
 
-// GetAssociationForServiceQuotaTemplateWithContext indicates an expected call of GetAssociationForServiceQuotaTemplateWithContext
+// GetAssociationForServiceQuotaTemplateWithContext indicates an expected call of GetAssociationForServiceQuotaTemplateWithContext.
 func (mr *MockServiceQuotasAPIMockRecorder) GetAssociationForServiceQuotaTemplateWithContext(arg0, arg1 interface{}, arg2 ...interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	varargs := append([]interface{}{arg0, arg1}, arg2...)
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "GetAssociationForServiceQuotaTemplateWithContext", reflect.TypeOf((*MockServiceQuotasAPI)(nil).GetAssociationForServiceQuotaTemplateWithContext), varargs...)
 }
 
-// GetRequestedServiceQuotaChange mocks base method
+// GetRequestedServiceQuotaChange mocks base method.
 func (m *MockServiceQuotasAPI) GetRequestedServiceQuotaChange(arg0 *servicequotas.GetRequestedServiceQuotaChangeInput) (*servicequotas.GetRequestedServiceQuotaChangeOutput, error) {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "GetRequestedServiceQuotaChange", arg0)
@@ -294,13 +295,13 @@ func (m *MockServiceQuotasAPI) GetRequestedServiceQuotaChange(arg0 *servicequota
 	return ret0, ret1
 }
 
-// GetRequestedServiceQuotaChange indicates an expected call of GetRequestedServiceQuotaChange
+// GetRequestedServiceQuotaChange indicates an expected call of GetRequestedServiceQuotaChange.
 func (mr *MockServiceQuotasAPIMockRecorder) GetRequestedServiceQuotaChange(arg0 interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "GetRequestedServiceQuotaChange", reflect.TypeOf((*MockServiceQuotasAPI)(nil).GetRequestedServiceQuotaChange), arg0)
 }
 
-// GetRequestedServiceQuotaChangeRequest mocks base method
+// GetRequestedServiceQuotaChangeRequest mocks base method.
 func (m *MockServiceQuotasAPI) GetRequestedServiceQuotaChangeRequest(arg0 *servicequotas.GetRequestedServiceQuotaChangeInput) (*request.Request, *servicequotas.GetRequestedServiceQuotaChangeOutput) {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "GetRequestedServiceQuotaChangeRequest", arg0)
@@ -309,13 +310,13 @@ func (m *MockServiceQuotasAPI) GetRequestedServiceQuotaChangeRequest(arg0 *servi
 	return ret0, ret1
 }
 
-// GetRequestedServiceQuotaChangeRequest indicates an expected call of GetRequestedServiceQuotaChangeRequest
+// GetRequestedServiceQuotaChangeRequest indicates an expected call of GetRequestedServiceQuotaChangeRequest.
 func (mr *MockServiceQuotasAPIMockRecorder) GetRequestedServiceQuotaChangeRequest(arg0 interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "GetRequestedServiceQuotaChangeRequest", reflect.TypeOf((*MockServiceQuotasAPI)(nil).GetRequestedServiceQuotaChangeRequest), arg0)
 }
 
-// GetRequestedServiceQuotaChangeWithContext mocks base method
+// GetRequestedServiceQuotaChangeWithContext mocks base method.
 func (m *MockServiceQuotasAPI) GetRequestedServiceQuotaChangeWithContext(arg0 context.Context, arg1 *servicequotas.GetRequestedServiceQuotaChangeInput, arg2 ...request.Option) (*servicequotas.GetRequestedServiceQuotaChangeOutput, error) {
 	m.ctrl.T.Helper()
 	varargs := []interface{}{arg0, arg1}
@@ -328,14 +329,14 @@ func (m *MockServiceQuotasAPI) GetRequestedServiceQuotaChangeWithContext(arg0 co
 	return ret0, ret1
 }
 
-// GetRequestedServiceQuotaChangeWithContext indicates an expected call of GetRequestedServiceQuotaChangeWithContext
+// GetRequestedServiceQuotaChangeWithContext indicates an expected call of GetRequestedServiceQuotaChangeWithContext.
 func (mr *MockServiceQuotasAPIMockRecorder) GetRequestedServiceQuotaChangeWithContext(arg0, arg1 interface{}, arg2 ...interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	varargs := append([]interface{}{arg0, arg1}, arg2...)
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "GetRequestedServiceQuotaChangeWithContext", reflect.TypeOf((*MockServiceQuotasAPI)(nil).GetRequestedServiceQuotaChangeWithContext), varargs...)
 }
 
-// GetServiceQuota mocks base method
+// GetServiceQuota mocks base method.
 func (m *MockServiceQuotasAPI) GetServiceQuota(arg0 *servicequotas.GetServiceQuotaInput) (*servicequotas.GetServiceQuotaOutput, error) {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "GetServiceQuota", arg0)
@@ -344,13 +345,13 @@ func (m *MockServiceQuotasAPI) GetServiceQuota(arg0 *servicequotas.GetServiceQuo
 	return ret0, ret1
 }
 
-// GetServiceQuota indicates an expected call of GetServiceQuota
+// GetServiceQuota indicates an expected call of GetServiceQuota.
 func (mr *MockServiceQuotasAPIMockRecorder) GetServiceQuota(arg0 interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "GetServiceQuota", reflect.TypeOf((*MockServiceQuotasAPI)(nil).GetServiceQuota), arg0)
 }
 
-// GetServiceQuotaIncreaseRequestFromTemplate mocks base method
+// GetServiceQuotaIncreaseRequestFromTemplate mocks base method.
 func (m *MockServiceQuotasAPI) GetServiceQuotaIncreaseRequestFromTemplate(arg0 *servicequotas.GetServiceQuotaIncreaseRequestFromTemplateInput) (*servicequotas.GetServiceQuotaIncreaseRequestFromTemplateOutput, error) {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "GetServiceQuotaIncreaseRequestFromTemplate", arg0)
@@ -359,13 +360,13 @@ func (m *MockServiceQuotasAPI) GetServiceQuotaIncreaseRequestFromTemplate(arg0 *
 	return ret0, ret1
 }
 
-// GetServiceQuotaIncreaseRequestFromTemplate indicates an expected call of GetServiceQuotaIncreaseRequestFromTemplate
+// GetServiceQuotaIncreaseRequestFromTemplate indicates an expected call of GetServiceQuotaIncreaseRequestFromTemplate.
 func (mr *MockServiceQuotasAPIMockRecorder) GetServiceQuotaIncreaseRequestFromTemplate(arg0 interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "GetServiceQuotaIncreaseRequestFromTemplate", reflect.TypeOf((*MockServiceQuotasAPI)(nil).GetServiceQuotaIncreaseRequestFromTemplate), arg0)
 }
 
-// GetServiceQuotaIncreaseRequestFromTemplateRequest mocks base method
+// GetServiceQuotaIncreaseRequestFromTemplateRequest mocks base method.
 func (m *MockServiceQuotasAPI) GetServiceQuotaIncreaseRequestFromTemplateRequest(arg0 *servicequotas.GetServiceQuotaIncreaseRequestFromTemplateInput) (*request.Request, *servicequotas.GetServiceQuotaIncreaseRequestFromTemplateOutput) {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "GetServiceQuotaIncreaseRequestFromTemplateRequest", arg0)
@@ -374,13 +375,13 @@ func (m *MockServiceQuotasAPI) GetServiceQuotaIncreaseRequestFromTemplateRequest
 	return ret0, ret1
 }
 
-// GetServiceQuotaIncreaseRequestFromTemplateRequest indicates an expected call of GetServiceQuotaIncreaseRequestFromTemplateRequest
+// GetServiceQuotaIncreaseRequestFromTemplateRequest indicates an expected call of GetServiceQuotaIncreaseRequestFromTemplateRequest.
 func (mr *MockServiceQuotasAPIMockRecorder) GetServiceQuotaIncreaseRequestFromTemplateRequest(arg0 interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "GetServiceQuotaIncreaseRequestFromTemplateRequest", reflect.TypeOf((*MockServiceQuotasAPI)(nil).GetServiceQuotaIncreaseRequestFromTemplateRequest), arg0)
 }
 
-// GetServiceQuotaIncreaseRequestFromTemplateWithContext mocks base method
+// GetServiceQuotaIncreaseRequestFromTemplateWithContext mocks base method.
 func (m *MockServiceQuotasAPI) GetServiceQuotaIncreaseRequestFromTemplateWithContext(arg0 context.Context, arg1 *servicequotas.GetServiceQuotaIncreaseRequestFromTemplateInput, arg2 ...request.Option) (*servicequotas.GetServiceQuotaIncreaseRequestFromTemplateOutput, error) {
 	m.ctrl.T.Helper()
 	varargs := []interface{}{arg0, arg1}
@@ -393,14 +394,14 @@ func (m *MockServiceQuotasAPI) GetServiceQuotaIncreaseRequestFromTemplateWithCon
 	return ret0, ret1
 }
 
-// GetServiceQuotaIncreaseRequestFromTemplateWithContext indicates an expected call of GetServiceQuotaIncreaseRequestFromTemplateWithContext
+// GetServiceQuotaIncreaseRequestFromTemplateWithContext indicates an expected call of GetServiceQuotaIncreaseRequestFromTemplateWithContext.
 func (mr *MockServiceQuotasAPIMockRecorder) GetServiceQuotaIncreaseRequestFromTemplateWithContext(arg0, arg1 interface{}, arg2 ...interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	varargs := append([]interface{}{arg0, arg1}, arg2...)
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "GetServiceQuotaIncreaseRequestFromTemplateWithContext", reflect.TypeOf((*MockServiceQuotasAPI)(nil).GetServiceQuotaIncreaseRequestFromTemplateWithContext), varargs...)
 }
 
-// GetServiceQuotaRequest mocks base method
+// GetServiceQuotaRequest mocks base method.
 func (m *MockServiceQuotasAPI) GetServiceQuotaRequest(arg0 *servicequotas.GetServiceQuotaInput) (*request.Request, *servicequotas.GetServiceQuotaOutput) {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "GetServiceQuotaRequest", arg0)
@@ -409,13 +410,13 @@ func (m *MockServiceQuotasAPI) GetServiceQuotaRequest(arg0 *servicequotas.GetSer
 	return ret0, ret1
 }
 
-// GetServiceQuotaRequest indicates an expected call of GetServiceQuotaRequest
+// GetServiceQuotaRequest indicates an expected call of GetServiceQuotaRequest.
 func (mr *MockServiceQuotasAPIMockRecorder) GetServiceQuotaRequest(arg0 interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "GetServiceQuotaRequest", reflect.TypeOf((*MockServiceQuotasAPI)(nil).GetServiceQuotaRequest), arg0)
 }
 
-// GetServiceQuotaWithContext mocks base method
+// GetServiceQuotaWithContext mocks base method.
 func (m *MockServiceQuotasAPI) GetServiceQuotaWithContext(arg0 context.Context, arg1 *servicequotas.GetServiceQuotaInput, arg2 ...request.Option) (*servicequotas.GetServiceQuotaOutput, error) {
 	m.ctrl.T.Helper()
 	varargs := []interface{}{arg0, arg1}
@@ -428,14 +429,14 @@ func (m *MockServiceQuotasAPI) GetServiceQuotaWithContext(arg0 context.Context, 
 	return ret0, ret1
 }
 
-// GetServiceQuotaWithContext indicates an expected call of GetServiceQuotaWithContext
+// GetServiceQuotaWithContext indicates an expected call of GetServiceQuotaWithContext.
 func (mr *MockServiceQuotasAPIMockRecorder) GetServiceQuotaWithContext(arg0, arg1 interface{}, arg2 ...interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	varargs := append([]interface{}{arg0, arg1}, arg2...)
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "GetServiceQuotaWithContext", reflect.TypeOf((*MockServiceQuotasAPI)(nil).GetServiceQuotaWithContext), varargs...)
 }
 
-// ListAWSDefaultServiceQuotas mocks base method
+// ListAWSDefaultServiceQuotas mocks base method.
 func (m *MockServiceQuotasAPI) ListAWSDefaultServiceQuotas(arg0 *servicequotas.ListAWSDefaultServiceQuotasInput) (*servicequotas.ListAWSDefaultServiceQuotasOutput, error) {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "ListAWSDefaultServiceQuotas", arg0)
@@ -444,13 +445,13 @@ func (m *MockServiceQuotasAPI) ListAWSDefaultServiceQuotas(arg0 *servicequotas.L
 	return ret0, ret1
 }
 
-// ListAWSDefaultServiceQuotas indicates an expected call of ListAWSDefaultServiceQuotas
+// ListAWSDefaultServiceQuotas indicates an expected call of ListAWSDefaultServiceQuotas.
 func (mr *MockServiceQuotasAPIMockRecorder) ListAWSDefaultServiceQuotas(arg0 interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ListAWSDefaultServiceQuotas", reflect.TypeOf((*MockServiceQuotasAPI)(nil).ListAWSDefaultServiceQuotas), arg0)
 }
 
-// ListAWSDefaultServiceQuotasPages mocks base method
+// ListAWSDefaultServiceQuotasPages mocks base method.
 func (m *MockServiceQuotasAPI) ListAWSDefaultServiceQuotasPages(arg0 *servicequotas.ListAWSDefaultServiceQuotasInput, arg1 func(*servicequotas.ListAWSDefaultServiceQuotasOutput, bool) bool) error {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "ListAWSDefaultServiceQuotasPages", arg0, arg1)
@@ -458,13 +459,13 @@ func (m *MockServiceQuotasAPI) ListAWSDefaultServiceQuotasPages(arg0 *servicequo
 	return ret0
 }
 
-// ListAWSDefaultServiceQuotasPages indicates an expected call of ListAWSDefaultServiceQuotasPages
+// ListAWSDefaultServiceQuotasPages indicates an expected call of ListAWSDefaultServiceQuotasPages.
 func (mr *MockServiceQuotasAPIMockRecorder) ListAWSDefaultServiceQuotasPages(arg0, arg1 interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ListAWSDefaultServiceQuotasPages", reflect.TypeOf((*MockServiceQuotasAPI)(nil).ListAWSDefaultServiceQuotasPages), arg0, arg1)
 }
 
-// ListAWSDefaultServiceQuotasPagesWithContext mocks base method
+// ListAWSDefaultServiceQuotasPagesWithContext mocks base method.
 func (m *MockServiceQuotasAPI) ListAWSDefaultServiceQuotasPagesWithContext(arg0 context.Context, arg1 *servicequotas.ListAWSDefaultServiceQuotasInput, arg2 func(*servicequotas.ListAWSDefaultServiceQuotasOutput, bool) bool, arg3 ...request.Option) error {
 	m.ctrl.T.Helper()
 	varargs := []interface{}{arg0, arg1, arg2}
@@ -476,14 +477,14 @@ func (m *MockServiceQuotasAPI) ListAWSDefaultServiceQuotasPagesWithContext(arg0 
 	return ret0
 }
 
-// ListAWSDefaultServiceQuotasPagesWithContext indicates an expected call of ListAWSDefaultServiceQuotasPagesWithContext
+// ListAWSDefaultServiceQuotasPagesWithContext indicates an expected call of ListAWSDefaultServiceQuotasPagesWithContext.
 func (mr *MockServiceQuotasAPIMockRecorder) ListAWSDefaultServiceQuotasPagesWithContext(arg0, arg1, arg2 interface{}, arg3 ...interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	varargs := append([]interface{}{arg0, arg1, arg2}, arg3...)
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ListAWSDefaultServiceQuotasPagesWithContext", reflect.TypeOf((*MockServiceQuotasAPI)(nil).ListAWSDefaultServiceQuotasPagesWithContext), varargs...)
 }
 
-// ListAWSDefaultServiceQuotasRequest mocks base method
+// ListAWSDefaultServiceQuotasRequest mocks base method.
 func (m *MockServiceQuotasAPI) ListAWSDefaultServiceQuotasRequest(arg0 *servicequotas.ListAWSDefaultServiceQuotasInput) (*request.Request, *servicequotas.ListAWSDefaultServiceQuotasOutput) {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "ListAWSDefaultServiceQuotasRequest", arg0)
@@ -492,13 +493,13 @@ func (m *MockServiceQuotasAPI) ListAWSDefaultServiceQuotasRequest(arg0 *serviceq
 	return ret0, ret1
 }
 
-// ListAWSDefaultServiceQuotasRequest indicates an expected call of ListAWSDefaultServiceQuotasRequest
+// ListAWSDefaultServiceQuotasRequest indicates an expected call of ListAWSDefaultServiceQuotasRequest.
 func (mr *MockServiceQuotasAPIMockRecorder) ListAWSDefaultServiceQuotasRequest(arg0 interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ListAWSDefaultServiceQuotasRequest", reflect.TypeOf((*MockServiceQuotasAPI)(nil).ListAWSDefaultServiceQuotasRequest), arg0)
 }
 
-// ListAWSDefaultServiceQuotasWithContext mocks base method
+// ListAWSDefaultServiceQuotasWithContext mocks base method.
 func (m *MockServiceQuotasAPI) ListAWSDefaultServiceQuotasWithContext(arg0 context.Context, arg1 *servicequotas.ListAWSDefaultServiceQuotasInput, arg2 ...request.Option) (*servicequotas.ListAWSDefaultServiceQuotasOutput, error) {
 	m.ctrl.T.Helper()
 	varargs := []interface{}{arg0, arg1}
@@ -511,14 +512,14 @@ func (m *MockServiceQuotasAPI) ListAWSDefaultServiceQuotasWithContext(arg0 conte
 	return ret0, ret1
 }
 
-// ListAWSDefaultServiceQuotasWithContext indicates an expected call of ListAWSDefaultServiceQuotasWithContext
+// ListAWSDefaultServiceQuotasWithContext indicates an expected call of ListAWSDefaultServiceQuotasWithContext.
 func (mr *MockServiceQuotasAPIMockRecorder) ListAWSDefaultServiceQuotasWithContext(arg0, arg1 interface{}, arg2 ...interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	varargs := append([]interface{}{arg0, arg1}, arg2...)
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ListAWSDefaultServiceQuotasWithContext", reflect.TypeOf((*MockServiceQuotasAPI)(nil).ListAWSDefaultServiceQuotasWithContext), varargs...)
 }
 
-// ListRequestedServiceQuotaChangeHistory mocks base method
+// ListRequestedServiceQuotaChangeHistory mocks base method.
 func (m *MockServiceQuotasAPI) ListRequestedServiceQuotaChangeHistory(arg0 *servicequotas.ListRequestedServiceQuotaChangeHistoryInput) (*servicequotas.ListRequestedServiceQuotaChangeHistoryOutput, error) {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "ListRequestedServiceQuotaChangeHistory", arg0)
@@ -527,13 +528,13 @@ func (m *MockServiceQuotasAPI) ListRequestedServiceQuotaChangeHistory(arg0 *serv
 	return ret0, ret1
 }
 
-// ListRequestedServiceQuotaChangeHistory indicates an expected call of ListRequestedServiceQuotaChangeHistory
+// ListRequestedServiceQuotaChangeHistory indicates an expected call of ListRequestedServiceQuotaChangeHistory.
 func (mr *MockServiceQuotasAPIMockRecorder) ListRequestedServiceQuotaChangeHistory(arg0 interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ListRequestedServiceQuotaChangeHistory", reflect.TypeOf((*MockServiceQuotasAPI)(nil).ListRequestedServiceQuotaChangeHistory), arg0)
 }
 
-// ListRequestedServiceQuotaChangeHistoryByQuota mocks base method
+// ListRequestedServiceQuotaChangeHistoryByQuota mocks base method.
 func (m *MockServiceQuotasAPI) ListRequestedServiceQuotaChangeHistoryByQuota(arg0 *servicequotas.ListRequestedServiceQuotaChangeHistoryByQuotaInput) (*servicequotas.ListRequestedServiceQuotaChangeHistoryByQuotaOutput, error) {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "ListRequestedServiceQuotaChangeHistoryByQuota", arg0)
@@ -542,13 +543,13 @@ func (m *MockServiceQuotasAPI) ListRequestedServiceQuotaChangeHistoryByQuota(arg
 	return ret0, ret1
 }
 
-// ListRequestedServiceQuotaChangeHistoryByQuota indicates an expected call of ListRequestedServiceQuotaChangeHistoryByQuota
+// ListRequestedServiceQuotaChangeHistoryByQuota indicates an expected call of ListRequestedServiceQuotaChangeHistoryByQuota.
 func (mr *MockServiceQuotasAPIMockRecorder) ListRequestedServiceQuotaChangeHistoryByQuota(arg0 interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ListRequestedServiceQuotaChangeHistoryByQuota", reflect.TypeOf((*MockServiceQuotasAPI)(nil).ListRequestedServiceQuotaChangeHistoryByQuota), arg0)
 }
 
-// ListRequestedServiceQuotaChangeHistoryByQuotaPages mocks base method
+// ListRequestedServiceQuotaChangeHistoryByQuotaPages mocks base method.
 func (m *MockServiceQuotasAPI) ListRequestedServiceQuotaChangeHistoryByQuotaPages(arg0 *servicequotas.ListRequestedServiceQuotaChangeHistoryByQuotaInput, arg1 func(*servicequotas.ListRequestedServiceQuotaChangeHistoryByQuotaOutput, bool) bool) error {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "ListRequestedServiceQuotaChangeHistoryByQuotaPages", arg0, arg1)
@@ -556,13 +557,13 @@ func (m *MockServiceQuotasAPI) ListRequestedServiceQuotaChangeHistoryByQuotaPage
 	return ret0
 }
 
-// ListRequestedServiceQuotaChangeHistoryByQuotaPages indicates an expected call of ListRequestedServiceQuotaChangeHistoryByQuotaPages
+// ListRequestedServiceQuotaChangeHistoryByQuotaPages indicates an expected call of ListRequestedServiceQuotaChangeHistoryByQuotaPages.
 func (mr *MockServiceQuotasAPIMockRecorder) ListRequestedServiceQuotaChangeHistoryByQuotaPages(arg0, arg1 interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ListRequestedServiceQuotaChangeHistoryByQuotaPages", reflect.TypeOf((*MockServiceQuotasAPI)(nil).ListRequestedServiceQuotaChangeHistoryByQuotaPages), arg0, arg1)
 }
 
-// ListRequestedServiceQuotaChangeHistoryByQuotaPagesWithContext mocks base method
+// ListRequestedServiceQuotaChangeHistoryByQuotaPagesWithContext mocks base method.
 func (m *MockServiceQuotasAPI) ListRequestedServiceQuotaChangeHistoryByQuotaPagesWithContext(arg0 context.Context, arg1 *servicequotas.ListRequestedServiceQuotaChangeHistoryByQuotaInput, arg2 func(*servicequotas.ListRequestedServiceQuotaChangeHistoryByQuotaOutput, bool) bool, arg3 ...request.Option) error {
 	m.ctrl.T.Helper()
 	varargs := []interface{}{arg0, arg1, arg2}
@@ -574,14 +575,14 @@ func (m *MockServiceQuotasAPI) ListRequestedServiceQuotaChangeHistoryByQuotaPage
 	return ret0
 }
 
-// ListRequestedServiceQuotaChangeHistoryByQuotaPagesWithContext indicates an expected call of ListRequestedServiceQuotaChangeHistoryByQuotaPagesWithContext
+// ListRequestedServiceQuotaChangeHistoryByQuotaPagesWithContext indicates an expected call of ListRequestedServiceQuotaChangeHistoryByQuotaPagesWithContext.
 func (mr *MockServiceQuotasAPIMockRecorder) ListRequestedServiceQuotaChangeHistoryByQuotaPagesWithContext(arg0, arg1, arg2 interface{}, arg3 ...interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	varargs := append([]interface{}{arg0, arg1, arg2}, arg3...)
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ListRequestedServiceQuotaChangeHistoryByQuotaPagesWithContext", reflect.TypeOf((*MockServiceQuotasAPI)(nil).ListRequestedServiceQuotaChangeHistoryByQuotaPagesWithContext), varargs...)
 }
 
-// ListRequestedServiceQuotaChangeHistoryByQuotaRequest mocks base method
+// ListRequestedServiceQuotaChangeHistoryByQuotaRequest mocks base method.
 func (m *MockServiceQuotasAPI) ListRequestedServiceQuotaChangeHistoryByQuotaRequest(arg0 *servicequotas.ListRequestedServiceQuotaChangeHistoryByQuotaInput) (*request.Request, *servicequotas.ListRequestedServiceQuotaChangeHistoryByQuotaOutput) {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "ListRequestedServiceQuotaChangeHistoryByQuotaRequest", arg0)
@@ -590,13 +591,13 @@ func (m *MockServiceQuotasAPI) ListRequestedServiceQuotaChangeHistoryByQuotaRequ
 	return ret0, ret1
 }
 
-// ListRequestedServiceQuotaChangeHistoryByQuotaRequest indicates an expected call of ListRequestedServiceQuotaChangeHistoryByQuotaRequest
+// ListRequestedServiceQuotaChangeHistoryByQuotaRequest indicates an expected call of ListRequestedServiceQuotaChangeHistoryByQuotaRequest.
 func (mr *MockServiceQuotasAPIMockRecorder) ListRequestedServiceQuotaChangeHistoryByQuotaRequest(arg0 interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ListRequestedServiceQuotaChangeHistoryByQuotaRequest", reflect.TypeOf((*MockServiceQuotasAPI)(nil).ListRequestedServiceQuotaChangeHistoryByQuotaRequest), arg0)
 }
 
-// ListRequestedServiceQuotaChangeHistoryByQuotaWithContext mocks base method
+// ListRequestedServiceQuotaChangeHistoryByQuotaWithContext mocks base method.
 func (m *MockServiceQuotasAPI) ListRequestedServiceQuotaChangeHistoryByQuotaWithContext(arg0 context.Context, arg1 *servicequotas.ListRequestedServiceQuotaChangeHistoryByQuotaInput, arg2 ...request.Option) (*servicequotas.ListRequestedServiceQuotaChangeHistoryByQuotaOutput, error) {
 	m.ctrl.T.Helper()
 	varargs := []interface{}{arg0, arg1}
@@ -609,14 +610,14 @@ func (m *MockServiceQuotasAPI) ListRequestedServiceQuotaChangeHistoryByQuotaWith
 	return ret0, ret1
 }
 
-// ListRequestedServiceQuotaChangeHistoryByQuotaWithContext indicates an expected call of ListRequestedServiceQuotaChangeHistoryByQuotaWithContext
+// ListRequestedServiceQuotaChangeHistoryByQuotaWithContext indicates an expected call of ListRequestedServiceQuotaChangeHistoryByQuotaWithContext.
 func (mr *MockServiceQuotasAPIMockRecorder) ListRequestedServiceQuotaChangeHistoryByQuotaWithContext(arg0, arg1 interface{}, arg2 ...interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	varargs := append([]interface{}{arg0, arg1}, arg2...)
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ListRequestedServiceQuotaChangeHistoryByQuotaWithContext", reflect.TypeOf((*MockServiceQuotasAPI)(nil).ListRequestedServiceQuotaChangeHistoryByQuotaWithContext), varargs...)
 }
 
-// ListRequestedServiceQuotaChangeHistoryPages mocks base method
+// ListRequestedServiceQuotaChangeHistoryPages mocks base method.
 func (m *MockServiceQuotasAPI) ListRequestedServiceQuotaChangeHistoryPages(arg0 *servicequotas.ListRequestedServiceQuotaChangeHistoryInput, arg1 func(*servicequotas.ListRequestedServiceQuotaChangeHistoryOutput, bool) bool) error {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "ListRequestedServiceQuotaChangeHistoryPages", arg0, arg1)
@@ -624,13 +625,13 @@ func (m *MockServiceQuotasAPI) ListRequestedServiceQuotaChangeHistoryPages(arg0 
 	return ret0
 }
 
-// ListRequestedServiceQuotaChangeHistoryPages indicates an expected call of ListRequestedServiceQuotaChangeHistoryPages
+// ListRequestedServiceQuotaChangeHistoryPages indicates an expected call of ListRequestedServiceQuotaChangeHistoryPages.
 func (mr *MockServiceQuotasAPIMockRecorder) ListRequestedServiceQuotaChangeHistoryPages(arg0, arg1 interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ListRequestedServiceQuotaChangeHistoryPages", reflect.TypeOf((*MockServiceQuotasAPI)(nil).ListRequestedServiceQuotaChangeHistoryPages), arg0, arg1)
 }
 
-// ListRequestedServiceQuotaChangeHistoryPagesWithContext mocks base method
+// ListRequestedServiceQuotaChangeHistoryPagesWithContext mocks base method.
 func (m *MockServiceQuotasAPI) ListRequestedServiceQuotaChangeHistoryPagesWithContext(arg0 context.Context, arg1 *servicequotas.ListRequestedServiceQuotaChangeHistoryInput, arg2 func(*servicequotas.ListRequestedServiceQuotaChangeHistoryOutput, bool) bool, arg3 ...request.Option) error {
 	m.ctrl.T.Helper()
 	varargs := []interface{}{arg0, arg1, arg2}
@@ -642,14 +643,14 @@ func (m *MockServiceQuotasAPI) ListRequestedServiceQuotaChangeHistoryPagesWithCo
 	return ret0
 }
 
-// ListRequestedServiceQuotaChangeHistoryPagesWithContext indicates an expected call of ListRequestedServiceQuotaChangeHistoryPagesWithContext
+// ListRequestedServiceQuotaChangeHistoryPagesWithContext indicates an expected call of ListRequestedServiceQuotaChangeHistoryPagesWithContext.
 func (mr *MockServiceQuotasAPIMockRecorder) ListRequestedServiceQuotaChangeHistoryPagesWithContext(arg0, arg1, arg2 interface{}, arg3 ...interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	varargs := append([]interface{}{arg0, arg1, arg2}, arg3...)
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ListRequestedServiceQuotaChangeHistoryPagesWithContext", reflect.TypeOf((*MockServiceQuotasAPI)(nil).ListRequestedServiceQuotaChangeHistoryPagesWithContext), varargs...)
 }
 
-// ListRequestedServiceQuotaChangeHistoryRequest mocks base method
+// ListRequestedServiceQuotaChangeHistoryRequest mocks base method.
 func (m *MockServiceQuotasAPI) ListRequestedServiceQuotaChangeHistoryRequest(arg0 *servicequotas.ListRequestedServiceQuotaChangeHistoryInput) (*request.Request, *servicequotas.ListRequestedServiceQuotaChangeHistoryOutput) {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "ListRequestedServiceQuotaChangeHistoryRequest", arg0)
@@ -658,13 +659,13 @@ func (m *MockServiceQuotasAPI) ListRequestedServiceQuotaChangeHistoryRequest(arg
 	return ret0, ret1
 }
 
-// ListRequestedServiceQuotaChangeHistoryRequest indicates an expected call of ListRequestedServiceQuotaChangeHistoryRequest
+// ListRequestedServiceQuotaChangeHistoryRequest indicates an expected call of ListRequestedServiceQuotaChangeHistoryRequest.
 func (mr *MockServiceQuotasAPIMockRecorder) ListRequestedServiceQuotaChangeHistoryRequest(arg0 interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ListRequestedServiceQuotaChangeHistoryRequest", reflect.TypeOf((*MockServiceQuotasAPI)(nil).ListRequestedServiceQuotaChangeHistoryRequest), arg0)
 }
 
-// ListRequestedServiceQuotaChangeHistoryWithContext mocks base method
+// ListRequestedServiceQuotaChangeHistoryWithContext mocks base method.
 func (m *MockServiceQuotasAPI) ListRequestedServiceQuotaChangeHistoryWithContext(arg0 context.Context, arg1 *servicequotas.ListRequestedServiceQuotaChangeHistoryInput, arg2 ...request.Option) (*servicequotas.ListRequestedServiceQuotaChangeHistoryOutput, error) {
 	m.ctrl.T.Helper()
 	varargs := []interface{}{arg0, arg1}
@@ -677,14 +678,14 @@ func (m *MockServiceQuotasAPI) ListRequestedServiceQuotaChangeHistoryWithContext
 	return ret0, ret1
 }
 
-// ListRequestedServiceQuotaChangeHistoryWithContext indicates an expected call of ListRequestedServiceQuotaChangeHistoryWithContext
+// ListRequestedServiceQuotaChangeHistoryWithContext indicates an expected call of ListRequestedServiceQuotaChangeHistoryWithContext.
 func (mr *MockServiceQuotasAPIMockRecorder) ListRequestedServiceQuotaChangeHistoryWithContext(arg0, arg1 interface{}, arg2 ...interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	varargs := append([]interface{}{arg0, arg1}, arg2...)
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ListRequestedServiceQuotaChangeHistoryWithContext", reflect.TypeOf((*MockServiceQuotasAPI)(nil).ListRequestedServiceQuotaChangeHistoryWithContext), varargs...)
 }
 
-// ListServiceQuotaIncreaseRequestsInTemplate mocks base method
+// ListServiceQuotaIncreaseRequestsInTemplate mocks base method.
 func (m *MockServiceQuotasAPI) ListServiceQuotaIncreaseRequestsInTemplate(arg0 *servicequotas.ListServiceQuotaIncreaseRequestsInTemplateInput) (*servicequotas.ListServiceQuotaIncreaseRequestsInTemplateOutput, error) {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "ListServiceQuotaIncreaseRequestsInTemplate", arg0)
@@ -693,13 +694,13 @@ func (m *MockServiceQuotasAPI) ListServiceQuotaIncreaseRequestsInTemplate(arg0 *
 	return ret0, ret1
 }
 
-// ListServiceQuotaIncreaseRequestsInTemplate indicates an expected call of ListServiceQuotaIncreaseRequestsInTemplate
+// ListServiceQuotaIncreaseRequestsInTemplate indicates an expected call of ListServiceQuotaIncreaseRequestsInTemplate.
 func (mr *MockServiceQuotasAPIMockRecorder) ListServiceQuotaIncreaseRequestsInTemplate(arg0 interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ListServiceQuotaIncreaseRequestsInTemplate", reflect.TypeOf((*MockServiceQuotasAPI)(nil).ListServiceQuotaIncreaseRequestsInTemplate), arg0)
 }
 
-// ListServiceQuotaIncreaseRequestsInTemplatePages mocks base method
+// ListServiceQuotaIncreaseRequestsInTemplatePages mocks base method.
 func (m *MockServiceQuotasAPI) ListServiceQuotaIncreaseRequestsInTemplatePages(arg0 *servicequotas.ListServiceQuotaIncreaseRequestsInTemplateInput, arg1 func(*servicequotas.ListServiceQuotaIncreaseRequestsInTemplateOutput, bool) bool) error {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "ListServiceQuotaIncreaseRequestsInTemplatePages", arg0, arg1)
@@ -707,13 +708,13 @@ func (m *MockServiceQuotasAPI) ListServiceQuotaIncreaseRequestsInTemplatePages(a
 	return ret0
 }
 
-// ListServiceQuotaIncreaseRequestsInTemplatePages indicates an expected call of ListServiceQuotaIncreaseRequestsInTemplatePages
+// ListServiceQuotaIncreaseRequestsInTemplatePages indicates an expected call of ListServiceQuotaIncreaseRequestsInTemplatePages.
 func (mr *MockServiceQuotasAPIMockRecorder) ListServiceQuotaIncreaseRequestsInTemplatePages(arg0, arg1 interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ListServiceQuotaIncreaseRequestsInTemplatePages", reflect.TypeOf((*MockServiceQuotasAPI)(nil).ListServiceQuotaIncreaseRequestsInTemplatePages), arg0, arg1)
 }
 
-// ListServiceQuotaIncreaseRequestsInTemplatePagesWithContext mocks base method
+// ListServiceQuotaIncreaseRequestsInTemplatePagesWithContext mocks base method.
 func (m *MockServiceQuotasAPI) ListServiceQuotaIncreaseRequestsInTemplatePagesWithContext(arg0 context.Context, arg1 *servicequotas.ListServiceQuotaIncreaseRequestsInTemplateInput, arg2 func(*servicequotas.ListServiceQuotaIncreaseRequestsInTemplateOutput, bool) bool, arg3 ...request.Option) error {
 	m.ctrl.T.Helper()
 	varargs := []interface{}{arg0, arg1, arg2}
@@ -725,14 +726,14 @@ func (m *MockServiceQuotasAPI) ListServiceQuotaIncreaseRequestsInTemplatePagesWi
 	return ret0
 }
 
-// ListServiceQuotaIncreaseRequestsInTemplatePagesWithContext indicates an expected call of ListServiceQuotaIncreaseRequestsInTemplatePagesWithContext
+// ListServiceQuotaIncreaseRequestsInTemplatePagesWithContext indicates an expected call of ListServiceQuotaIncreaseRequestsInTemplatePagesWithContext.
 func (mr *MockServiceQuotasAPIMockRecorder) ListServiceQuotaIncreaseRequestsInTemplatePagesWithContext(arg0, arg1, arg2 interface{}, arg3 ...interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	varargs := append([]interface{}{arg0, arg1, arg2}, arg3...)
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ListServiceQuotaIncreaseRequestsInTemplatePagesWithContext", reflect.TypeOf((*MockServiceQuotasAPI)(nil).ListServiceQuotaIncreaseRequestsInTemplatePagesWithContext), varargs...)
 }
 
-// ListServiceQuotaIncreaseRequestsInTemplateRequest mocks base method
+// ListServiceQuotaIncreaseRequestsInTemplateRequest mocks base method.
 func (m *MockServiceQuotasAPI) ListServiceQuotaIncreaseRequestsInTemplateRequest(arg0 *servicequotas.ListServiceQuotaIncreaseRequestsInTemplateInput) (*request.Request, *servicequotas.ListServiceQuotaIncreaseRequestsInTemplateOutput) {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "ListServiceQuotaIncreaseRequestsInTemplateRequest", arg0)
@@ -741,13 +742,13 @@ func (m *MockServiceQuotasAPI) ListServiceQuotaIncreaseRequestsInTemplateRequest
 	return ret0, ret1
 }
 
-// ListServiceQuotaIncreaseRequestsInTemplateRequest indicates an expected call of ListServiceQuotaIncreaseRequestsInTemplateRequest
+// ListServiceQuotaIncreaseRequestsInTemplateRequest indicates an expected call of ListServiceQuotaIncreaseRequestsInTemplateRequest.
 func (mr *MockServiceQuotasAPIMockRecorder) ListServiceQuotaIncreaseRequestsInTemplateRequest(arg0 interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ListServiceQuotaIncreaseRequestsInTemplateRequest", reflect.TypeOf((*MockServiceQuotasAPI)(nil).ListServiceQuotaIncreaseRequestsInTemplateRequest), arg0)
 }
 
-// ListServiceQuotaIncreaseRequestsInTemplateWithContext mocks base method
+// ListServiceQuotaIncreaseRequestsInTemplateWithContext mocks base method.
 func (m *MockServiceQuotasAPI) ListServiceQuotaIncreaseRequestsInTemplateWithContext(arg0 context.Context, arg1 *servicequotas.ListServiceQuotaIncreaseRequestsInTemplateInput, arg2 ...request.Option) (*servicequotas.ListServiceQuotaIncreaseRequestsInTemplateOutput, error) {
 	m.ctrl.T.Helper()
 	varargs := []interface{}{arg0, arg1}
@@ -760,14 +761,14 @@ func (m *MockServiceQuotasAPI) ListServiceQuotaIncreaseRequestsInTemplateWithCon
 	return ret0, ret1
 }
 
-// ListServiceQuotaIncreaseRequestsInTemplateWithContext indicates an expected call of ListServiceQuotaIncreaseRequestsInTemplateWithContext
+// ListServiceQuotaIncreaseRequestsInTemplateWithContext indicates an expected call of ListServiceQuotaIncreaseRequestsInTemplateWithContext.
 func (mr *MockServiceQuotasAPIMockRecorder) ListServiceQuotaIncreaseRequestsInTemplateWithContext(arg0, arg1 interface{}, arg2 ...interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	varargs := append([]interface{}{arg0, arg1}, arg2...)
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ListServiceQuotaIncreaseRequestsInTemplateWithContext", reflect.TypeOf((*MockServiceQuotasAPI)(nil).ListServiceQuotaIncreaseRequestsInTemplateWithContext), varargs...)
 }
 
-// ListServiceQuotas mocks base method
+// ListServiceQuotas mocks base method.
 func (m *MockServiceQuotasAPI) ListServiceQuotas(arg0 *servicequotas.ListServiceQuotasInput) (*servicequotas.ListServiceQuotasOutput, error) {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "ListServiceQuotas", arg0)
@@ -776,13 +777,13 @@ func (m *MockServiceQuotasAPI) ListServiceQuotas(arg0 *servicequotas.ListService
 	return ret0, ret1
 }
 
-// ListServiceQuotas indicates an expected call of ListServiceQuotas
+// ListServiceQuotas indicates an expected call of ListServiceQuotas.
 func (mr *MockServiceQuotasAPIMockRecorder) ListServiceQuotas(arg0 interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ListServiceQuotas", reflect.TypeOf((*MockServiceQuotasAPI)(nil).ListServiceQuotas), arg0)
 }
 
-// ListServiceQuotasPages mocks base method
+// ListServiceQuotasPages mocks base method.
 func (m *MockServiceQuotasAPI) ListServiceQuotasPages(arg0 *servicequotas.ListServiceQuotasInput, arg1 func(*servicequotas.ListServiceQuotasOutput, bool) bool) error {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "ListServiceQuotasPages", arg0, arg1)
@@ -790,13 +791,13 @@ func (m *MockServiceQuotasAPI) ListServiceQuotasPages(arg0 *servicequotas.ListSe
 	return ret0
 }
 
-// ListServiceQuotasPages indicates an expected call of ListServiceQuotasPages
+// ListServiceQuotasPages indicates an expected call of ListServiceQuotasPages.
 func (mr *MockServiceQuotasAPIMockRecorder) ListServiceQuotasPages(arg0, arg1 interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ListServiceQuotasPages", reflect.TypeOf((*MockServiceQuotasAPI)(nil).ListServiceQuotasPages), arg0, arg1)
 }
 
-// ListServiceQuotasPagesWithContext mocks base method
+// ListServiceQuotasPagesWithContext mocks base method.
 func (m *MockServiceQuotasAPI) ListServiceQuotasPagesWithContext(arg0 context.Context, arg1 *servicequotas.ListServiceQuotasInput, arg2 func(*servicequotas.ListServiceQuotasOutput, bool) bool, arg3 ...request.Option) error {
 	m.ctrl.T.Helper()
 	varargs := []interface{}{arg0, arg1, arg2}
@@ -808,14 +809,14 @@ func (m *MockServiceQuotasAPI) ListServiceQuotasPagesWithContext(arg0 context.Co
 	return ret0
 }
 
-// ListServiceQuotasPagesWithContext indicates an expected call of ListServiceQuotasPagesWithContext
+// ListServiceQuotasPagesWithContext indicates an expected call of ListServiceQuotasPagesWithContext.
 func (mr *MockServiceQuotasAPIMockRecorder) ListServiceQuotasPagesWithContext(arg0, arg1, arg2 interface{}, arg3 ...interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	varargs := append([]interface{}{arg0, arg1, arg2}, arg3...)
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ListServiceQuotasPagesWithContext", reflect.TypeOf((*MockServiceQuotasAPI)(nil).ListServiceQuotasPagesWithContext), varargs...)
 }
 
-// ListServiceQuotasRequest mocks base method
+// ListServiceQuotasRequest mocks base method.
 func (m *MockServiceQuotasAPI) ListServiceQuotasRequest(arg0 *servicequotas.ListServiceQuotasInput) (*request.Request, *servicequotas.ListServiceQuotasOutput) {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "ListServiceQuotasRequest", arg0)
@@ -824,13 +825,13 @@ func (m *MockServiceQuotasAPI) ListServiceQuotasRequest(arg0 *servicequotas.List
 	return ret0, ret1
 }
 
-// ListServiceQuotasRequest indicates an expected call of ListServiceQuotasRequest
+// ListServiceQuotasRequest indicates an expected call of ListServiceQuotasRequest.
 func (mr *MockServiceQuotasAPIMockRecorder) ListServiceQuotasRequest(arg0 interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ListServiceQuotasRequest", reflect.TypeOf((*MockServiceQuotasAPI)(nil).ListServiceQuotasRequest), arg0)
 }
 
-// ListServiceQuotasWithContext mocks base method
+// ListServiceQuotasWithContext mocks base method.
 func (m *MockServiceQuotasAPI) ListServiceQuotasWithContext(arg0 context.Context, arg1 *servicequotas.ListServiceQuotasInput, arg2 ...request.Option) (*servicequotas.ListServiceQuotasOutput, error) {
 	m.ctrl.T.Helper()
 	varargs := []interface{}{arg0, arg1}
@@ -843,14 +844,14 @@ func (m *MockServiceQuotasAPI) ListServiceQuotasWithContext(arg0 context.Context
 	return ret0, ret1
 }
 
-// ListServiceQuotasWithContext indicates an expected call of ListServiceQuotasWithContext
+// ListServiceQuotasWithContext indicates an expected call of ListServiceQuotasWithContext.
 func (mr *MockServiceQuotasAPIMockRecorder) ListServiceQuotasWithContext(arg0, arg1 interface{}, arg2 ...interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	varargs := append([]interface{}{arg0, arg1}, arg2...)
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ListServiceQuotasWithContext", reflect.TypeOf((*MockServiceQuotasAPI)(nil).ListServiceQuotasWithContext), varargs...)
 }
 
-// ListServices mocks base method
+// ListServices mocks base method.
 func (m *MockServiceQuotasAPI) ListServices(arg0 *servicequotas.ListServicesInput) (*servicequotas.ListServicesOutput, error) {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "ListServices", arg0)
@@ -859,13 +860,13 @@ func (m *MockServiceQuotasAPI) ListServices(arg0 *servicequotas.ListServicesInpu
 	return ret0, ret1
 }
 
-// ListServices indicates an expected call of ListServices
+// ListServices indicates an expected call of ListServices.
 func (mr *MockServiceQuotasAPIMockRecorder) ListServices(arg0 interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ListServices", reflect.TypeOf((*MockServiceQuotasAPI)(nil).ListServices), arg0)
 }
 
-// ListServicesPages mocks base method
+// ListServicesPages mocks base method.
 func (m *MockServiceQuotasAPI) ListServicesPages(arg0 *servicequotas.ListServicesInput, arg1 func(*servicequotas.ListServicesOutput, bool) bool) error {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "ListServicesPages", arg0, arg1)
@@ -873,13 +874,13 @@ func (m *MockServiceQuotasAPI) ListServicesPages(arg0 *servicequotas.ListService
 	return ret0
 }
 
-// ListServicesPages indicates an expected call of ListServicesPages
+// ListServicesPages indicates an expected call of ListServicesPages.
 func (mr *MockServiceQuotasAPIMockRecorder) ListServicesPages(arg0, arg1 interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ListServicesPages", reflect.TypeOf((*MockServiceQuotasAPI)(nil).ListServicesPages), arg0, arg1)
 }
 
-// ListServicesPagesWithContext mocks base method
+// ListServicesPagesWithContext mocks base method.
 func (m *MockServiceQuotasAPI) ListServicesPagesWithContext(arg0 context.Context, arg1 *servicequotas.ListServicesInput, arg2 func(*servicequotas.ListServicesOutput, bool) bool, arg3 ...request.Option) error {
 	m.ctrl.T.Helper()
 	varargs := []interface{}{arg0, arg1, arg2}
@@ -891,14 +892,14 @@ func (m *MockServiceQuotasAPI) ListServicesPagesWithContext(arg0 context.Context
 	return ret0
 }
 
-// ListServicesPagesWithContext indicates an expected call of ListServicesPagesWithContext
+// ListServicesPagesWithContext indicates an expected call of ListServicesPagesWithContext.
 func (mr *MockServiceQuotasAPIMockRecorder) ListServicesPagesWithContext(arg0, arg1, arg2 interface{}, arg3 ...interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	varargs := append([]interface{}{arg0, arg1, arg2}, arg3...)
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ListServicesPagesWithContext", reflect.TypeOf((*MockServiceQuotasAPI)(nil).ListServicesPagesWithContext), varargs...)
 }
 
-// ListServicesRequest mocks base method
+// ListServicesRequest mocks base method.
 func (m *MockServiceQuotasAPI) ListServicesRequest(arg0 *servicequotas.ListServicesInput) (*request.Request, *servicequotas.ListServicesOutput) {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "ListServicesRequest", arg0)
@@ -907,13 +908,13 @@ func (m *MockServiceQuotasAPI) ListServicesRequest(arg0 *servicequotas.ListServi
 	return ret0, ret1
 }
 
-// ListServicesRequest indicates an expected call of ListServicesRequest
+// ListServicesRequest indicates an expected call of ListServicesRequest.
 func (mr *MockServiceQuotasAPIMockRecorder) ListServicesRequest(arg0 interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ListServicesRequest", reflect.TypeOf((*MockServiceQuotasAPI)(nil).ListServicesRequest), arg0)
 }
 
-// ListServicesWithContext mocks base method
+// ListServicesWithContext mocks base method.
 func (m *MockServiceQuotasAPI) ListServicesWithContext(arg0 context.Context, arg1 *servicequotas.ListServicesInput, arg2 ...request.Option) (*servicequotas.ListServicesOutput, error) {
 	m.ctrl.T.Helper()
 	varargs := []interface{}{arg0, arg1}
@@ -926,14 +927,64 @@ func (m *MockServiceQuotasAPI) ListServicesWithContext(arg0 context.Context, arg
 	return ret0, ret1
 }
 
-// ListServicesWithContext indicates an expected call of ListServicesWithContext
+// ListServicesWithContext indicates an expected call of ListServicesWithContext.
 func (mr *MockServiceQuotasAPIMockRecorder) ListServicesWithContext(arg0, arg1 interface{}, arg2 ...interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	varargs := append([]interface{}{arg0, arg1}, arg2...)
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ListServicesWithContext", reflect.TypeOf((*MockServiceQuotasAPI)(nil).ListServicesWithContext), varargs...)
 }
 
-// PutServiceQuotaIncreaseRequestIntoTemplate mocks base method
+// ListTagsForResource mocks base method.
+func (m *MockServiceQuotasAPI) ListTagsForResource(arg0 *servicequotas.ListTagsForResourceInput) (*servicequotas.ListTagsForResourceOutput, error) {
+	m.ctrl.T.Helper()
+	ret := m.ctrl.Call(m, "ListTagsForResource", arg0)
+	ret0, _ := ret[0].(*servicequotas.ListTagsForResourceOutput)
+	ret1, _ := ret[1].(error)
+	return ret0, ret1
+}
+
+// ListTagsForResource indicates an expected call of ListTagsForResource.
+func (mr *MockServiceQuotasAPIMockRecorder) ListTagsForResource(arg0 interface{}) *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ListTagsForResource", reflect.TypeOf((*MockServiceQuotasAPI)(nil).ListTagsForResource), arg0)
+}
+
+// ListTagsForResourceRequest mocks base method.
+func (m *MockServiceQuotasAPI) ListTagsForResourceRequest(arg0 *servicequotas.ListTagsForResourceInput) (*request.Request, *servicequotas.ListTagsForResourceOutput) {
+	m.ctrl.T.Helper()
+	ret := m.ctrl.Call(m, "ListTagsForResourceRequest", arg0)
+	ret0, _ := ret[0].(*request.Request)
+	ret1, _ := ret[1].(*servicequotas.ListTagsForResourceOutput)
+	return ret0, ret1
+}
+
+// ListTagsForResourceRequest indicates an expected call of ListTagsForResourceRequest.
+func (mr *MockServiceQuotasAPIMockRecorder) ListTagsForResourceRequest(arg0 interface{}) *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ListTagsForResourceRequest", reflect.TypeOf((*MockServiceQuotasAPI)(nil).ListTagsForResourceRequest), arg0)
+}
+
+// ListTagsForResourceWithContext mocks base method.
+func (m *MockServiceQuotasAPI) ListTagsForResourceWithContext(arg0 context.Context, arg1 *servicequotas.ListTagsForResourceInput, arg2 ...request.Option) (*servicequotas.ListTagsForResourceOutput, error) {
+	m.ctrl.T.Helper()
+	varargs := []interface{}{arg0, arg1}
+	for _, a := range arg2 {
+		varargs = append(varargs, a)
+	}
+	ret := m.ctrl.Call(m, "ListTagsForResourceWithContext", varargs...)
+	ret0, _ := ret[0].(*servicequotas.ListTagsForResourceOutput)
+	ret1, _ := ret[1].(error)
+	return ret0, ret1
+}
+
+// ListTagsForResourceWithContext indicates an expected call of ListTagsForResourceWithContext.
+func (mr *MockServiceQuotasAPIMockRecorder) ListTagsForResourceWithContext(arg0, arg1 interface{}, arg2 ...interface{}) *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	varargs := append([]interface{}{arg0, arg1}, arg2...)
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ListTagsForResourceWithContext", reflect.TypeOf((*MockServiceQuotasAPI)(nil).ListTagsForResourceWithContext), varargs...)
+}
+
+// PutServiceQuotaIncreaseRequestIntoTemplate mocks base method.
 func (m *MockServiceQuotasAPI) PutServiceQuotaIncreaseRequestIntoTemplate(arg0 *servicequotas.PutServiceQuotaIncreaseRequestIntoTemplateInput) (*servicequotas.PutServiceQuotaIncreaseRequestIntoTemplateOutput, error) {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "PutServiceQuotaIncreaseRequestIntoTemplate", arg0)
@@ -942,13 +993,13 @@ func (m *MockServiceQuotasAPI) PutServiceQuotaIncreaseRequestIntoTemplate(arg0 *
 	return ret0, ret1
 }
 
-// PutServiceQuotaIncreaseRequestIntoTemplate indicates an expected call of PutServiceQuotaIncreaseRequestIntoTemplate
+// PutServiceQuotaIncreaseRequestIntoTemplate indicates an expected call of PutServiceQuotaIncreaseRequestIntoTemplate.
 func (mr *MockServiceQuotasAPIMockRecorder) PutServiceQuotaIncreaseRequestIntoTemplate(arg0 interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "PutServiceQuotaIncreaseRequestIntoTemplate", reflect.TypeOf((*MockServiceQuotasAPI)(nil).PutServiceQuotaIncreaseRequestIntoTemplate), arg0)
 }
 
-// PutServiceQuotaIncreaseRequestIntoTemplateRequest mocks base method
+// PutServiceQuotaIncreaseRequestIntoTemplateRequest mocks base method.
 func (m *MockServiceQuotasAPI) PutServiceQuotaIncreaseRequestIntoTemplateRequest(arg0 *servicequotas.PutServiceQuotaIncreaseRequestIntoTemplateInput) (*request.Request, *servicequotas.PutServiceQuotaIncreaseRequestIntoTemplateOutput) {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "PutServiceQuotaIncreaseRequestIntoTemplateRequest", arg0)
@@ -957,13 +1008,13 @@ func (m *MockServiceQuotasAPI) PutServiceQuotaIncreaseRequestIntoTemplateRequest
 	return ret0, ret1
 }
 
-// PutServiceQuotaIncreaseRequestIntoTemplateRequest indicates an expected call of PutServiceQuotaIncreaseRequestIntoTemplateRequest
+// PutServiceQuotaIncreaseRequestIntoTemplateRequest indicates an expected call of PutServiceQuotaIncreaseRequestIntoTemplateRequest.
 func (mr *MockServiceQuotasAPIMockRecorder) PutServiceQuotaIncreaseRequestIntoTemplateRequest(arg0 interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "PutServiceQuotaIncreaseRequestIntoTemplateRequest", reflect.TypeOf((*MockServiceQuotasAPI)(nil).PutServiceQuotaIncreaseRequestIntoTemplateRequest), arg0)
 }
 
-// PutServiceQuotaIncreaseRequestIntoTemplateWithContext mocks base method
+// PutServiceQuotaIncreaseRequestIntoTemplateWithContext mocks base method.
 func (m *MockServiceQuotasAPI) PutServiceQuotaIncreaseRequestIntoTemplateWithContext(arg0 context.Context, arg1 *servicequotas.PutServiceQuotaIncreaseRequestIntoTemplateInput, arg2 ...request.Option) (*servicequotas.PutServiceQuotaIncreaseRequestIntoTemplateOutput, error) {
 	m.ctrl.T.Helper()
 	varargs := []interface{}{arg0, arg1}
@@ -976,14 +1027,14 @@ func (m *MockServiceQuotasAPI) PutServiceQuotaIncreaseRequestIntoTemplateWithCon
 	return ret0, ret1
 }
 
-// PutServiceQuotaIncreaseRequestIntoTemplateWithContext indicates an expected call of PutServiceQuotaIncreaseRequestIntoTemplateWithContext
+// PutServiceQuotaIncreaseRequestIntoTemplateWithContext indicates an expected call of PutServiceQuotaIncreaseRequestIntoTemplateWithContext.
 func (mr *MockServiceQuotasAPIMockRecorder) PutServiceQuotaIncreaseRequestIntoTemplateWithContext(arg0, arg1 interface{}, arg2 ...interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	varargs := append([]interface{}{arg0, arg1}, arg2...)
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "PutServiceQuotaIncreaseRequestIntoTemplateWithContext", reflect.TypeOf((*MockServiceQuotasAPI)(nil).PutServiceQuotaIncreaseRequestIntoTemplateWithContext), varargs...)
 }
 
-// RequestServiceQuotaIncrease mocks base method
+// RequestServiceQuotaIncrease mocks base method.
 func (m *MockServiceQuotasAPI) RequestServiceQuotaIncrease(arg0 *servicequotas.RequestServiceQuotaIncreaseInput) (*servicequotas.RequestServiceQuotaIncreaseOutput, error) {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "RequestServiceQuotaIncrease", arg0)
@@ -992,13 +1043,13 @@ func (m *MockServiceQuotasAPI) RequestServiceQuotaIncrease(arg0 *servicequotas.R
 	return ret0, ret1
 }
 
-// RequestServiceQuotaIncrease indicates an expected call of RequestServiceQuotaIncrease
+// RequestServiceQuotaIncrease indicates an expected call of RequestServiceQuotaIncrease.
 func (mr *MockServiceQuotasAPIMockRecorder) RequestServiceQuotaIncrease(arg0 interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "RequestServiceQuotaIncrease", reflect.TypeOf((*MockServiceQuotasAPI)(nil).RequestServiceQuotaIncrease), arg0)
 }
 
-// RequestServiceQuotaIncreaseRequest mocks base method
+// RequestServiceQuotaIncreaseRequest mocks base method.
 func (m *MockServiceQuotasAPI) RequestServiceQuotaIncreaseRequest(arg0 *servicequotas.RequestServiceQuotaIncreaseInput) (*request.Request, *servicequotas.RequestServiceQuotaIncreaseOutput) {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "RequestServiceQuotaIncreaseRequest", arg0)
@@ -1007,13 +1058,13 @@ func (m *MockServiceQuotasAPI) RequestServiceQuotaIncreaseRequest(arg0 *serviceq
 	return ret0, ret1
 }
 
-// RequestServiceQuotaIncreaseRequest indicates an expected call of RequestServiceQuotaIncreaseRequest
+// RequestServiceQuotaIncreaseRequest indicates an expected call of RequestServiceQuotaIncreaseRequest.
 func (mr *MockServiceQuotasAPIMockRecorder) RequestServiceQuotaIncreaseRequest(arg0 interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "RequestServiceQuotaIncreaseRequest", reflect.TypeOf((*MockServiceQuotasAPI)(nil).RequestServiceQuotaIncreaseRequest), arg0)
 }
 
-// RequestServiceQuotaIncreaseWithContext mocks base method
+// RequestServiceQuotaIncreaseWithContext mocks base method.
 func (m *MockServiceQuotasAPI) RequestServiceQuotaIncreaseWithContext(arg0 context.Context, arg1 *servicequotas.RequestServiceQuotaIncreaseInput, arg2 ...request.Option) (*servicequotas.RequestServiceQuotaIncreaseOutput, error) {
 	m.ctrl.T.Helper()
 	varargs := []interface{}{arg0, arg1}
@@ -1026,9 +1077,109 @@ func (m *MockServiceQuotasAPI) RequestServiceQuotaIncreaseWithContext(arg0 conte
 	return ret0, ret1
 }
 
-// RequestServiceQuotaIncreaseWithContext indicates an expected call of RequestServiceQuotaIncreaseWithContext
+// RequestServiceQuotaIncreaseWithContext indicates an expected call of RequestServiceQuotaIncreaseWithContext.
 func (mr *MockServiceQuotasAPIMockRecorder) RequestServiceQuotaIncreaseWithContext(arg0, arg1 interface{}, arg2 ...interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	varargs := append([]interface{}{arg0, arg1}, arg2...)
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "RequestServiceQuotaIncreaseWithContext", reflect.TypeOf((*MockServiceQuotasAPI)(nil).RequestServiceQuotaIncreaseWithContext), varargs...)
+}
+
+// TagResource mocks base method.
+func (m *MockServiceQuotasAPI) TagResource(arg0 *servicequotas.TagResourceInput) (*servicequotas.TagResourceOutput, error) {
+	m.ctrl.T.Helper()
+	ret := m.ctrl.Call(m, "TagResource", arg0)
+	ret0, _ := ret[0].(*servicequotas.TagResourceOutput)
+	ret1, _ := ret[1].(error)
+	return ret0, ret1
+}
+
+// TagResource indicates an expected call of TagResource.
+func (mr *MockServiceQuotasAPIMockRecorder) TagResource(arg0 interface{}) *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "TagResource", reflect.TypeOf((*MockServiceQuotasAPI)(nil).TagResource), arg0)
+}
+
+// TagResourceRequest mocks base method.
+func (m *MockServiceQuotasAPI) TagResourceRequest(arg0 *servicequotas.TagResourceInput) (*request.Request, *servicequotas.TagResourceOutput) {
+	m.ctrl.T.Helper()
+	ret := m.ctrl.Call(m, "TagResourceRequest", arg0)
+	ret0, _ := ret[0].(*request.Request)
+	ret1, _ := ret[1].(*servicequotas.TagResourceOutput)
+	return ret0, ret1
+}
+
+// TagResourceRequest indicates an expected call of TagResourceRequest.
+func (mr *MockServiceQuotasAPIMockRecorder) TagResourceRequest(arg0 interface{}) *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "TagResourceRequest", reflect.TypeOf((*MockServiceQuotasAPI)(nil).TagResourceRequest), arg0)
+}
+
+// TagResourceWithContext mocks base method.
+func (m *MockServiceQuotasAPI) TagResourceWithContext(arg0 context.Context, arg1 *servicequotas.TagResourceInput, arg2 ...request.Option) (*servicequotas.TagResourceOutput, error) {
+	m.ctrl.T.Helper()
+	varargs := []interface{}{arg0, arg1}
+	for _, a := range arg2 {
+		varargs = append(varargs, a)
+	}
+	ret := m.ctrl.Call(m, "TagResourceWithContext", varargs...)
+	ret0, _ := ret[0].(*servicequotas.TagResourceOutput)
+	ret1, _ := ret[1].(error)
+	return ret0, ret1
+}
+
+// TagResourceWithContext indicates an expected call of TagResourceWithContext.
+func (mr *MockServiceQuotasAPIMockRecorder) TagResourceWithContext(arg0, arg1 interface{}, arg2 ...interface{}) *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	varargs := append([]interface{}{arg0, arg1}, arg2...)
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "TagResourceWithContext", reflect.TypeOf((*MockServiceQuotasAPI)(nil).TagResourceWithContext), varargs...)
+}
+
+// UntagResource mocks base method.
+func (m *MockServiceQuotasAPI) UntagResource(arg0 *servicequotas.UntagResourceInput) (*servicequotas.UntagResourceOutput, error) {
+	m.ctrl.T.Helper()
+	ret := m.ctrl.Call(m, "UntagResource", arg0)
+	ret0, _ := ret[0].(*servicequotas.UntagResourceOutput)
+	ret1, _ := ret[1].(error)
+	return ret0, ret1
+}
+
+// UntagResource indicates an expected call of UntagResource.
+func (mr *MockServiceQuotasAPIMockRecorder) UntagResource(arg0 interface{}) *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "UntagResource", reflect.TypeOf((*MockServiceQuotasAPI)(nil).UntagResource), arg0)
+}
+
+// UntagResourceRequest mocks base method.
+func (m *MockServiceQuotasAPI) UntagResourceRequest(arg0 *servicequotas.UntagResourceInput) (*request.Request, *servicequotas.UntagResourceOutput) {
+	m.ctrl.T.Helper()
+	ret := m.ctrl.Call(m, "UntagResourceRequest", arg0)
+	ret0, _ := ret[0].(*request.Request)
+	ret1, _ := ret[1].(*servicequotas.UntagResourceOutput)
+	return ret0, ret1
+}
+
+// UntagResourceRequest indicates an expected call of UntagResourceRequest.
+func (mr *MockServiceQuotasAPIMockRecorder) UntagResourceRequest(arg0 interface{}) *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "UntagResourceRequest", reflect.TypeOf((*MockServiceQuotasAPI)(nil).UntagResourceRequest), arg0)
+}
+
+// UntagResourceWithContext mocks base method.
+func (m *MockServiceQuotasAPI) UntagResourceWithContext(arg0 context.Context, arg1 *servicequotas.UntagResourceInput, arg2 ...request.Option) (*servicequotas.UntagResourceOutput, error) {
+	m.ctrl.T.Helper()
+	varargs := []interface{}{arg0, arg1}
+	for _, a := range arg2 {
+		varargs = append(varargs, a)
+	}
+	ret := m.ctrl.Call(m, "UntagResourceWithContext", varargs...)
+	ret0, _ := ret[0].(*servicequotas.UntagResourceOutput)
+	ret1, _ := ret[1].(error)
+	return ret0, ret1
+}
+
+// UntagResourceWithContext indicates an expected call of UntagResourceWithContext.
+func (mr *MockServiceQuotasAPIMockRecorder) UntagResourceWithContext(arg0, arg1 interface{}, arg2 ...interface{}) *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	varargs := append([]interface{}{arg0, arg1}, arg2...)
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "UntagResourceWithContext", reflect.TypeOf((*MockServiceQuotasAPI)(nil).UntagResourceWithContext), varargs...)
 }

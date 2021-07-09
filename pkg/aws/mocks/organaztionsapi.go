@@ -6,36 +6,37 @@ package mocks
 
 import (
 	context "context"
+	reflect "reflect"
+
 	request "github.com/aws/aws-sdk-go/aws/request"
 	organizations "github.com/aws/aws-sdk-go/service/organizations"
 	gomock "github.com/golang/mock/gomock"
-	reflect "reflect"
 )
 
-// MockOrganizationsAPI is a mock of OrganizationsAPI interface
+// MockOrganizationsAPI is a mock of OrganizationsAPI interface.
 type MockOrganizationsAPI struct {
 	ctrl     *gomock.Controller
 	recorder *MockOrganizationsAPIMockRecorder
 }
 
-// MockOrganizationsAPIMockRecorder is the mock recorder for MockOrganizationsAPI
+// MockOrganizationsAPIMockRecorder is the mock recorder for MockOrganizationsAPI.
 type MockOrganizationsAPIMockRecorder struct {
 	mock *MockOrganizationsAPI
 }
 
-// NewMockOrganizationsAPI creates a new mock instance
+// NewMockOrganizationsAPI creates a new mock instance.
 func NewMockOrganizationsAPI(ctrl *gomock.Controller) *MockOrganizationsAPI {
 	mock := &MockOrganizationsAPI{ctrl: ctrl}
 	mock.recorder = &MockOrganizationsAPIMockRecorder{mock}
 	return mock
 }
 
-// EXPECT returns an object that allows the caller to indicate expected use
+// EXPECT returns an object that allows the caller to indicate expected use.
 func (m *MockOrganizationsAPI) EXPECT() *MockOrganizationsAPIMockRecorder {
 	return m.recorder
 }
 
-// AcceptHandshake mocks base method
+// AcceptHandshake mocks base method.
 func (m *MockOrganizationsAPI) AcceptHandshake(arg0 *organizations.AcceptHandshakeInput) (*organizations.AcceptHandshakeOutput, error) {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "AcceptHandshake", arg0)
@@ -44,13 +45,13 @@ func (m *MockOrganizationsAPI) AcceptHandshake(arg0 *organizations.AcceptHandsha
 	return ret0, ret1
 }
 
-// AcceptHandshake indicates an expected call of AcceptHandshake
+// AcceptHandshake indicates an expected call of AcceptHandshake.
 func (mr *MockOrganizationsAPIMockRecorder) AcceptHandshake(arg0 interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "AcceptHandshake", reflect.TypeOf((*MockOrganizationsAPI)(nil).AcceptHandshake), arg0)
 }
 
-// AcceptHandshakeRequest mocks base method
+// AcceptHandshakeRequest mocks base method.
 func (m *MockOrganizationsAPI) AcceptHandshakeRequest(arg0 *organizations.AcceptHandshakeInput) (*request.Request, *organizations.AcceptHandshakeOutput) {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "AcceptHandshakeRequest", arg0)
@@ -59,13 +60,13 @@ func (m *MockOrganizationsAPI) AcceptHandshakeRequest(arg0 *organizations.Accept
 	return ret0, ret1
 }
 
-// AcceptHandshakeRequest indicates an expected call of AcceptHandshakeRequest
+// AcceptHandshakeRequest indicates an expected call of AcceptHandshakeRequest.
 func (mr *MockOrganizationsAPIMockRecorder) AcceptHandshakeRequest(arg0 interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "AcceptHandshakeRequest", reflect.TypeOf((*MockOrganizationsAPI)(nil).AcceptHandshakeRequest), arg0)
 }
 
-// AcceptHandshakeWithContext mocks base method
+// AcceptHandshakeWithContext mocks base method.
 func (m *MockOrganizationsAPI) AcceptHandshakeWithContext(arg0 context.Context, arg1 *organizations.AcceptHandshakeInput, arg2 ...request.Option) (*organizations.AcceptHandshakeOutput, error) {
 	m.ctrl.T.Helper()
 	varargs := []interface{}{arg0, arg1}
@@ -78,14 +79,14 @@ func (m *MockOrganizationsAPI) AcceptHandshakeWithContext(arg0 context.Context, 
 	return ret0, ret1
 }
 
-// AcceptHandshakeWithContext indicates an expected call of AcceptHandshakeWithContext
+// AcceptHandshakeWithContext indicates an expected call of AcceptHandshakeWithContext.
 func (mr *MockOrganizationsAPIMockRecorder) AcceptHandshakeWithContext(arg0, arg1 interface{}, arg2 ...interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	varargs := append([]interface{}{arg0, arg1}, arg2...)
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "AcceptHandshakeWithContext", reflect.TypeOf((*MockOrganizationsAPI)(nil).AcceptHandshakeWithContext), varargs...)
 }
 
-// AttachPolicy mocks base method
+// AttachPolicy mocks base method.
 func (m *MockOrganizationsAPI) AttachPolicy(arg0 *organizations.AttachPolicyInput) (*organizations.AttachPolicyOutput, error) {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "AttachPolicy", arg0)
@@ -94,13 +95,13 @@ func (m *MockOrganizationsAPI) AttachPolicy(arg0 *organizations.AttachPolicyInpu
 	return ret0, ret1
 }
 
-// AttachPolicy indicates an expected call of AttachPolicy
+// AttachPolicy indicates an expected call of AttachPolicy.
 func (mr *MockOrganizationsAPIMockRecorder) AttachPolicy(arg0 interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "AttachPolicy", reflect.TypeOf((*MockOrganizationsAPI)(nil).AttachPolicy), arg0)
 }
 
-// AttachPolicyRequest mocks base method
+// AttachPolicyRequest mocks base method.
 func (m *MockOrganizationsAPI) AttachPolicyRequest(arg0 *organizations.AttachPolicyInput) (*request.Request, *organizations.AttachPolicyOutput) {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "AttachPolicyRequest", arg0)
@@ -109,13 +110,13 @@ func (m *MockOrganizationsAPI) AttachPolicyRequest(arg0 *organizations.AttachPol
 	return ret0, ret1
 }
 
-// AttachPolicyRequest indicates an expected call of AttachPolicyRequest
+// AttachPolicyRequest indicates an expected call of AttachPolicyRequest.
 func (mr *MockOrganizationsAPIMockRecorder) AttachPolicyRequest(arg0 interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "AttachPolicyRequest", reflect.TypeOf((*MockOrganizationsAPI)(nil).AttachPolicyRequest), arg0)
 }
 
-// AttachPolicyWithContext mocks base method
+// AttachPolicyWithContext mocks base method.
 func (m *MockOrganizationsAPI) AttachPolicyWithContext(arg0 context.Context, arg1 *organizations.AttachPolicyInput, arg2 ...request.Option) (*organizations.AttachPolicyOutput, error) {
 	m.ctrl.T.Helper()
 	varargs := []interface{}{arg0, arg1}
@@ -128,14 +129,14 @@ func (m *MockOrganizationsAPI) AttachPolicyWithContext(arg0 context.Context, arg
 	return ret0, ret1
 }
 
-// AttachPolicyWithContext indicates an expected call of AttachPolicyWithContext
+// AttachPolicyWithContext indicates an expected call of AttachPolicyWithContext.
 func (mr *MockOrganizationsAPIMockRecorder) AttachPolicyWithContext(arg0, arg1 interface{}, arg2 ...interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	varargs := append([]interface{}{arg0, arg1}, arg2...)
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "AttachPolicyWithContext", reflect.TypeOf((*MockOrganizationsAPI)(nil).AttachPolicyWithContext), varargs...)
 }
 
-// CancelHandshake mocks base method
+// CancelHandshake mocks base method.
 func (m *MockOrganizationsAPI) CancelHandshake(arg0 *organizations.CancelHandshakeInput) (*organizations.CancelHandshakeOutput, error) {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "CancelHandshake", arg0)
@@ -144,13 +145,13 @@ func (m *MockOrganizationsAPI) CancelHandshake(arg0 *organizations.CancelHandsha
 	return ret0, ret1
 }
 
-// CancelHandshake indicates an expected call of CancelHandshake
+// CancelHandshake indicates an expected call of CancelHandshake.
 func (mr *MockOrganizationsAPIMockRecorder) CancelHandshake(arg0 interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "CancelHandshake", reflect.TypeOf((*MockOrganizationsAPI)(nil).CancelHandshake), arg0)
 }
 
-// CancelHandshakeRequest mocks base method
+// CancelHandshakeRequest mocks base method.
 func (m *MockOrganizationsAPI) CancelHandshakeRequest(arg0 *organizations.CancelHandshakeInput) (*request.Request, *organizations.CancelHandshakeOutput) {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "CancelHandshakeRequest", arg0)
@@ -159,13 +160,13 @@ func (m *MockOrganizationsAPI) CancelHandshakeRequest(arg0 *organizations.Cancel
 	return ret0, ret1
 }
 
-// CancelHandshakeRequest indicates an expected call of CancelHandshakeRequest
+// CancelHandshakeRequest indicates an expected call of CancelHandshakeRequest.
 func (mr *MockOrganizationsAPIMockRecorder) CancelHandshakeRequest(arg0 interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "CancelHandshakeRequest", reflect.TypeOf((*MockOrganizationsAPI)(nil).CancelHandshakeRequest), arg0)
 }
 
-// CancelHandshakeWithContext mocks base method
+// CancelHandshakeWithContext mocks base method.
 func (m *MockOrganizationsAPI) CancelHandshakeWithContext(arg0 context.Context, arg1 *organizations.CancelHandshakeInput, arg2 ...request.Option) (*organizations.CancelHandshakeOutput, error) {
 	m.ctrl.T.Helper()
 	varargs := []interface{}{arg0, arg1}
@@ -178,14 +179,14 @@ func (m *MockOrganizationsAPI) CancelHandshakeWithContext(arg0 context.Context, 
 	return ret0, ret1
 }
 
-// CancelHandshakeWithContext indicates an expected call of CancelHandshakeWithContext
+// CancelHandshakeWithContext indicates an expected call of CancelHandshakeWithContext.
 func (mr *MockOrganizationsAPIMockRecorder) CancelHandshakeWithContext(arg0, arg1 interface{}, arg2 ...interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	varargs := append([]interface{}{arg0, arg1}, arg2...)
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "CancelHandshakeWithContext", reflect.TypeOf((*MockOrganizationsAPI)(nil).CancelHandshakeWithContext), varargs...)
 }
 
-// CreateAccount mocks base method
+// CreateAccount mocks base method.
 func (m *MockOrganizationsAPI) CreateAccount(arg0 *organizations.CreateAccountInput) (*organizations.CreateAccountOutput, error) {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "CreateAccount", arg0)
@@ -194,13 +195,13 @@ func (m *MockOrganizationsAPI) CreateAccount(arg0 *organizations.CreateAccountIn
 	return ret0, ret1
 }
 
-// CreateAccount indicates an expected call of CreateAccount
+// CreateAccount indicates an expected call of CreateAccount.
 func (mr *MockOrganizationsAPIMockRecorder) CreateAccount(arg0 interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "CreateAccount", reflect.TypeOf((*MockOrganizationsAPI)(nil).CreateAccount), arg0)
 }
 
-// CreateAccountRequest mocks base method
+// CreateAccountRequest mocks base method.
 func (m *MockOrganizationsAPI) CreateAccountRequest(arg0 *organizations.CreateAccountInput) (*request.Request, *organizations.CreateAccountOutput) {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "CreateAccountRequest", arg0)
@@ -209,13 +210,13 @@ func (m *MockOrganizationsAPI) CreateAccountRequest(arg0 *organizations.CreateAc
 	return ret0, ret1
 }
 
-// CreateAccountRequest indicates an expected call of CreateAccountRequest
+// CreateAccountRequest indicates an expected call of CreateAccountRequest.
 func (mr *MockOrganizationsAPIMockRecorder) CreateAccountRequest(arg0 interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "CreateAccountRequest", reflect.TypeOf((*MockOrganizationsAPI)(nil).CreateAccountRequest), arg0)
 }
 
-// CreateAccountWithContext mocks base method
+// CreateAccountWithContext mocks base method.
 func (m *MockOrganizationsAPI) CreateAccountWithContext(arg0 context.Context, arg1 *organizations.CreateAccountInput, arg2 ...request.Option) (*organizations.CreateAccountOutput, error) {
 	m.ctrl.T.Helper()
 	varargs := []interface{}{arg0, arg1}
@@ -228,14 +229,14 @@ func (m *MockOrganizationsAPI) CreateAccountWithContext(arg0 context.Context, ar
 	return ret0, ret1
 }
 
-// CreateAccountWithContext indicates an expected call of CreateAccountWithContext
+// CreateAccountWithContext indicates an expected call of CreateAccountWithContext.
 func (mr *MockOrganizationsAPIMockRecorder) CreateAccountWithContext(arg0, arg1 interface{}, arg2 ...interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	varargs := append([]interface{}{arg0, arg1}, arg2...)
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "CreateAccountWithContext", reflect.TypeOf((*MockOrganizationsAPI)(nil).CreateAccountWithContext), varargs...)
 }
 
-// CreateGovCloudAccount mocks base method
+// CreateGovCloudAccount mocks base method.
 func (m *MockOrganizationsAPI) CreateGovCloudAccount(arg0 *organizations.CreateGovCloudAccountInput) (*organizations.CreateGovCloudAccountOutput, error) {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "CreateGovCloudAccount", arg0)
@@ -244,13 +245,13 @@ func (m *MockOrganizationsAPI) CreateGovCloudAccount(arg0 *organizations.CreateG
 	return ret0, ret1
 }
 
-// CreateGovCloudAccount indicates an expected call of CreateGovCloudAccount
+// CreateGovCloudAccount indicates an expected call of CreateGovCloudAccount.
 func (mr *MockOrganizationsAPIMockRecorder) CreateGovCloudAccount(arg0 interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "CreateGovCloudAccount", reflect.TypeOf((*MockOrganizationsAPI)(nil).CreateGovCloudAccount), arg0)
 }
 
-// CreateGovCloudAccountRequest mocks base method
+// CreateGovCloudAccountRequest mocks base method.
 func (m *MockOrganizationsAPI) CreateGovCloudAccountRequest(arg0 *organizations.CreateGovCloudAccountInput) (*request.Request, *organizations.CreateGovCloudAccountOutput) {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "CreateGovCloudAccountRequest", arg0)
@@ -259,13 +260,13 @@ func (m *MockOrganizationsAPI) CreateGovCloudAccountRequest(arg0 *organizations.
 	return ret0, ret1
 }
 
-// CreateGovCloudAccountRequest indicates an expected call of CreateGovCloudAccountRequest
+// CreateGovCloudAccountRequest indicates an expected call of CreateGovCloudAccountRequest.
 func (mr *MockOrganizationsAPIMockRecorder) CreateGovCloudAccountRequest(arg0 interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "CreateGovCloudAccountRequest", reflect.TypeOf((*MockOrganizationsAPI)(nil).CreateGovCloudAccountRequest), arg0)
 }
 
-// CreateGovCloudAccountWithContext mocks base method
+// CreateGovCloudAccountWithContext mocks base method.
 func (m *MockOrganizationsAPI) CreateGovCloudAccountWithContext(arg0 context.Context, arg1 *organizations.CreateGovCloudAccountInput, arg2 ...request.Option) (*organizations.CreateGovCloudAccountOutput, error) {
 	m.ctrl.T.Helper()
 	varargs := []interface{}{arg0, arg1}
@@ -278,14 +279,14 @@ func (m *MockOrganizationsAPI) CreateGovCloudAccountWithContext(arg0 context.Con
 	return ret0, ret1
 }
 
-// CreateGovCloudAccountWithContext indicates an expected call of CreateGovCloudAccountWithContext
+// CreateGovCloudAccountWithContext indicates an expected call of CreateGovCloudAccountWithContext.
 func (mr *MockOrganizationsAPIMockRecorder) CreateGovCloudAccountWithContext(arg0, arg1 interface{}, arg2 ...interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	varargs := append([]interface{}{arg0, arg1}, arg2...)
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "CreateGovCloudAccountWithContext", reflect.TypeOf((*MockOrganizationsAPI)(nil).CreateGovCloudAccountWithContext), varargs...)
 }
 
-// CreateOrganization mocks base method
+// CreateOrganization mocks base method.
 func (m *MockOrganizationsAPI) CreateOrganization(arg0 *organizations.CreateOrganizationInput) (*organizations.CreateOrganizationOutput, error) {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "CreateOrganization", arg0)
@@ -294,13 +295,13 @@ func (m *MockOrganizationsAPI) CreateOrganization(arg0 *organizations.CreateOrga
 	return ret0, ret1
 }
 
-// CreateOrganization indicates an expected call of CreateOrganization
+// CreateOrganization indicates an expected call of CreateOrganization.
 func (mr *MockOrganizationsAPIMockRecorder) CreateOrganization(arg0 interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "CreateOrganization", reflect.TypeOf((*MockOrganizationsAPI)(nil).CreateOrganization), arg0)
 }
 
-// CreateOrganizationRequest mocks base method
+// CreateOrganizationRequest mocks base method.
 func (m *MockOrganizationsAPI) CreateOrganizationRequest(arg0 *organizations.CreateOrganizationInput) (*request.Request, *organizations.CreateOrganizationOutput) {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "CreateOrganizationRequest", arg0)
@@ -309,13 +310,13 @@ func (m *MockOrganizationsAPI) CreateOrganizationRequest(arg0 *organizations.Cre
 	return ret0, ret1
 }
 
-// CreateOrganizationRequest indicates an expected call of CreateOrganizationRequest
+// CreateOrganizationRequest indicates an expected call of CreateOrganizationRequest.
 func (mr *MockOrganizationsAPIMockRecorder) CreateOrganizationRequest(arg0 interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "CreateOrganizationRequest", reflect.TypeOf((*MockOrganizationsAPI)(nil).CreateOrganizationRequest), arg0)
 }
 
-// CreateOrganizationWithContext mocks base method
+// CreateOrganizationWithContext mocks base method.
 func (m *MockOrganizationsAPI) CreateOrganizationWithContext(arg0 context.Context, arg1 *organizations.CreateOrganizationInput, arg2 ...request.Option) (*organizations.CreateOrganizationOutput, error) {
 	m.ctrl.T.Helper()
 	varargs := []interface{}{arg0, arg1}
@@ -328,14 +329,14 @@ func (m *MockOrganizationsAPI) CreateOrganizationWithContext(arg0 context.Contex
 	return ret0, ret1
 }
 
-// CreateOrganizationWithContext indicates an expected call of CreateOrganizationWithContext
+// CreateOrganizationWithContext indicates an expected call of CreateOrganizationWithContext.
 func (mr *MockOrganizationsAPIMockRecorder) CreateOrganizationWithContext(arg0, arg1 interface{}, arg2 ...interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	varargs := append([]interface{}{arg0, arg1}, arg2...)
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "CreateOrganizationWithContext", reflect.TypeOf((*MockOrganizationsAPI)(nil).CreateOrganizationWithContext), varargs...)
 }
 
-// CreateOrganizationalUnit mocks base method
+// CreateOrganizationalUnit mocks base method.
 func (m *MockOrganizationsAPI) CreateOrganizationalUnit(arg0 *organizations.CreateOrganizationalUnitInput) (*organizations.CreateOrganizationalUnitOutput, error) {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "CreateOrganizationalUnit", arg0)
@@ -344,13 +345,13 @@ func (m *MockOrganizationsAPI) CreateOrganizationalUnit(arg0 *organizations.Crea
 	return ret0, ret1
 }
 
-// CreateOrganizationalUnit indicates an expected call of CreateOrganizationalUnit
+// CreateOrganizationalUnit indicates an expected call of CreateOrganizationalUnit.
 func (mr *MockOrganizationsAPIMockRecorder) CreateOrganizationalUnit(arg0 interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "CreateOrganizationalUnit", reflect.TypeOf((*MockOrganizationsAPI)(nil).CreateOrganizationalUnit), arg0)
 }
 
-// CreateOrganizationalUnitRequest mocks base method
+// CreateOrganizationalUnitRequest mocks base method.
 func (m *MockOrganizationsAPI) CreateOrganizationalUnitRequest(arg0 *organizations.CreateOrganizationalUnitInput) (*request.Request, *organizations.CreateOrganizationalUnitOutput) {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "CreateOrganizationalUnitRequest", arg0)
@@ -359,13 +360,13 @@ func (m *MockOrganizationsAPI) CreateOrganizationalUnitRequest(arg0 *organizatio
 	return ret0, ret1
 }
 
-// CreateOrganizationalUnitRequest indicates an expected call of CreateOrganizationalUnitRequest
+// CreateOrganizationalUnitRequest indicates an expected call of CreateOrganizationalUnitRequest.
 func (mr *MockOrganizationsAPIMockRecorder) CreateOrganizationalUnitRequest(arg0 interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "CreateOrganizationalUnitRequest", reflect.TypeOf((*MockOrganizationsAPI)(nil).CreateOrganizationalUnitRequest), arg0)
 }
 
-// CreateOrganizationalUnitWithContext mocks base method
+// CreateOrganizationalUnitWithContext mocks base method.
 func (m *MockOrganizationsAPI) CreateOrganizationalUnitWithContext(arg0 context.Context, arg1 *organizations.CreateOrganizationalUnitInput, arg2 ...request.Option) (*organizations.CreateOrganizationalUnitOutput, error) {
 	m.ctrl.T.Helper()
 	varargs := []interface{}{arg0, arg1}
@@ -378,14 +379,14 @@ func (m *MockOrganizationsAPI) CreateOrganizationalUnitWithContext(arg0 context.
 	return ret0, ret1
 }
 
-// CreateOrganizationalUnitWithContext indicates an expected call of CreateOrganizationalUnitWithContext
+// CreateOrganizationalUnitWithContext indicates an expected call of CreateOrganizationalUnitWithContext.
 func (mr *MockOrganizationsAPIMockRecorder) CreateOrganizationalUnitWithContext(arg0, arg1 interface{}, arg2 ...interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	varargs := append([]interface{}{arg0, arg1}, arg2...)
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "CreateOrganizationalUnitWithContext", reflect.TypeOf((*MockOrganizationsAPI)(nil).CreateOrganizationalUnitWithContext), varargs...)
 }
 
-// CreatePolicy mocks base method
+// CreatePolicy mocks base method.
 func (m *MockOrganizationsAPI) CreatePolicy(arg0 *organizations.CreatePolicyInput) (*organizations.CreatePolicyOutput, error) {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "CreatePolicy", arg0)
@@ -394,13 +395,13 @@ func (m *MockOrganizationsAPI) CreatePolicy(arg0 *organizations.CreatePolicyInpu
 	return ret0, ret1
 }
 
-// CreatePolicy indicates an expected call of CreatePolicy
+// CreatePolicy indicates an expected call of CreatePolicy.
 func (mr *MockOrganizationsAPIMockRecorder) CreatePolicy(arg0 interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "CreatePolicy", reflect.TypeOf((*MockOrganizationsAPI)(nil).CreatePolicy), arg0)
 }
 
-// CreatePolicyRequest mocks base method
+// CreatePolicyRequest mocks base method.
 func (m *MockOrganizationsAPI) CreatePolicyRequest(arg0 *organizations.CreatePolicyInput) (*request.Request, *organizations.CreatePolicyOutput) {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "CreatePolicyRequest", arg0)
@@ -409,13 +410,13 @@ func (m *MockOrganizationsAPI) CreatePolicyRequest(arg0 *organizations.CreatePol
 	return ret0, ret1
 }
 
-// CreatePolicyRequest indicates an expected call of CreatePolicyRequest
+// CreatePolicyRequest indicates an expected call of CreatePolicyRequest.
 func (mr *MockOrganizationsAPIMockRecorder) CreatePolicyRequest(arg0 interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "CreatePolicyRequest", reflect.TypeOf((*MockOrganizationsAPI)(nil).CreatePolicyRequest), arg0)
 }
 
-// CreatePolicyWithContext mocks base method
+// CreatePolicyWithContext mocks base method.
 func (m *MockOrganizationsAPI) CreatePolicyWithContext(arg0 context.Context, arg1 *organizations.CreatePolicyInput, arg2 ...request.Option) (*organizations.CreatePolicyOutput, error) {
 	m.ctrl.T.Helper()
 	varargs := []interface{}{arg0, arg1}
@@ -428,14 +429,14 @@ func (m *MockOrganizationsAPI) CreatePolicyWithContext(arg0 context.Context, arg
 	return ret0, ret1
 }
 
-// CreatePolicyWithContext indicates an expected call of CreatePolicyWithContext
+// CreatePolicyWithContext indicates an expected call of CreatePolicyWithContext.
 func (mr *MockOrganizationsAPIMockRecorder) CreatePolicyWithContext(arg0, arg1 interface{}, arg2 ...interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	varargs := append([]interface{}{arg0, arg1}, arg2...)
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "CreatePolicyWithContext", reflect.TypeOf((*MockOrganizationsAPI)(nil).CreatePolicyWithContext), varargs...)
 }
 
-// DeclineHandshake mocks base method
+// DeclineHandshake mocks base method.
 func (m *MockOrganizationsAPI) DeclineHandshake(arg0 *organizations.DeclineHandshakeInput) (*organizations.DeclineHandshakeOutput, error) {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "DeclineHandshake", arg0)
@@ -444,13 +445,13 @@ func (m *MockOrganizationsAPI) DeclineHandshake(arg0 *organizations.DeclineHands
 	return ret0, ret1
 }
 
-// DeclineHandshake indicates an expected call of DeclineHandshake
+// DeclineHandshake indicates an expected call of DeclineHandshake.
 func (mr *MockOrganizationsAPIMockRecorder) DeclineHandshake(arg0 interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "DeclineHandshake", reflect.TypeOf((*MockOrganizationsAPI)(nil).DeclineHandshake), arg0)
 }
 
-// DeclineHandshakeRequest mocks base method
+// DeclineHandshakeRequest mocks base method.
 func (m *MockOrganizationsAPI) DeclineHandshakeRequest(arg0 *organizations.DeclineHandshakeInput) (*request.Request, *organizations.DeclineHandshakeOutput) {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "DeclineHandshakeRequest", arg0)
@@ -459,13 +460,13 @@ func (m *MockOrganizationsAPI) DeclineHandshakeRequest(arg0 *organizations.Decli
 	return ret0, ret1
 }
 
-// DeclineHandshakeRequest indicates an expected call of DeclineHandshakeRequest
+// DeclineHandshakeRequest indicates an expected call of DeclineHandshakeRequest.
 func (mr *MockOrganizationsAPIMockRecorder) DeclineHandshakeRequest(arg0 interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "DeclineHandshakeRequest", reflect.TypeOf((*MockOrganizationsAPI)(nil).DeclineHandshakeRequest), arg0)
 }
 
-// DeclineHandshakeWithContext mocks base method
+// DeclineHandshakeWithContext mocks base method.
 func (m *MockOrganizationsAPI) DeclineHandshakeWithContext(arg0 context.Context, arg1 *organizations.DeclineHandshakeInput, arg2 ...request.Option) (*organizations.DeclineHandshakeOutput, error) {
 	m.ctrl.T.Helper()
 	varargs := []interface{}{arg0, arg1}
@@ -478,14 +479,14 @@ func (m *MockOrganizationsAPI) DeclineHandshakeWithContext(arg0 context.Context,
 	return ret0, ret1
 }
 
-// DeclineHandshakeWithContext indicates an expected call of DeclineHandshakeWithContext
+// DeclineHandshakeWithContext indicates an expected call of DeclineHandshakeWithContext.
 func (mr *MockOrganizationsAPIMockRecorder) DeclineHandshakeWithContext(arg0, arg1 interface{}, arg2 ...interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	varargs := append([]interface{}{arg0, arg1}, arg2...)
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "DeclineHandshakeWithContext", reflect.TypeOf((*MockOrganizationsAPI)(nil).DeclineHandshakeWithContext), varargs...)
 }
 
-// DeleteOrganization mocks base method
+// DeleteOrganization mocks base method.
 func (m *MockOrganizationsAPI) DeleteOrganization(arg0 *organizations.DeleteOrganizationInput) (*organizations.DeleteOrganizationOutput, error) {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "DeleteOrganization", arg0)
@@ -494,13 +495,13 @@ func (m *MockOrganizationsAPI) DeleteOrganization(arg0 *organizations.DeleteOrga
 	return ret0, ret1
 }
 
-// DeleteOrganization indicates an expected call of DeleteOrganization
+// DeleteOrganization indicates an expected call of DeleteOrganization.
 func (mr *MockOrganizationsAPIMockRecorder) DeleteOrganization(arg0 interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "DeleteOrganization", reflect.TypeOf((*MockOrganizationsAPI)(nil).DeleteOrganization), arg0)
 }
 
-// DeleteOrganizationRequest mocks base method
+// DeleteOrganizationRequest mocks base method.
 func (m *MockOrganizationsAPI) DeleteOrganizationRequest(arg0 *organizations.DeleteOrganizationInput) (*request.Request, *organizations.DeleteOrganizationOutput) {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "DeleteOrganizationRequest", arg0)
@@ -509,13 +510,13 @@ func (m *MockOrganizationsAPI) DeleteOrganizationRequest(arg0 *organizations.Del
 	return ret0, ret1
 }
 
-// DeleteOrganizationRequest indicates an expected call of DeleteOrganizationRequest
+// DeleteOrganizationRequest indicates an expected call of DeleteOrganizationRequest.
 func (mr *MockOrganizationsAPIMockRecorder) DeleteOrganizationRequest(arg0 interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "DeleteOrganizationRequest", reflect.TypeOf((*MockOrganizationsAPI)(nil).DeleteOrganizationRequest), arg0)
 }
 
-// DeleteOrganizationWithContext mocks base method
+// DeleteOrganizationWithContext mocks base method.
 func (m *MockOrganizationsAPI) DeleteOrganizationWithContext(arg0 context.Context, arg1 *organizations.DeleteOrganizationInput, arg2 ...request.Option) (*organizations.DeleteOrganizationOutput, error) {
 	m.ctrl.T.Helper()
 	varargs := []interface{}{arg0, arg1}
@@ -528,14 +529,14 @@ func (m *MockOrganizationsAPI) DeleteOrganizationWithContext(arg0 context.Contex
 	return ret0, ret1
 }
 
-// DeleteOrganizationWithContext indicates an expected call of DeleteOrganizationWithContext
+// DeleteOrganizationWithContext indicates an expected call of DeleteOrganizationWithContext.
 func (mr *MockOrganizationsAPIMockRecorder) DeleteOrganizationWithContext(arg0, arg1 interface{}, arg2 ...interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	varargs := append([]interface{}{arg0, arg1}, arg2...)
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "DeleteOrganizationWithContext", reflect.TypeOf((*MockOrganizationsAPI)(nil).DeleteOrganizationWithContext), varargs...)
 }
 
-// DeleteOrganizationalUnit mocks base method
+// DeleteOrganizationalUnit mocks base method.
 func (m *MockOrganizationsAPI) DeleteOrganizationalUnit(arg0 *organizations.DeleteOrganizationalUnitInput) (*organizations.DeleteOrganizationalUnitOutput, error) {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "DeleteOrganizationalUnit", arg0)
@@ -544,13 +545,13 @@ func (m *MockOrganizationsAPI) DeleteOrganizationalUnit(arg0 *organizations.Dele
 	return ret0, ret1
 }
 
-// DeleteOrganizationalUnit indicates an expected call of DeleteOrganizationalUnit
+// DeleteOrganizationalUnit indicates an expected call of DeleteOrganizationalUnit.
 func (mr *MockOrganizationsAPIMockRecorder) DeleteOrganizationalUnit(arg0 interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "DeleteOrganizationalUnit", reflect.TypeOf((*MockOrganizationsAPI)(nil).DeleteOrganizationalUnit), arg0)
 }
 
-// DeleteOrganizationalUnitRequest mocks base method
+// DeleteOrganizationalUnitRequest mocks base method.
 func (m *MockOrganizationsAPI) DeleteOrganizationalUnitRequest(arg0 *organizations.DeleteOrganizationalUnitInput) (*request.Request, *organizations.DeleteOrganizationalUnitOutput) {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "DeleteOrganizationalUnitRequest", arg0)
@@ -559,13 +560,13 @@ func (m *MockOrganizationsAPI) DeleteOrganizationalUnitRequest(arg0 *organizatio
 	return ret0, ret1
 }
 
-// DeleteOrganizationalUnitRequest indicates an expected call of DeleteOrganizationalUnitRequest
+// DeleteOrganizationalUnitRequest indicates an expected call of DeleteOrganizationalUnitRequest.
 func (mr *MockOrganizationsAPIMockRecorder) DeleteOrganizationalUnitRequest(arg0 interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "DeleteOrganizationalUnitRequest", reflect.TypeOf((*MockOrganizationsAPI)(nil).DeleteOrganizationalUnitRequest), arg0)
 }
 
-// DeleteOrganizationalUnitWithContext mocks base method
+// DeleteOrganizationalUnitWithContext mocks base method.
 func (m *MockOrganizationsAPI) DeleteOrganizationalUnitWithContext(arg0 context.Context, arg1 *organizations.DeleteOrganizationalUnitInput, arg2 ...request.Option) (*organizations.DeleteOrganizationalUnitOutput, error) {
 	m.ctrl.T.Helper()
 	varargs := []interface{}{arg0, arg1}
@@ -578,14 +579,14 @@ func (m *MockOrganizationsAPI) DeleteOrganizationalUnitWithContext(arg0 context.
 	return ret0, ret1
 }
 
-// DeleteOrganizationalUnitWithContext indicates an expected call of DeleteOrganizationalUnitWithContext
+// DeleteOrganizationalUnitWithContext indicates an expected call of DeleteOrganizationalUnitWithContext.
 func (mr *MockOrganizationsAPIMockRecorder) DeleteOrganizationalUnitWithContext(arg0, arg1 interface{}, arg2 ...interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	varargs := append([]interface{}{arg0, arg1}, arg2...)
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "DeleteOrganizationalUnitWithContext", reflect.TypeOf((*MockOrganizationsAPI)(nil).DeleteOrganizationalUnitWithContext), varargs...)
 }
 
-// DeletePolicy mocks base method
+// DeletePolicy mocks base method.
 func (m *MockOrganizationsAPI) DeletePolicy(arg0 *organizations.DeletePolicyInput) (*organizations.DeletePolicyOutput, error) {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "DeletePolicy", arg0)
@@ -594,13 +595,13 @@ func (m *MockOrganizationsAPI) DeletePolicy(arg0 *organizations.DeletePolicyInpu
 	return ret0, ret1
 }
 
-// DeletePolicy indicates an expected call of DeletePolicy
+// DeletePolicy indicates an expected call of DeletePolicy.
 func (mr *MockOrganizationsAPIMockRecorder) DeletePolicy(arg0 interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "DeletePolicy", reflect.TypeOf((*MockOrganizationsAPI)(nil).DeletePolicy), arg0)
 }
 
-// DeletePolicyRequest mocks base method
+// DeletePolicyRequest mocks base method.
 func (m *MockOrganizationsAPI) DeletePolicyRequest(arg0 *organizations.DeletePolicyInput) (*request.Request, *organizations.DeletePolicyOutput) {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "DeletePolicyRequest", arg0)
@@ -609,13 +610,13 @@ func (m *MockOrganizationsAPI) DeletePolicyRequest(arg0 *organizations.DeletePol
 	return ret0, ret1
 }
 
-// DeletePolicyRequest indicates an expected call of DeletePolicyRequest
+// DeletePolicyRequest indicates an expected call of DeletePolicyRequest.
 func (mr *MockOrganizationsAPIMockRecorder) DeletePolicyRequest(arg0 interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "DeletePolicyRequest", reflect.TypeOf((*MockOrganizationsAPI)(nil).DeletePolicyRequest), arg0)
 }
 
-// DeletePolicyWithContext mocks base method
+// DeletePolicyWithContext mocks base method.
 func (m *MockOrganizationsAPI) DeletePolicyWithContext(arg0 context.Context, arg1 *organizations.DeletePolicyInput, arg2 ...request.Option) (*organizations.DeletePolicyOutput, error) {
 	m.ctrl.T.Helper()
 	varargs := []interface{}{arg0, arg1}
@@ -628,14 +629,64 @@ func (m *MockOrganizationsAPI) DeletePolicyWithContext(arg0 context.Context, arg
 	return ret0, ret1
 }
 
-// DeletePolicyWithContext indicates an expected call of DeletePolicyWithContext
+// DeletePolicyWithContext indicates an expected call of DeletePolicyWithContext.
 func (mr *MockOrganizationsAPIMockRecorder) DeletePolicyWithContext(arg0, arg1 interface{}, arg2 ...interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	varargs := append([]interface{}{arg0, arg1}, arg2...)
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "DeletePolicyWithContext", reflect.TypeOf((*MockOrganizationsAPI)(nil).DeletePolicyWithContext), varargs...)
 }
 
-// DescribeAccount mocks base method
+// DeregisterDelegatedAdministrator mocks base method.
+func (m *MockOrganizationsAPI) DeregisterDelegatedAdministrator(arg0 *organizations.DeregisterDelegatedAdministratorInput) (*organizations.DeregisterDelegatedAdministratorOutput, error) {
+	m.ctrl.T.Helper()
+	ret := m.ctrl.Call(m, "DeregisterDelegatedAdministrator", arg0)
+	ret0, _ := ret[0].(*organizations.DeregisterDelegatedAdministratorOutput)
+	ret1, _ := ret[1].(error)
+	return ret0, ret1
+}
+
+// DeregisterDelegatedAdministrator indicates an expected call of DeregisterDelegatedAdministrator.
+func (mr *MockOrganizationsAPIMockRecorder) DeregisterDelegatedAdministrator(arg0 interface{}) *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "DeregisterDelegatedAdministrator", reflect.TypeOf((*MockOrganizationsAPI)(nil).DeregisterDelegatedAdministrator), arg0)
+}
+
+// DeregisterDelegatedAdministratorRequest mocks base method.
+func (m *MockOrganizationsAPI) DeregisterDelegatedAdministratorRequest(arg0 *organizations.DeregisterDelegatedAdministratorInput) (*request.Request, *organizations.DeregisterDelegatedAdministratorOutput) {
+	m.ctrl.T.Helper()
+	ret := m.ctrl.Call(m, "DeregisterDelegatedAdministratorRequest", arg0)
+	ret0, _ := ret[0].(*request.Request)
+	ret1, _ := ret[1].(*organizations.DeregisterDelegatedAdministratorOutput)
+	return ret0, ret1
+}
+
+// DeregisterDelegatedAdministratorRequest indicates an expected call of DeregisterDelegatedAdministratorRequest.
+func (mr *MockOrganizationsAPIMockRecorder) DeregisterDelegatedAdministratorRequest(arg0 interface{}) *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "DeregisterDelegatedAdministratorRequest", reflect.TypeOf((*MockOrganizationsAPI)(nil).DeregisterDelegatedAdministratorRequest), arg0)
+}
+
+// DeregisterDelegatedAdministratorWithContext mocks base method.
+func (m *MockOrganizationsAPI) DeregisterDelegatedAdministratorWithContext(arg0 context.Context, arg1 *organizations.DeregisterDelegatedAdministratorInput, arg2 ...request.Option) (*organizations.DeregisterDelegatedAdministratorOutput, error) {
+	m.ctrl.T.Helper()
+	varargs := []interface{}{arg0, arg1}
+	for _, a := range arg2 {
+		varargs = append(varargs, a)
+	}
+	ret := m.ctrl.Call(m, "DeregisterDelegatedAdministratorWithContext", varargs...)
+	ret0, _ := ret[0].(*organizations.DeregisterDelegatedAdministratorOutput)
+	ret1, _ := ret[1].(error)
+	return ret0, ret1
+}
+
+// DeregisterDelegatedAdministratorWithContext indicates an expected call of DeregisterDelegatedAdministratorWithContext.
+func (mr *MockOrganizationsAPIMockRecorder) DeregisterDelegatedAdministratorWithContext(arg0, arg1 interface{}, arg2 ...interface{}) *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	varargs := append([]interface{}{arg0, arg1}, arg2...)
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "DeregisterDelegatedAdministratorWithContext", reflect.TypeOf((*MockOrganizationsAPI)(nil).DeregisterDelegatedAdministratorWithContext), varargs...)
+}
+
+// DescribeAccount mocks base method.
 func (m *MockOrganizationsAPI) DescribeAccount(arg0 *organizations.DescribeAccountInput) (*organizations.DescribeAccountOutput, error) {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "DescribeAccount", arg0)
@@ -644,13 +695,13 @@ func (m *MockOrganizationsAPI) DescribeAccount(arg0 *organizations.DescribeAccou
 	return ret0, ret1
 }
 
-// DescribeAccount indicates an expected call of DescribeAccount
+// DescribeAccount indicates an expected call of DescribeAccount.
 func (mr *MockOrganizationsAPIMockRecorder) DescribeAccount(arg0 interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "DescribeAccount", reflect.TypeOf((*MockOrganizationsAPI)(nil).DescribeAccount), arg0)
 }
 
-// DescribeAccountRequest mocks base method
+// DescribeAccountRequest mocks base method.
 func (m *MockOrganizationsAPI) DescribeAccountRequest(arg0 *organizations.DescribeAccountInput) (*request.Request, *organizations.DescribeAccountOutput) {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "DescribeAccountRequest", arg0)
@@ -659,13 +710,13 @@ func (m *MockOrganizationsAPI) DescribeAccountRequest(arg0 *organizations.Descri
 	return ret0, ret1
 }
 
-// DescribeAccountRequest indicates an expected call of DescribeAccountRequest
+// DescribeAccountRequest indicates an expected call of DescribeAccountRequest.
 func (mr *MockOrganizationsAPIMockRecorder) DescribeAccountRequest(arg0 interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "DescribeAccountRequest", reflect.TypeOf((*MockOrganizationsAPI)(nil).DescribeAccountRequest), arg0)
 }
 
-// DescribeAccountWithContext mocks base method
+// DescribeAccountWithContext mocks base method.
 func (m *MockOrganizationsAPI) DescribeAccountWithContext(arg0 context.Context, arg1 *organizations.DescribeAccountInput, arg2 ...request.Option) (*organizations.DescribeAccountOutput, error) {
 	m.ctrl.T.Helper()
 	varargs := []interface{}{arg0, arg1}
@@ -678,14 +729,14 @@ func (m *MockOrganizationsAPI) DescribeAccountWithContext(arg0 context.Context, 
 	return ret0, ret1
 }
 
-// DescribeAccountWithContext indicates an expected call of DescribeAccountWithContext
+// DescribeAccountWithContext indicates an expected call of DescribeAccountWithContext.
 func (mr *MockOrganizationsAPIMockRecorder) DescribeAccountWithContext(arg0, arg1 interface{}, arg2 ...interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	varargs := append([]interface{}{arg0, arg1}, arg2...)
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "DescribeAccountWithContext", reflect.TypeOf((*MockOrganizationsAPI)(nil).DescribeAccountWithContext), varargs...)
 }
 
-// DescribeCreateAccountStatus mocks base method
+// DescribeCreateAccountStatus mocks base method.
 func (m *MockOrganizationsAPI) DescribeCreateAccountStatus(arg0 *organizations.DescribeCreateAccountStatusInput) (*organizations.DescribeCreateAccountStatusOutput, error) {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "DescribeCreateAccountStatus", arg0)
@@ -694,13 +745,13 @@ func (m *MockOrganizationsAPI) DescribeCreateAccountStatus(arg0 *organizations.D
 	return ret0, ret1
 }
 
-// DescribeCreateAccountStatus indicates an expected call of DescribeCreateAccountStatus
+// DescribeCreateAccountStatus indicates an expected call of DescribeCreateAccountStatus.
 func (mr *MockOrganizationsAPIMockRecorder) DescribeCreateAccountStatus(arg0 interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "DescribeCreateAccountStatus", reflect.TypeOf((*MockOrganizationsAPI)(nil).DescribeCreateAccountStatus), arg0)
 }
 
-// DescribeCreateAccountStatusRequest mocks base method
+// DescribeCreateAccountStatusRequest mocks base method.
 func (m *MockOrganizationsAPI) DescribeCreateAccountStatusRequest(arg0 *organizations.DescribeCreateAccountStatusInput) (*request.Request, *organizations.DescribeCreateAccountStatusOutput) {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "DescribeCreateAccountStatusRequest", arg0)
@@ -709,13 +760,13 @@ func (m *MockOrganizationsAPI) DescribeCreateAccountStatusRequest(arg0 *organiza
 	return ret0, ret1
 }
 
-// DescribeCreateAccountStatusRequest indicates an expected call of DescribeCreateAccountStatusRequest
+// DescribeCreateAccountStatusRequest indicates an expected call of DescribeCreateAccountStatusRequest.
 func (mr *MockOrganizationsAPIMockRecorder) DescribeCreateAccountStatusRequest(arg0 interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "DescribeCreateAccountStatusRequest", reflect.TypeOf((*MockOrganizationsAPI)(nil).DescribeCreateAccountStatusRequest), arg0)
 }
 
-// DescribeCreateAccountStatusWithContext mocks base method
+// DescribeCreateAccountStatusWithContext mocks base method.
 func (m *MockOrganizationsAPI) DescribeCreateAccountStatusWithContext(arg0 context.Context, arg1 *organizations.DescribeCreateAccountStatusInput, arg2 ...request.Option) (*organizations.DescribeCreateAccountStatusOutput, error) {
 	m.ctrl.T.Helper()
 	varargs := []interface{}{arg0, arg1}
@@ -728,14 +779,14 @@ func (m *MockOrganizationsAPI) DescribeCreateAccountStatusWithContext(arg0 conte
 	return ret0, ret1
 }
 
-// DescribeCreateAccountStatusWithContext indicates an expected call of DescribeCreateAccountStatusWithContext
+// DescribeCreateAccountStatusWithContext indicates an expected call of DescribeCreateAccountStatusWithContext.
 func (mr *MockOrganizationsAPIMockRecorder) DescribeCreateAccountStatusWithContext(arg0, arg1 interface{}, arg2 ...interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	varargs := append([]interface{}{arg0, arg1}, arg2...)
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "DescribeCreateAccountStatusWithContext", reflect.TypeOf((*MockOrganizationsAPI)(nil).DescribeCreateAccountStatusWithContext), varargs...)
 }
 
-// DescribeEffectivePolicy mocks base method
+// DescribeEffectivePolicy mocks base method.
 func (m *MockOrganizationsAPI) DescribeEffectivePolicy(arg0 *organizations.DescribeEffectivePolicyInput) (*organizations.DescribeEffectivePolicyOutput, error) {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "DescribeEffectivePolicy", arg0)
@@ -744,13 +795,13 @@ func (m *MockOrganizationsAPI) DescribeEffectivePolicy(arg0 *organizations.Descr
 	return ret0, ret1
 }
 
-// DescribeEffectivePolicy indicates an expected call of DescribeEffectivePolicy
+// DescribeEffectivePolicy indicates an expected call of DescribeEffectivePolicy.
 func (mr *MockOrganizationsAPIMockRecorder) DescribeEffectivePolicy(arg0 interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "DescribeEffectivePolicy", reflect.TypeOf((*MockOrganizationsAPI)(nil).DescribeEffectivePolicy), arg0)
 }
 
-// DescribeEffectivePolicyRequest mocks base method
+// DescribeEffectivePolicyRequest mocks base method.
 func (m *MockOrganizationsAPI) DescribeEffectivePolicyRequest(arg0 *organizations.DescribeEffectivePolicyInput) (*request.Request, *organizations.DescribeEffectivePolicyOutput) {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "DescribeEffectivePolicyRequest", arg0)
@@ -759,13 +810,13 @@ func (m *MockOrganizationsAPI) DescribeEffectivePolicyRequest(arg0 *organization
 	return ret0, ret1
 }
 
-// DescribeEffectivePolicyRequest indicates an expected call of DescribeEffectivePolicyRequest
+// DescribeEffectivePolicyRequest indicates an expected call of DescribeEffectivePolicyRequest.
 func (mr *MockOrganizationsAPIMockRecorder) DescribeEffectivePolicyRequest(arg0 interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "DescribeEffectivePolicyRequest", reflect.TypeOf((*MockOrganizationsAPI)(nil).DescribeEffectivePolicyRequest), arg0)
 }
 
-// DescribeEffectivePolicyWithContext mocks base method
+// DescribeEffectivePolicyWithContext mocks base method.
 func (m *MockOrganizationsAPI) DescribeEffectivePolicyWithContext(arg0 context.Context, arg1 *organizations.DescribeEffectivePolicyInput, arg2 ...request.Option) (*organizations.DescribeEffectivePolicyOutput, error) {
 	m.ctrl.T.Helper()
 	varargs := []interface{}{arg0, arg1}
@@ -778,14 +829,14 @@ func (m *MockOrganizationsAPI) DescribeEffectivePolicyWithContext(arg0 context.C
 	return ret0, ret1
 }
 
-// DescribeEffectivePolicyWithContext indicates an expected call of DescribeEffectivePolicyWithContext
+// DescribeEffectivePolicyWithContext indicates an expected call of DescribeEffectivePolicyWithContext.
 func (mr *MockOrganizationsAPIMockRecorder) DescribeEffectivePolicyWithContext(arg0, arg1 interface{}, arg2 ...interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	varargs := append([]interface{}{arg0, arg1}, arg2...)
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "DescribeEffectivePolicyWithContext", reflect.TypeOf((*MockOrganizationsAPI)(nil).DescribeEffectivePolicyWithContext), varargs...)
 }
 
-// DescribeHandshake mocks base method
+// DescribeHandshake mocks base method.
 func (m *MockOrganizationsAPI) DescribeHandshake(arg0 *organizations.DescribeHandshakeInput) (*organizations.DescribeHandshakeOutput, error) {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "DescribeHandshake", arg0)
@@ -794,13 +845,13 @@ func (m *MockOrganizationsAPI) DescribeHandshake(arg0 *organizations.DescribeHan
 	return ret0, ret1
 }
 
-// DescribeHandshake indicates an expected call of DescribeHandshake
+// DescribeHandshake indicates an expected call of DescribeHandshake.
 func (mr *MockOrganizationsAPIMockRecorder) DescribeHandshake(arg0 interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "DescribeHandshake", reflect.TypeOf((*MockOrganizationsAPI)(nil).DescribeHandshake), arg0)
 }
 
-// DescribeHandshakeRequest mocks base method
+// DescribeHandshakeRequest mocks base method.
 func (m *MockOrganizationsAPI) DescribeHandshakeRequest(arg0 *organizations.DescribeHandshakeInput) (*request.Request, *organizations.DescribeHandshakeOutput) {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "DescribeHandshakeRequest", arg0)
@@ -809,13 +860,13 @@ func (m *MockOrganizationsAPI) DescribeHandshakeRequest(arg0 *organizations.Desc
 	return ret0, ret1
 }
 
-// DescribeHandshakeRequest indicates an expected call of DescribeHandshakeRequest
+// DescribeHandshakeRequest indicates an expected call of DescribeHandshakeRequest.
 func (mr *MockOrganizationsAPIMockRecorder) DescribeHandshakeRequest(arg0 interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "DescribeHandshakeRequest", reflect.TypeOf((*MockOrganizationsAPI)(nil).DescribeHandshakeRequest), arg0)
 }
 
-// DescribeHandshakeWithContext mocks base method
+// DescribeHandshakeWithContext mocks base method.
 func (m *MockOrganizationsAPI) DescribeHandshakeWithContext(arg0 context.Context, arg1 *organizations.DescribeHandshakeInput, arg2 ...request.Option) (*organizations.DescribeHandshakeOutput, error) {
 	m.ctrl.T.Helper()
 	varargs := []interface{}{arg0, arg1}
@@ -828,14 +879,14 @@ func (m *MockOrganizationsAPI) DescribeHandshakeWithContext(arg0 context.Context
 	return ret0, ret1
 }
 
-// DescribeHandshakeWithContext indicates an expected call of DescribeHandshakeWithContext
+// DescribeHandshakeWithContext indicates an expected call of DescribeHandshakeWithContext.
 func (mr *MockOrganizationsAPIMockRecorder) DescribeHandshakeWithContext(arg0, arg1 interface{}, arg2 ...interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	varargs := append([]interface{}{arg0, arg1}, arg2...)
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "DescribeHandshakeWithContext", reflect.TypeOf((*MockOrganizationsAPI)(nil).DescribeHandshakeWithContext), varargs...)
 }
 
-// DescribeOrganization mocks base method
+// DescribeOrganization mocks base method.
 func (m *MockOrganizationsAPI) DescribeOrganization(arg0 *organizations.DescribeOrganizationInput) (*organizations.DescribeOrganizationOutput, error) {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "DescribeOrganization", arg0)
@@ -844,13 +895,13 @@ func (m *MockOrganizationsAPI) DescribeOrganization(arg0 *organizations.Describe
 	return ret0, ret1
 }
 
-// DescribeOrganization indicates an expected call of DescribeOrganization
+// DescribeOrganization indicates an expected call of DescribeOrganization.
 func (mr *MockOrganizationsAPIMockRecorder) DescribeOrganization(arg0 interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "DescribeOrganization", reflect.TypeOf((*MockOrganizationsAPI)(nil).DescribeOrganization), arg0)
 }
 
-// DescribeOrganizationRequest mocks base method
+// DescribeOrganizationRequest mocks base method.
 func (m *MockOrganizationsAPI) DescribeOrganizationRequest(arg0 *organizations.DescribeOrganizationInput) (*request.Request, *organizations.DescribeOrganizationOutput) {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "DescribeOrganizationRequest", arg0)
@@ -859,13 +910,13 @@ func (m *MockOrganizationsAPI) DescribeOrganizationRequest(arg0 *organizations.D
 	return ret0, ret1
 }
 
-// DescribeOrganizationRequest indicates an expected call of DescribeOrganizationRequest
+// DescribeOrganizationRequest indicates an expected call of DescribeOrganizationRequest.
 func (mr *MockOrganizationsAPIMockRecorder) DescribeOrganizationRequest(arg0 interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "DescribeOrganizationRequest", reflect.TypeOf((*MockOrganizationsAPI)(nil).DescribeOrganizationRequest), arg0)
 }
 
-// DescribeOrganizationWithContext mocks base method
+// DescribeOrganizationWithContext mocks base method.
 func (m *MockOrganizationsAPI) DescribeOrganizationWithContext(arg0 context.Context, arg1 *organizations.DescribeOrganizationInput, arg2 ...request.Option) (*organizations.DescribeOrganizationOutput, error) {
 	m.ctrl.T.Helper()
 	varargs := []interface{}{arg0, arg1}
@@ -878,14 +929,14 @@ func (m *MockOrganizationsAPI) DescribeOrganizationWithContext(arg0 context.Cont
 	return ret0, ret1
 }
 
-// DescribeOrganizationWithContext indicates an expected call of DescribeOrganizationWithContext
+// DescribeOrganizationWithContext indicates an expected call of DescribeOrganizationWithContext.
 func (mr *MockOrganizationsAPIMockRecorder) DescribeOrganizationWithContext(arg0, arg1 interface{}, arg2 ...interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	varargs := append([]interface{}{arg0, arg1}, arg2...)
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "DescribeOrganizationWithContext", reflect.TypeOf((*MockOrganizationsAPI)(nil).DescribeOrganizationWithContext), varargs...)
 }
 
-// DescribeOrganizationalUnit mocks base method
+// DescribeOrganizationalUnit mocks base method.
 func (m *MockOrganizationsAPI) DescribeOrganizationalUnit(arg0 *organizations.DescribeOrganizationalUnitInput) (*organizations.DescribeOrganizationalUnitOutput, error) {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "DescribeOrganizationalUnit", arg0)
@@ -894,13 +945,13 @@ func (m *MockOrganizationsAPI) DescribeOrganizationalUnit(arg0 *organizations.De
 	return ret0, ret1
 }
 
-// DescribeOrganizationalUnit indicates an expected call of DescribeOrganizationalUnit
+// DescribeOrganizationalUnit indicates an expected call of DescribeOrganizationalUnit.
 func (mr *MockOrganizationsAPIMockRecorder) DescribeOrganizationalUnit(arg0 interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "DescribeOrganizationalUnit", reflect.TypeOf((*MockOrganizationsAPI)(nil).DescribeOrganizationalUnit), arg0)
 }
 
-// DescribeOrganizationalUnitRequest mocks base method
+// DescribeOrganizationalUnitRequest mocks base method.
 func (m *MockOrganizationsAPI) DescribeOrganizationalUnitRequest(arg0 *organizations.DescribeOrganizationalUnitInput) (*request.Request, *organizations.DescribeOrganizationalUnitOutput) {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "DescribeOrganizationalUnitRequest", arg0)
@@ -909,13 +960,13 @@ func (m *MockOrganizationsAPI) DescribeOrganizationalUnitRequest(arg0 *organizat
 	return ret0, ret1
 }
 
-// DescribeOrganizationalUnitRequest indicates an expected call of DescribeOrganizationalUnitRequest
+// DescribeOrganizationalUnitRequest indicates an expected call of DescribeOrganizationalUnitRequest.
 func (mr *MockOrganizationsAPIMockRecorder) DescribeOrganizationalUnitRequest(arg0 interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "DescribeOrganizationalUnitRequest", reflect.TypeOf((*MockOrganizationsAPI)(nil).DescribeOrganizationalUnitRequest), arg0)
 }
 
-// DescribeOrganizationalUnitWithContext mocks base method
+// DescribeOrganizationalUnitWithContext mocks base method.
 func (m *MockOrganizationsAPI) DescribeOrganizationalUnitWithContext(arg0 context.Context, arg1 *organizations.DescribeOrganizationalUnitInput, arg2 ...request.Option) (*organizations.DescribeOrganizationalUnitOutput, error) {
 	m.ctrl.T.Helper()
 	varargs := []interface{}{arg0, arg1}
@@ -928,14 +979,14 @@ func (m *MockOrganizationsAPI) DescribeOrganizationalUnitWithContext(arg0 contex
 	return ret0, ret1
 }
 
-// DescribeOrganizationalUnitWithContext indicates an expected call of DescribeOrganizationalUnitWithContext
+// DescribeOrganizationalUnitWithContext indicates an expected call of DescribeOrganizationalUnitWithContext.
 func (mr *MockOrganizationsAPIMockRecorder) DescribeOrganizationalUnitWithContext(arg0, arg1 interface{}, arg2 ...interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	varargs := append([]interface{}{arg0, arg1}, arg2...)
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "DescribeOrganizationalUnitWithContext", reflect.TypeOf((*MockOrganizationsAPI)(nil).DescribeOrganizationalUnitWithContext), varargs...)
 }
 
-// DescribePolicy mocks base method
+// DescribePolicy mocks base method.
 func (m *MockOrganizationsAPI) DescribePolicy(arg0 *organizations.DescribePolicyInput) (*organizations.DescribePolicyOutput, error) {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "DescribePolicy", arg0)
@@ -944,13 +995,13 @@ func (m *MockOrganizationsAPI) DescribePolicy(arg0 *organizations.DescribePolicy
 	return ret0, ret1
 }
 
-// DescribePolicy indicates an expected call of DescribePolicy
+// DescribePolicy indicates an expected call of DescribePolicy.
 func (mr *MockOrganizationsAPIMockRecorder) DescribePolicy(arg0 interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "DescribePolicy", reflect.TypeOf((*MockOrganizationsAPI)(nil).DescribePolicy), arg0)
 }
 
-// DescribePolicyRequest mocks base method
+// DescribePolicyRequest mocks base method.
 func (m *MockOrganizationsAPI) DescribePolicyRequest(arg0 *organizations.DescribePolicyInput) (*request.Request, *organizations.DescribePolicyOutput) {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "DescribePolicyRequest", arg0)
@@ -959,13 +1010,13 @@ func (m *MockOrganizationsAPI) DescribePolicyRequest(arg0 *organizations.Describ
 	return ret0, ret1
 }
 
-// DescribePolicyRequest indicates an expected call of DescribePolicyRequest
+// DescribePolicyRequest indicates an expected call of DescribePolicyRequest.
 func (mr *MockOrganizationsAPIMockRecorder) DescribePolicyRequest(arg0 interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "DescribePolicyRequest", reflect.TypeOf((*MockOrganizationsAPI)(nil).DescribePolicyRequest), arg0)
 }
 
-// DescribePolicyWithContext mocks base method
+// DescribePolicyWithContext mocks base method.
 func (m *MockOrganizationsAPI) DescribePolicyWithContext(arg0 context.Context, arg1 *organizations.DescribePolicyInput, arg2 ...request.Option) (*organizations.DescribePolicyOutput, error) {
 	m.ctrl.T.Helper()
 	varargs := []interface{}{arg0, arg1}
@@ -978,14 +1029,14 @@ func (m *MockOrganizationsAPI) DescribePolicyWithContext(arg0 context.Context, a
 	return ret0, ret1
 }
 
-// DescribePolicyWithContext indicates an expected call of DescribePolicyWithContext
+// DescribePolicyWithContext indicates an expected call of DescribePolicyWithContext.
 func (mr *MockOrganizationsAPIMockRecorder) DescribePolicyWithContext(arg0, arg1 interface{}, arg2 ...interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	varargs := append([]interface{}{arg0, arg1}, arg2...)
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "DescribePolicyWithContext", reflect.TypeOf((*MockOrganizationsAPI)(nil).DescribePolicyWithContext), varargs...)
 }
 
-// DetachPolicy mocks base method
+// DetachPolicy mocks base method.
 func (m *MockOrganizationsAPI) DetachPolicy(arg0 *organizations.DetachPolicyInput) (*organizations.DetachPolicyOutput, error) {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "DetachPolicy", arg0)
@@ -994,13 +1045,13 @@ func (m *MockOrganizationsAPI) DetachPolicy(arg0 *organizations.DetachPolicyInpu
 	return ret0, ret1
 }
 
-// DetachPolicy indicates an expected call of DetachPolicy
+// DetachPolicy indicates an expected call of DetachPolicy.
 func (mr *MockOrganizationsAPIMockRecorder) DetachPolicy(arg0 interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "DetachPolicy", reflect.TypeOf((*MockOrganizationsAPI)(nil).DetachPolicy), arg0)
 }
 
-// DetachPolicyRequest mocks base method
+// DetachPolicyRequest mocks base method.
 func (m *MockOrganizationsAPI) DetachPolicyRequest(arg0 *organizations.DetachPolicyInput) (*request.Request, *organizations.DetachPolicyOutput) {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "DetachPolicyRequest", arg0)
@@ -1009,13 +1060,13 @@ func (m *MockOrganizationsAPI) DetachPolicyRequest(arg0 *organizations.DetachPol
 	return ret0, ret1
 }
 
-// DetachPolicyRequest indicates an expected call of DetachPolicyRequest
+// DetachPolicyRequest indicates an expected call of DetachPolicyRequest.
 func (mr *MockOrganizationsAPIMockRecorder) DetachPolicyRequest(arg0 interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "DetachPolicyRequest", reflect.TypeOf((*MockOrganizationsAPI)(nil).DetachPolicyRequest), arg0)
 }
 
-// DetachPolicyWithContext mocks base method
+// DetachPolicyWithContext mocks base method.
 func (m *MockOrganizationsAPI) DetachPolicyWithContext(arg0 context.Context, arg1 *organizations.DetachPolicyInput, arg2 ...request.Option) (*organizations.DetachPolicyOutput, error) {
 	m.ctrl.T.Helper()
 	varargs := []interface{}{arg0, arg1}
@@ -1028,14 +1079,14 @@ func (m *MockOrganizationsAPI) DetachPolicyWithContext(arg0 context.Context, arg
 	return ret0, ret1
 }
 
-// DetachPolicyWithContext indicates an expected call of DetachPolicyWithContext
+// DetachPolicyWithContext indicates an expected call of DetachPolicyWithContext.
 func (mr *MockOrganizationsAPIMockRecorder) DetachPolicyWithContext(arg0, arg1 interface{}, arg2 ...interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	varargs := append([]interface{}{arg0, arg1}, arg2...)
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "DetachPolicyWithContext", reflect.TypeOf((*MockOrganizationsAPI)(nil).DetachPolicyWithContext), varargs...)
 }
 
-// DisableAWSServiceAccess mocks base method
+// DisableAWSServiceAccess mocks base method.
 func (m *MockOrganizationsAPI) DisableAWSServiceAccess(arg0 *organizations.DisableAWSServiceAccessInput) (*organizations.DisableAWSServiceAccessOutput, error) {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "DisableAWSServiceAccess", arg0)
@@ -1044,13 +1095,13 @@ func (m *MockOrganizationsAPI) DisableAWSServiceAccess(arg0 *organizations.Disab
 	return ret0, ret1
 }
 
-// DisableAWSServiceAccess indicates an expected call of DisableAWSServiceAccess
+// DisableAWSServiceAccess indicates an expected call of DisableAWSServiceAccess.
 func (mr *MockOrganizationsAPIMockRecorder) DisableAWSServiceAccess(arg0 interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "DisableAWSServiceAccess", reflect.TypeOf((*MockOrganizationsAPI)(nil).DisableAWSServiceAccess), arg0)
 }
 
-// DisableAWSServiceAccessRequest mocks base method
+// DisableAWSServiceAccessRequest mocks base method.
 func (m *MockOrganizationsAPI) DisableAWSServiceAccessRequest(arg0 *organizations.DisableAWSServiceAccessInput) (*request.Request, *organizations.DisableAWSServiceAccessOutput) {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "DisableAWSServiceAccessRequest", arg0)
@@ -1059,13 +1110,13 @@ func (m *MockOrganizationsAPI) DisableAWSServiceAccessRequest(arg0 *organization
 	return ret0, ret1
 }
 
-// DisableAWSServiceAccessRequest indicates an expected call of DisableAWSServiceAccessRequest
+// DisableAWSServiceAccessRequest indicates an expected call of DisableAWSServiceAccessRequest.
 func (mr *MockOrganizationsAPIMockRecorder) DisableAWSServiceAccessRequest(arg0 interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "DisableAWSServiceAccessRequest", reflect.TypeOf((*MockOrganizationsAPI)(nil).DisableAWSServiceAccessRequest), arg0)
 }
 
-// DisableAWSServiceAccessWithContext mocks base method
+// DisableAWSServiceAccessWithContext mocks base method.
 func (m *MockOrganizationsAPI) DisableAWSServiceAccessWithContext(arg0 context.Context, arg1 *organizations.DisableAWSServiceAccessInput, arg2 ...request.Option) (*organizations.DisableAWSServiceAccessOutput, error) {
 	m.ctrl.T.Helper()
 	varargs := []interface{}{arg0, arg1}
@@ -1078,14 +1129,14 @@ func (m *MockOrganizationsAPI) DisableAWSServiceAccessWithContext(arg0 context.C
 	return ret0, ret1
 }
 
-// DisableAWSServiceAccessWithContext indicates an expected call of DisableAWSServiceAccessWithContext
+// DisableAWSServiceAccessWithContext indicates an expected call of DisableAWSServiceAccessWithContext.
 func (mr *MockOrganizationsAPIMockRecorder) DisableAWSServiceAccessWithContext(arg0, arg1 interface{}, arg2 ...interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	varargs := append([]interface{}{arg0, arg1}, arg2...)
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "DisableAWSServiceAccessWithContext", reflect.TypeOf((*MockOrganizationsAPI)(nil).DisableAWSServiceAccessWithContext), varargs...)
 }
 
-// DisablePolicyType mocks base method
+// DisablePolicyType mocks base method.
 func (m *MockOrganizationsAPI) DisablePolicyType(arg0 *organizations.DisablePolicyTypeInput) (*organizations.DisablePolicyTypeOutput, error) {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "DisablePolicyType", arg0)
@@ -1094,13 +1145,13 @@ func (m *MockOrganizationsAPI) DisablePolicyType(arg0 *organizations.DisablePoli
 	return ret0, ret1
 }
 
-// DisablePolicyType indicates an expected call of DisablePolicyType
+// DisablePolicyType indicates an expected call of DisablePolicyType.
 func (mr *MockOrganizationsAPIMockRecorder) DisablePolicyType(arg0 interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "DisablePolicyType", reflect.TypeOf((*MockOrganizationsAPI)(nil).DisablePolicyType), arg0)
 }
 
-// DisablePolicyTypeRequest mocks base method
+// DisablePolicyTypeRequest mocks base method.
 func (m *MockOrganizationsAPI) DisablePolicyTypeRequest(arg0 *organizations.DisablePolicyTypeInput) (*request.Request, *organizations.DisablePolicyTypeOutput) {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "DisablePolicyTypeRequest", arg0)
@@ -1109,13 +1160,13 @@ func (m *MockOrganizationsAPI) DisablePolicyTypeRequest(arg0 *organizations.Disa
 	return ret0, ret1
 }
 
-// DisablePolicyTypeRequest indicates an expected call of DisablePolicyTypeRequest
+// DisablePolicyTypeRequest indicates an expected call of DisablePolicyTypeRequest.
 func (mr *MockOrganizationsAPIMockRecorder) DisablePolicyTypeRequest(arg0 interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "DisablePolicyTypeRequest", reflect.TypeOf((*MockOrganizationsAPI)(nil).DisablePolicyTypeRequest), arg0)
 }
 
-// DisablePolicyTypeWithContext mocks base method
+// DisablePolicyTypeWithContext mocks base method.
 func (m *MockOrganizationsAPI) DisablePolicyTypeWithContext(arg0 context.Context, arg1 *organizations.DisablePolicyTypeInput, arg2 ...request.Option) (*organizations.DisablePolicyTypeOutput, error) {
 	m.ctrl.T.Helper()
 	varargs := []interface{}{arg0, arg1}
@@ -1128,14 +1179,14 @@ func (m *MockOrganizationsAPI) DisablePolicyTypeWithContext(arg0 context.Context
 	return ret0, ret1
 }
 
-// DisablePolicyTypeWithContext indicates an expected call of DisablePolicyTypeWithContext
+// DisablePolicyTypeWithContext indicates an expected call of DisablePolicyTypeWithContext.
 func (mr *MockOrganizationsAPIMockRecorder) DisablePolicyTypeWithContext(arg0, arg1 interface{}, arg2 ...interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	varargs := append([]interface{}{arg0, arg1}, arg2...)
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "DisablePolicyTypeWithContext", reflect.TypeOf((*MockOrganizationsAPI)(nil).DisablePolicyTypeWithContext), varargs...)
 }
 
-// EnableAWSServiceAccess mocks base method
+// EnableAWSServiceAccess mocks base method.
 func (m *MockOrganizationsAPI) EnableAWSServiceAccess(arg0 *organizations.EnableAWSServiceAccessInput) (*organizations.EnableAWSServiceAccessOutput, error) {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "EnableAWSServiceAccess", arg0)
@@ -1144,13 +1195,13 @@ func (m *MockOrganizationsAPI) EnableAWSServiceAccess(arg0 *organizations.Enable
 	return ret0, ret1
 }
 
-// EnableAWSServiceAccess indicates an expected call of EnableAWSServiceAccess
+// EnableAWSServiceAccess indicates an expected call of EnableAWSServiceAccess.
 func (mr *MockOrganizationsAPIMockRecorder) EnableAWSServiceAccess(arg0 interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "EnableAWSServiceAccess", reflect.TypeOf((*MockOrganizationsAPI)(nil).EnableAWSServiceAccess), arg0)
 }
 
-// EnableAWSServiceAccessRequest mocks base method
+// EnableAWSServiceAccessRequest mocks base method.
 func (m *MockOrganizationsAPI) EnableAWSServiceAccessRequest(arg0 *organizations.EnableAWSServiceAccessInput) (*request.Request, *organizations.EnableAWSServiceAccessOutput) {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "EnableAWSServiceAccessRequest", arg0)
@@ -1159,13 +1210,13 @@ func (m *MockOrganizationsAPI) EnableAWSServiceAccessRequest(arg0 *organizations
 	return ret0, ret1
 }
 
-// EnableAWSServiceAccessRequest indicates an expected call of EnableAWSServiceAccessRequest
+// EnableAWSServiceAccessRequest indicates an expected call of EnableAWSServiceAccessRequest.
 func (mr *MockOrganizationsAPIMockRecorder) EnableAWSServiceAccessRequest(arg0 interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "EnableAWSServiceAccessRequest", reflect.TypeOf((*MockOrganizationsAPI)(nil).EnableAWSServiceAccessRequest), arg0)
 }
 
-// EnableAWSServiceAccessWithContext mocks base method
+// EnableAWSServiceAccessWithContext mocks base method.
 func (m *MockOrganizationsAPI) EnableAWSServiceAccessWithContext(arg0 context.Context, arg1 *organizations.EnableAWSServiceAccessInput, arg2 ...request.Option) (*organizations.EnableAWSServiceAccessOutput, error) {
 	m.ctrl.T.Helper()
 	varargs := []interface{}{arg0, arg1}
@@ -1178,14 +1229,14 @@ func (m *MockOrganizationsAPI) EnableAWSServiceAccessWithContext(arg0 context.Co
 	return ret0, ret1
 }
 
-// EnableAWSServiceAccessWithContext indicates an expected call of EnableAWSServiceAccessWithContext
+// EnableAWSServiceAccessWithContext indicates an expected call of EnableAWSServiceAccessWithContext.
 func (mr *MockOrganizationsAPIMockRecorder) EnableAWSServiceAccessWithContext(arg0, arg1 interface{}, arg2 ...interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	varargs := append([]interface{}{arg0, arg1}, arg2...)
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "EnableAWSServiceAccessWithContext", reflect.TypeOf((*MockOrganizationsAPI)(nil).EnableAWSServiceAccessWithContext), varargs...)
 }
 
-// EnableAllFeatures mocks base method
+// EnableAllFeatures mocks base method.
 func (m *MockOrganizationsAPI) EnableAllFeatures(arg0 *organizations.EnableAllFeaturesInput) (*organizations.EnableAllFeaturesOutput, error) {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "EnableAllFeatures", arg0)
@@ -1194,13 +1245,13 @@ func (m *MockOrganizationsAPI) EnableAllFeatures(arg0 *organizations.EnableAllFe
 	return ret0, ret1
 }
 
-// EnableAllFeatures indicates an expected call of EnableAllFeatures
+// EnableAllFeatures indicates an expected call of EnableAllFeatures.
 func (mr *MockOrganizationsAPIMockRecorder) EnableAllFeatures(arg0 interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "EnableAllFeatures", reflect.TypeOf((*MockOrganizationsAPI)(nil).EnableAllFeatures), arg0)
 }
 
-// EnableAllFeaturesRequest mocks base method
+// EnableAllFeaturesRequest mocks base method.
 func (m *MockOrganizationsAPI) EnableAllFeaturesRequest(arg0 *organizations.EnableAllFeaturesInput) (*request.Request, *organizations.EnableAllFeaturesOutput) {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "EnableAllFeaturesRequest", arg0)
@@ -1209,13 +1260,13 @@ func (m *MockOrganizationsAPI) EnableAllFeaturesRequest(arg0 *organizations.Enab
 	return ret0, ret1
 }
 
-// EnableAllFeaturesRequest indicates an expected call of EnableAllFeaturesRequest
+// EnableAllFeaturesRequest indicates an expected call of EnableAllFeaturesRequest.
 func (mr *MockOrganizationsAPIMockRecorder) EnableAllFeaturesRequest(arg0 interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "EnableAllFeaturesRequest", reflect.TypeOf((*MockOrganizationsAPI)(nil).EnableAllFeaturesRequest), arg0)
 }
 
-// EnableAllFeaturesWithContext mocks base method
+// EnableAllFeaturesWithContext mocks base method.
 func (m *MockOrganizationsAPI) EnableAllFeaturesWithContext(arg0 context.Context, arg1 *organizations.EnableAllFeaturesInput, arg2 ...request.Option) (*organizations.EnableAllFeaturesOutput, error) {
 	m.ctrl.T.Helper()
 	varargs := []interface{}{arg0, arg1}
@@ -1228,14 +1279,14 @@ func (m *MockOrganizationsAPI) EnableAllFeaturesWithContext(arg0 context.Context
 	return ret0, ret1
 }
 
-// EnableAllFeaturesWithContext indicates an expected call of EnableAllFeaturesWithContext
+// EnableAllFeaturesWithContext indicates an expected call of EnableAllFeaturesWithContext.
 func (mr *MockOrganizationsAPIMockRecorder) EnableAllFeaturesWithContext(arg0, arg1 interface{}, arg2 ...interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	varargs := append([]interface{}{arg0, arg1}, arg2...)
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "EnableAllFeaturesWithContext", reflect.TypeOf((*MockOrganizationsAPI)(nil).EnableAllFeaturesWithContext), varargs...)
 }
 
-// EnablePolicyType mocks base method
+// EnablePolicyType mocks base method.
 func (m *MockOrganizationsAPI) EnablePolicyType(arg0 *organizations.EnablePolicyTypeInput) (*organizations.EnablePolicyTypeOutput, error) {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "EnablePolicyType", arg0)
@@ -1244,13 +1295,13 @@ func (m *MockOrganizationsAPI) EnablePolicyType(arg0 *organizations.EnablePolicy
 	return ret0, ret1
 }
 
-// EnablePolicyType indicates an expected call of EnablePolicyType
+// EnablePolicyType indicates an expected call of EnablePolicyType.
 func (mr *MockOrganizationsAPIMockRecorder) EnablePolicyType(arg0 interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "EnablePolicyType", reflect.TypeOf((*MockOrganizationsAPI)(nil).EnablePolicyType), arg0)
 }
 
-// EnablePolicyTypeRequest mocks base method
+// EnablePolicyTypeRequest mocks base method.
 func (m *MockOrganizationsAPI) EnablePolicyTypeRequest(arg0 *organizations.EnablePolicyTypeInput) (*request.Request, *organizations.EnablePolicyTypeOutput) {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "EnablePolicyTypeRequest", arg0)
@@ -1259,13 +1310,13 @@ func (m *MockOrganizationsAPI) EnablePolicyTypeRequest(arg0 *organizations.Enabl
 	return ret0, ret1
 }
 
-// EnablePolicyTypeRequest indicates an expected call of EnablePolicyTypeRequest
+// EnablePolicyTypeRequest indicates an expected call of EnablePolicyTypeRequest.
 func (mr *MockOrganizationsAPIMockRecorder) EnablePolicyTypeRequest(arg0 interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "EnablePolicyTypeRequest", reflect.TypeOf((*MockOrganizationsAPI)(nil).EnablePolicyTypeRequest), arg0)
 }
 
-// EnablePolicyTypeWithContext mocks base method
+// EnablePolicyTypeWithContext mocks base method.
 func (m *MockOrganizationsAPI) EnablePolicyTypeWithContext(arg0 context.Context, arg1 *organizations.EnablePolicyTypeInput, arg2 ...request.Option) (*organizations.EnablePolicyTypeOutput, error) {
 	m.ctrl.T.Helper()
 	varargs := []interface{}{arg0, arg1}
@@ -1278,14 +1329,14 @@ func (m *MockOrganizationsAPI) EnablePolicyTypeWithContext(arg0 context.Context,
 	return ret0, ret1
 }
 
-// EnablePolicyTypeWithContext indicates an expected call of EnablePolicyTypeWithContext
+// EnablePolicyTypeWithContext indicates an expected call of EnablePolicyTypeWithContext.
 func (mr *MockOrganizationsAPIMockRecorder) EnablePolicyTypeWithContext(arg0, arg1 interface{}, arg2 ...interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	varargs := append([]interface{}{arg0, arg1}, arg2...)
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "EnablePolicyTypeWithContext", reflect.TypeOf((*MockOrganizationsAPI)(nil).EnablePolicyTypeWithContext), varargs...)
 }
 
-// InviteAccountToOrganization mocks base method
+// InviteAccountToOrganization mocks base method.
 func (m *MockOrganizationsAPI) InviteAccountToOrganization(arg0 *organizations.InviteAccountToOrganizationInput) (*organizations.InviteAccountToOrganizationOutput, error) {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "InviteAccountToOrganization", arg0)
@@ -1294,13 +1345,13 @@ func (m *MockOrganizationsAPI) InviteAccountToOrganization(arg0 *organizations.I
 	return ret0, ret1
 }
 
-// InviteAccountToOrganization indicates an expected call of InviteAccountToOrganization
+// InviteAccountToOrganization indicates an expected call of InviteAccountToOrganization.
 func (mr *MockOrganizationsAPIMockRecorder) InviteAccountToOrganization(arg0 interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "InviteAccountToOrganization", reflect.TypeOf((*MockOrganizationsAPI)(nil).InviteAccountToOrganization), arg0)
 }
 
-// InviteAccountToOrganizationRequest mocks base method
+// InviteAccountToOrganizationRequest mocks base method.
 func (m *MockOrganizationsAPI) InviteAccountToOrganizationRequest(arg0 *organizations.InviteAccountToOrganizationInput) (*request.Request, *organizations.InviteAccountToOrganizationOutput) {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "InviteAccountToOrganizationRequest", arg0)
@@ -1309,13 +1360,13 @@ func (m *MockOrganizationsAPI) InviteAccountToOrganizationRequest(arg0 *organiza
 	return ret0, ret1
 }
 
-// InviteAccountToOrganizationRequest indicates an expected call of InviteAccountToOrganizationRequest
+// InviteAccountToOrganizationRequest indicates an expected call of InviteAccountToOrganizationRequest.
 func (mr *MockOrganizationsAPIMockRecorder) InviteAccountToOrganizationRequest(arg0 interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "InviteAccountToOrganizationRequest", reflect.TypeOf((*MockOrganizationsAPI)(nil).InviteAccountToOrganizationRequest), arg0)
 }
 
-// InviteAccountToOrganizationWithContext mocks base method
+// InviteAccountToOrganizationWithContext mocks base method.
 func (m *MockOrganizationsAPI) InviteAccountToOrganizationWithContext(arg0 context.Context, arg1 *organizations.InviteAccountToOrganizationInput, arg2 ...request.Option) (*organizations.InviteAccountToOrganizationOutput, error) {
 	m.ctrl.T.Helper()
 	varargs := []interface{}{arg0, arg1}
@@ -1328,14 +1379,14 @@ func (m *MockOrganizationsAPI) InviteAccountToOrganizationWithContext(arg0 conte
 	return ret0, ret1
 }
 
-// InviteAccountToOrganizationWithContext indicates an expected call of InviteAccountToOrganizationWithContext
+// InviteAccountToOrganizationWithContext indicates an expected call of InviteAccountToOrganizationWithContext.
 func (mr *MockOrganizationsAPIMockRecorder) InviteAccountToOrganizationWithContext(arg0, arg1 interface{}, arg2 ...interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	varargs := append([]interface{}{arg0, arg1}, arg2...)
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "InviteAccountToOrganizationWithContext", reflect.TypeOf((*MockOrganizationsAPI)(nil).InviteAccountToOrganizationWithContext), varargs...)
 }
 
-// LeaveOrganization mocks base method
+// LeaveOrganization mocks base method.
 func (m *MockOrganizationsAPI) LeaveOrganization(arg0 *organizations.LeaveOrganizationInput) (*organizations.LeaveOrganizationOutput, error) {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "LeaveOrganization", arg0)
@@ -1344,13 +1395,13 @@ func (m *MockOrganizationsAPI) LeaveOrganization(arg0 *organizations.LeaveOrgani
 	return ret0, ret1
 }
 
-// LeaveOrganization indicates an expected call of LeaveOrganization
+// LeaveOrganization indicates an expected call of LeaveOrganization.
 func (mr *MockOrganizationsAPIMockRecorder) LeaveOrganization(arg0 interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "LeaveOrganization", reflect.TypeOf((*MockOrganizationsAPI)(nil).LeaveOrganization), arg0)
 }
 
-// LeaveOrganizationRequest mocks base method
+// LeaveOrganizationRequest mocks base method.
 func (m *MockOrganizationsAPI) LeaveOrganizationRequest(arg0 *organizations.LeaveOrganizationInput) (*request.Request, *organizations.LeaveOrganizationOutput) {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "LeaveOrganizationRequest", arg0)
@@ -1359,13 +1410,13 @@ func (m *MockOrganizationsAPI) LeaveOrganizationRequest(arg0 *organizations.Leav
 	return ret0, ret1
 }
 
-// LeaveOrganizationRequest indicates an expected call of LeaveOrganizationRequest
+// LeaveOrganizationRequest indicates an expected call of LeaveOrganizationRequest.
 func (mr *MockOrganizationsAPIMockRecorder) LeaveOrganizationRequest(arg0 interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "LeaveOrganizationRequest", reflect.TypeOf((*MockOrganizationsAPI)(nil).LeaveOrganizationRequest), arg0)
 }
 
-// LeaveOrganizationWithContext mocks base method
+// LeaveOrganizationWithContext mocks base method.
 func (m *MockOrganizationsAPI) LeaveOrganizationWithContext(arg0 context.Context, arg1 *organizations.LeaveOrganizationInput, arg2 ...request.Option) (*organizations.LeaveOrganizationOutput, error) {
 	m.ctrl.T.Helper()
 	varargs := []interface{}{arg0, arg1}
@@ -1378,14 +1429,14 @@ func (m *MockOrganizationsAPI) LeaveOrganizationWithContext(arg0 context.Context
 	return ret0, ret1
 }
 
-// LeaveOrganizationWithContext indicates an expected call of LeaveOrganizationWithContext
+// LeaveOrganizationWithContext indicates an expected call of LeaveOrganizationWithContext.
 func (mr *MockOrganizationsAPIMockRecorder) LeaveOrganizationWithContext(arg0, arg1 interface{}, arg2 ...interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	varargs := append([]interface{}{arg0, arg1}, arg2...)
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "LeaveOrganizationWithContext", reflect.TypeOf((*MockOrganizationsAPI)(nil).LeaveOrganizationWithContext), varargs...)
 }
 
-// ListAWSServiceAccessForOrganization mocks base method
+// ListAWSServiceAccessForOrganization mocks base method.
 func (m *MockOrganizationsAPI) ListAWSServiceAccessForOrganization(arg0 *organizations.ListAWSServiceAccessForOrganizationInput) (*organizations.ListAWSServiceAccessForOrganizationOutput, error) {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "ListAWSServiceAccessForOrganization", arg0)
@@ -1394,13 +1445,13 @@ func (m *MockOrganizationsAPI) ListAWSServiceAccessForOrganization(arg0 *organiz
 	return ret0, ret1
 }
 
-// ListAWSServiceAccessForOrganization indicates an expected call of ListAWSServiceAccessForOrganization
+// ListAWSServiceAccessForOrganization indicates an expected call of ListAWSServiceAccessForOrganization.
 func (mr *MockOrganizationsAPIMockRecorder) ListAWSServiceAccessForOrganization(arg0 interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ListAWSServiceAccessForOrganization", reflect.TypeOf((*MockOrganizationsAPI)(nil).ListAWSServiceAccessForOrganization), arg0)
 }
 
-// ListAWSServiceAccessForOrganizationPages mocks base method
+// ListAWSServiceAccessForOrganizationPages mocks base method.
 func (m *MockOrganizationsAPI) ListAWSServiceAccessForOrganizationPages(arg0 *organizations.ListAWSServiceAccessForOrganizationInput, arg1 func(*organizations.ListAWSServiceAccessForOrganizationOutput, bool) bool) error {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "ListAWSServiceAccessForOrganizationPages", arg0, arg1)
@@ -1408,13 +1459,13 @@ func (m *MockOrganizationsAPI) ListAWSServiceAccessForOrganizationPages(arg0 *or
 	return ret0
 }
 
-// ListAWSServiceAccessForOrganizationPages indicates an expected call of ListAWSServiceAccessForOrganizationPages
+// ListAWSServiceAccessForOrganizationPages indicates an expected call of ListAWSServiceAccessForOrganizationPages.
 func (mr *MockOrganizationsAPIMockRecorder) ListAWSServiceAccessForOrganizationPages(arg0, arg1 interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ListAWSServiceAccessForOrganizationPages", reflect.TypeOf((*MockOrganizationsAPI)(nil).ListAWSServiceAccessForOrganizationPages), arg0, arg1)
 }
 
-// ListAWSServiceAccessForOrganizationPagesWithContext mocks base method
+// ListAWSServiceAccessForOrganizationPagesWithContext mocks base method.
 func (m *MockOrganizationsAPI) ListAWSServiceAccessForOrganizationPagesWithContext(arg0 context.Context, arg1 *organizations.ListAWSServiceAccessForOrganizationInput, arg2 func(*organizations.ListAWSServiceAccessForOrganizationOutput, bool) bool, arg3 ...request.Option) error {
 	m.ctrl.T.Helper()
 	varargs := []interface{}{arg0, arg1, arg2}
@@ -1426,14 +1477,14 @@ func (m *MockOrganizationsAPI) ListAWSServiceAccessForOrganizationPagesWithConte
 	return ret0
 }
 
-// ListAWSServiceAccessForOrganizationPagesWithContext indicates an expected call of ListAWSServiceAccessForOrganizationPagesWithContext
+// ListAWSServiceAccessForOrganizationPagesWithContext indicates an expected call of ListAWSServiceAccessForOrganizationPagesWithContext.
 func (mr *MockOrganizationsAPIMockRecorder) ListAWSServiceAccessForOrganizationPagesWithContext(arg0, arg1, arg2 interface{}, arg3 ...interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	varargs := append([]interface{}{arg0, arg1, arg2}, arg3...)
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ListAWSServiceAccessForOrganizationPagesWithContext", reflect.TypeOf((*MockOrganizationsAPI)(nil).ListAWSServiceAccessForOrganizationPagesWithContext), varargs...)
 }
 
-// ListAWSServiceAccessForOrganizationRequest mocks base method
+// ListAWSServiceAccessForOrganizationRequest mocks base method.
 func (m *MockOrganizationsAPI) ListAWSServiceAccessForOrganizationRequest(arg0 *organizations.ListAWSServiceAccessForOrganizationInput) (*request.Request, *organizations.ListAWSServiceAccessForOrganizationOutput) {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "ListAWSServiceAccessForOrganizationRequest", arg0)
@@ -1442,13 +1493,13 @@ func (m *MockOrganizationsAPI) ListAWSServiceAccessForOrganizationRequest(arg0 *
 	return ret0, ret1
 }
 
-// ListAWSServiceAccessForOrganizationRequest indicates an expected call of ListAWSServiceAccessForOrganizationRequest
+// ListAWSServiceAccessForOrganizationRequest indicates an expected call of ListAWSServiceAccessForOrganizationRequest.
 func (mr *MockOrganizationsAPIMockRecorder) ListAWSServiceAccessForOrganizationRequest(arg0 interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ListAWSServiceAccessForOrganizationRequest", reflect.TypeOf((*MockOrganizationsAPI)(nil).ListAWSServiceAccessForOrganizationRequest), arg0)
 }
 
-// ListAWSServiceAccessForOrganizationWithContext mocks base method
+// ListAWSServiceAccessForOrganizationWithContext mocks base method.
 func (m *MockOrganizationsAPI) ListAWSServiceAccessForOrganizationWithContext(arg0 context.Context, arg1 *organizations.ListAWSServiceAccessForOrganizationInput, arg2 ...request.Option) (*organizations.ListAWSServiceAccessForOrganizationOutput, error) {
 	m.ctrl.T.Helper()
 	varargs := []interface{}{arg0, arg1}
@@ -1461,14 +1512,14 @@ func (m *MockOrganizationsAPI) ListAWSServiceAccessForOrganizationWithContext(ar
 	return ret0, ret1
 }
 
-// ListAWSServiceAccessForOrganizationWithContext indicates an expected call of ListAWSServiceAccessForOrganizationWithContext
+// ListAWSServiceAccessForOrganizationWithContext indicates an expected call of ListAWSServiceAccessForOrganizationWithContext.
 func (mr *MockOrganizationsAPIMockRecorder) ListAWSServiceAccessForOrganizationWithContext(arg0, arg1 interface{}, arg2 ...interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	varargs := append([]interface{}{arg0, arg1}, arg2...)
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ListAWSServiceAccessForOrganizationWithContext", reflect.TypeOf((*MockOrganizationsAPI)(nil).ListAWSServiceAccessForOrganizationWithContext), varargs...)
 }
 
-// ListAccounts mocks base method
+// ListAccounts mocks base method.
 func (m *MockOrganizationsAPI) ListAccounts(arg0 *organizations.ListAccountsInput) (*organizations.ListAccountsOutput, error) {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "ListAccounts", arg0)
@@ -1477,13 +1528,13 @@ func (m *MockOrganizationsAPI) ListAccounts(arg0 *organizations.ListAccountsInpu
 	return ret0, ret1
 }
 
-// ListAccounts indicates an expected call of ListAccounts
+// ListAccounts indicates an expected call of ListAccounts.
 func (mr *MockOrganizationsAPIMockRecorder) ListAccounts(arg0 interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ListAccounts", reflect.TypeOf((*MockOrganizationsAPI)(nil).ListAccounts), arg0)
 }
 
-// ListAccountsForParent mocks base method
+// ListAccountsForParent mocks base method.
 func (m *MockOrganizationsAPI) ListAccountsForParent(arg0 *organizations.ListAccountsForParentInput) (*organizations.ListAccountsForParentOutput, error) {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "ListAccountsForParent", arg0)
@@ -1492,13 +1543,13 @@ func (m *MockOrganizationsAPI) ListAccountsForParent(arg0 *organizations.ListAcc
 	return ret0, ret1
 }
 
-// ListAccountsForParent indicates an expected call of ListAccountsForParent
+// ListAccountsForParent indicates an expected call of ListAccountsForParent.
 func (mr *MockOrganizationsAPIMockRecorder) ListAccountsForParent(arg0 interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ListAccountsForParent", reflect.TypeOf((*MockOrganizationsAPI)(nil).ListAccountsForParent), arg0)
 }
 
-// ListAccountsForParentPages mocks base method
+// ListAccountsForParentPages mocks base method.
 func (m *MockOrganizationsAPI) ListAccountsForParentPages(arg0 *organizations.ListAccountsForParentInput, arg1 func(*organizations.ListAccountsForParentOutput, bool) bool) error {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "ListAccountsForParentPages", arg0, arg1)
@@ -1506,13 +1557,13 @@ func (m *MockOrganizationsAPI) ListAccountsForParentPages(arg0 *organizations.Li
 	return ret0
 }
 
-// ListAccountsForParentPages indicates an expected call of ListAccountsForParentPages
+// ListAccountsForParentPages indicates an expected call of ListAccountsForParentPages.
 func (mr *MockOrganizationsAPIMockRecorder) ListAccountsForParentPages(arg0, arg1 interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ListAccountsForParentPages", reflect.TypeOf((*MockOrganizationsAPI)(nil).ListAccountsForParentPages), arg0, arg1)
 }
 
-// ListAccountsForParentPagesWithContext mocks base method
+// ListAccountsForParentPagesWithContext mocks base method.
 func (m *MockOrganizationsAPI) ListAccountsForParentPagesWithContext(arg0 context.Context, arg1 *organizations.ListAccountsForParentInput, arg2 func(*organizations.ListAccountsForParentOutput, bool) bool, arg3 ...request.Option) error {
 	m.ctrl.T.Helper()
 	varargs := []interface{}{arg0, arg1, arg2}
@@ -1524,14 +1575,14 @@ func (m *MockOrganizationsAPI) ListAccountsForParentPagesWithContext(arg0 contex
 	return ret0
 }
 
-// ListAccountsForParentPagesWithContext indicates an expected call of ListAccountsForParentPagesWithContext
+// ListAccountsForParentPagesWithContext indicates an expected call of ListAccountsForParentPagesWithContext.
 func (mr *MockOrganizationsAPIMockRecorder) ListAccountsForParentPagesWithContext(arg0, arg1, arg2 interface{}, arg3 ...interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	varargs := append([]interface{}{arg0, arg1, arg2}, arg3...)
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ListAccountsForParentPagesWithContext", reflect.TypeOf((*MockOrganizationsAPI)(nil).ListAccountsForParentPagesWithContext), varargs...)
 }
 
-// ListAccountsForParentRequest mocks base method
+// ListAccountsForParentRequest mocks base method.
 func (m *MockOrganizationsAPI) ListAccountsForParentRequest(arg0 *organizations.ListAccountsForParentInput) (*request.Request, *organizations.ListAccountsForParentOutput) {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "ListAccountsForParentRequest", arg0)
@@ -1540,13 +1591,13 @@ func (m *MockOrganizationsAPI) ListAccountsForParentRequest(arg0 *organizations.
 	return ret0, ret1
 }
 
-// ListAccountsForParentRequest indicates an expected call of ListAccountsForParentRequest
+// ListAccountsForParentRequest indicates an expected call of ListAccountsForParentRequest.
 func (mr *MockOrganizationsAPIMockRecorder) ListAccountsForParentRequest(arg0 interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ListAccountsForParentRequest", reflect.TypeOf((*MockOrganizationsAPI)(nil).ListAccountsForParentRequest), arg0)
 }
 
-// ListAccountsForParentWithContext mocks base method
+// ListAccountsForParentWithContext mocks base method.
 func (m *MockOrganizationsAPI) ListAccountsForParentWithContext(arg0 context.Context, arg1 *organizations.ListAccountsForParentInput, arg2 ...request.Option) (*organizations.ListAccountsForParentOutput, error) {
 	m.ctrl.T.Helper()
 	varargs := []interface{}{arg0, arg1}
@@ -1559,14 +1610,14 @@ func (m *MockOrganizationsAPI) ListAccountsForParentWithContext(arg0 context.Con
 	return ret0, ret1
 }
 
-// ListAccountsForParentWithContext indicates an expected call of ListAccountsForParentWithContext
+// ListAccountsForParentWithContext indicates an expected call of ListAccountsForParentWithContext.
 func (mr *MockOrganizationsAPIMockRecorder) ListAccountsForParentWithContext(arg0, arg1 interface{}, arg2 ...interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	varargs := append([]interface{}{arg0, arg1}, arg2...)
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ListAccountsForParentWithContext", reflect.TypeOf((*MockOrganizationsAPI)(nil).ListAccountsForParentWithContext), varargs...)
 }
 
-// ListAccountsPages mocks base method
+// ListAccountsPages mocks base method.
 func (m *MockOrganizationsAPI) ListAccountsPages(arg0 *organizations.ListAccountsInput, arg1 func(*organizations.ListAccountsOutput, bool) bool) error {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "ListAccountsPages", arg0, arg1)
@@ -1574,13 +1625,13 @@ func (m *MockOrganizationsAPI) ListAccountsPages(arg0 *organizations.ListAccount
 	return ret0
 }
 
-// ListAccountsPages indicates an expected call of ListAccountsPages
+// ListAccountsPages indicates an expected call of ListAccountsPages.
 func (mr *MockOrganizationsAPIMockRecorder) ListAccountsPages(arg0, arg1 interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ListAccountsPages", reflect.TypeOf((*MockOrganizationsAPI)(nil).ListAccountsPages), arg0, arg1)
 }
 
-// ListAccountsPagesWithContext mocks base method
+// ListAccountsPagesWithContext mocks base method.
 func (m *MockOrganizationsAPI) ListAccountsPagesWithContext(arg0 context.Context, arg1 *organizations.ListAccountsInput, arg2 func(*organizations.ListAccountsOutput, bool) bool, arg3 ...request.Option) error {
 	m.ctrl.T.Helper()
 	varargs := []interface{}{arg0, arg1, arg2}
@@ -1592,14 +1643,14 @@ func (m *MockOrganizationsAPI) ListAccountsPagesWithContext(arg0 context.Context
 	return ret0
 }
 
-// ListAccountsPagesWithContext indicates an expected call of ListAccountsPagesWithContext
+// ListAccountsPagesWithContext indicates an expected call of ListAccountsPagesWithContext.
 func (mr *MockOrganizationsAPIMockRecorder) ListAccountsPagesWithContext(arg0, arg1, arg2 interface{}, arg3 ...interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	varargs := append([]interface{}{arg0, arg1, arg2}, arg3...)
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ListAccountsPagesWithContext", reflect.TypeOf((*MockOrganizationsAPI)(nil).ListAccountsPagesWithContext), varargs...)
 }
 
-// ListAccountsRequest mocks base method
+// ListAccountsRequest mocks base method.
 func (m *MockOrganizationsAPI) ListAccountsRequest(arg0 *organizations.ListAccountsInput) (*request.Request, *organizations.ListAccountsOutput) {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "ListAccountsRequest", arg0)
@@ -1608,13 +1659,13 @@ func (m *MockOrganizationsAPI) ListAccountsRequest(arg0 *organizations.ListAccou
 	return ret0, ret1
 }
 
-// ListAccountsRequest indicates an expected call of ListAccountsRequest
+// ListAccountsRequest indicates an expected call of ListAccountsRequest.
 func (mr *MockOrganizationsAPIMockRecorder) ListAccountsRequest(arg0 interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ListAccountsRequest", reflect.TypeOf((*MockOrganizationsAPI)(nil).ListAccountsRequest), arg0)
 }
 
-// ListAccountsWithContext mocks base method
+// ListAccountsWithContext mocks base method.
 func (m *MockOrganizationsAPI) ListAccountsWithContext(arg0 context.Context, arg1 *organizations.ListAccountsInput, arg2 ...request.Option) (*organizations.ListAccountsOutput, error) {
 	m.ctrl.T.Helper()
 	varargs := []interface{}{arg0, arg1}
@@ -1627,14 +1678,14 @@ func (m *MockOrganizationsAPI) ListAccountsWithContext(arg0 context.Context, arg
 	return ret0, ret1
 }
 
-// ListAccountsWithContext indicates an expected call of ListAccountsWithContext
+// ListAccountsWithContext indicates an expected call of ListAccountsWithContext.
 func (mr *MockOrganizationsAPIMockRecorder) ListAccountsWithContext(arg0, arg1 interface{}, arg2 ...interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	varargs := append([]interface{}{arg0, arg1}, arg2...)
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ListAccountsWithContext", reflect.TypeOf((*MockOrganizationsAPI)(nil).ListAccountsWithContext), varargs...)
 }
 
-// ListChildren mocks base method
+// ListChildren mocks base method.
 func (m *MockOrganizationsAPI) ListChildren(arg0 *organizations.ListChildrenInput) (*organizations.ListChildrenOutput, error) {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "ListChildren", arg0)
@@ -1643,13 +1694,13 @@ func (m *MockOrganizationsAPI) ListChildren(arg0 *organizations.ListChildrenInpu
 	return ret0, ret1
 }
 
-// ListChildren indicates an expected call of ListChildren
+// ListChildren indicates an expected call of ListChildren.
 func (mr *MockOrganizationsAPIMockRecorder) ListChildren(arg0 interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ListChildren", reflect.TypeOf((*MockOrganizationsAPI)(nil).ListChildren), arg0)
 }
 
-// ListChildrenPages mocks base method
+// ListChildrenPages mocks base method.
 func (m *MockOrganizationsAPI) ListChildrenPages(arg0 *organizations.ListChildrenInput, arg1 func(*organizations.ListChildrenOutput, bool) bool) error {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "ListChildrenPages", arg0, arg1)
@@ -1657,13 +1708,13 @@ func (m *MockOrganizationsAPI) ListChildrenPages(arg0 *organizations.ListChildre
 	return ret0
 }
 
-// ListChildrenPages indicates an expected call of ListChildrenPages
+// ListChildrenPages indicates an expected call of ListChildrenPages.
 func (mr *MockOrganizationsAPIMockRecorder) ListChildrenPages(arg0, arg1 interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ListChildrenPages", reflect.TypeOf((*MockOrganizationsAPI)(nil).ListChildrenPages), arg0, arg1)
 }
 
-// ListChildrenPagesWithContext mocks base method
+// ListChildrenPagesWithContext mocks base method.
 func (m *MockOrganizationsAPI) ListChildrenPagesWithContext(arg0 context.Context, arg1 *organizations.ListChildrenInput, arg2 func(*organizations.ListChildrenOutput, bool) bool, arg3 ...request.Option) error {
 	m.ctrl.T.Helper()
 	varargs := []interface{}{arg0, arg1, arg2}
@@ -1675,14 +1726,14 @@ func (m *MockOrganizationsAPI) ListChildrenPagesWithContext(arg0 context.Context
 	return ret0
 }
 
-// ListChildrenPagesWithContext indicates an expected call of ListChildrenPagesWithContext
+// ListChildrenPagesWithContext indicates an expected call of ListChildrenPagesWithContext.
 func (mr *MockOrganizationsAPIMockRecorder) ListChildrenPagesWithContext(arg0, arg1, arg2 interface{}, arg3 ...interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	varargs := append([]interface{}{arg0, arg1, arg2}, arg3...)
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ListChildrenPagesWithContext", reflect.TypeOf((*MockOrganizationsAPI)(nil).ListChildrenPagesWithContext), varargs...)
 }
 
-// ListChildrenRequest mocks base method
+// ListChildrenRequest mocks base method.
 func (m *MockOrganizationsAPI) ListChildrenRequest(arg0 *organizations.ListChildrenInput) (*request.Request, *organizations.ListChildrenOutput) {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "ListChildrenRequest", arg0)
@@ -1691,13 +1742,13 @@ func (m *MockOrganizationsAPI) ListChildrenRequest(arg0 *organizations.ListChild
 	return ret0, ret1
 }
 
-// ListChildrenRequest indicates an expected call of ListChildrenRequest
+// ListChildrenRequest indicates an expected call of ListChildrenRequest.
 func (mr *MockOrganizationsAPIMockRecorder) ListChildrenRequest(arg0 interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ListChildrenRequest", reflect.TypeOf((*MockOrganizationsAPI)(nil).ListChildrenRequest), arg0)
 }
 
-// ListChildrenWithContext mocks base method
+// ListChildrenWithContext mocks base method.
 func (m *MockOrganizationsAPI) ListChildrenWithContext(arg0 context.Context, arg1 *organizations.ListChildrenInput, arg2 ...request.Option) (*organizations.ListChildrenOutput, error) {
 	m.ctrl.T.Helper()
 	varargs := []interface{}{arg0, arg1}
@@ -1710,14 +1761,14 @@ func (m *MockOrganizationsAPI) ListChildrenWithContext(arg0 context.Context, arg
 	return ret0, ret1
 }
 
-// ListChildrenWithContext indicates an expected call of ListChildrenWithContext
+// ListChildrenWithContext indicates an expected call of ListChildrenWithContext.
 func (mr *MockOrganizationsAPIMockRecorder) ListChildrenWithContext(arg0, arg1 interface{}, arg2 ...interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	varargs := append([]interface{}{arg0, arg1}, arg2...)
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ListChildrenWithContext", reflect.TypeOf((*MockOrganizationsAPI)(nil).ListChildrenWithContext), varargs...)
 }
 
-// ListCreateAccountStatus mocks base method
+// ListCreateAccountStatus mocks base method.
 func (m *MockOrganizationsAPI) ListCreateAccountStatus(arg0 *organizations.ListCreateAccountStatusInput) (*organizations.ListCreateAccountStatusOutput, error) {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "ListCreateAccountStatus", arg0)
@@ -1726,13 +1777,13 @@ func (m *MockOrganizationsAPI) ListCreateAccountStatus(arg0 *organizations.ListC
 	return ret0, ret1
 }
 
-// ListCreateAccountStatus indicates an expected call of ListCreateAccountStatus
+// ListCreateAccountStatus indicates an expected call of ListCreateAccountStatus.
 func (mr *MockOrganizationsAPIMockRecorder) ListCreateAccountStatus(arg0 interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ListCreateAccountStatus", reflect.TypeOf((*MockOrganizationsAPI)(nil).ListCreateAccountStatus), arg0)
 }
 
-// ListCreateAccountStatusPages mocks base method
+// ListCreateAccountStatusPages mocks base method.
 func (m *MockOrganizationsAPI) ListCreateAccountStatusPages(arg0 *organizations.ListCreateAccountStatusInput, arg1 func(*organizations.ListCreateAccountStatusOutput, bool) bool) error {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "ListCreateAccountStatusPages", arg0, arg1)
@@ -1740,13 +1791,13 @@ func (m *MockOrganizationsAPI) ListCreateAccountStatusPages(arg0 *organizations.
 	return ret0
 }
 
-// ListCreateAccountStatusPages indicates an expected call of ListCreateAccountStatusPages
+// ListCreateAccountStatusPages indicates an expected call of ListCreateAccountStatusPages.
 func (mr *MockOrganizationsAPIMockRecorder) ListCreateAccountStatusPages(arg0, arg1 interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ListCreateAccountStatusPages", reflect.TypeOf((*MockOrganizationsAPI)(nil).ListCreateAccountStatusPages), arg0, arg1)
 }
 
-// ListCreateAccountStatusPagesWithContext mocks base method
+// ListCreateAccountStatusPagesWithContext mocks base method.
 func (m *MockOrganizationsAPI) ListCreateAccountStatusPagesWithContext(arg0 context.Context, arg1 *organizations.ListCreateAccountStatusInput, arg2 func(*organizations.ListCreateAccountStatusOutput, bool) bool, arg3 ...request.Option) error {
 	m.ctrl.T.Helper()
 	varargs := []interface{}{arg0, arg1, arg2}
@@ -1758,14 +1809,14 @@ func (m *MockOrganizationsAPI) ListCreateAccountStatusPagesWithContext(arg0 cont
 	return ret0
 }
 
-// ListCreateAccountStatusPagesWithContext indicates an expected call of ListCreateAccountStatusPagesWithContext
+// ListCreateAccountStatusPagesWithContext indicates an expected call of ListCreateAccountStatusPagesWithContext.
 func (mr *MockOrganizationsAPIMockRecorder) ListCreateAccountStatusPagesWithContext(arg0, arg1, arg2 interface{}, arg3 ...interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	varargs := append([]interface{}{arg0, arg1, arg2}, arg3...)
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ListCreateAccountStatusPagesWithContext", reflect.TypeOf((*MockOrganizationsAPI)(nil).ListCreateAccountStatusPagesWithContext), varargs...)
 }
 
-// ListCreateAccountStatusRequest mocks base method
+// ListCreateAccountStatusRequest mocks base method.
 func (m *MockOrganizationsAPI) ListCreateAccountStatusRequest(arg0 *organizations.ListCreateAccountStatusInput) (*request.Request, *organizations.ListCreateAccountStatusOutput) {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "ListCreateAccountStatusRequest", arg0)
@@ -1774,13 +1825,13 @@ func (m *MockOrganizationsAPI) ListCreateAccountStatusRequest(arg0 *organization
 	return ret0, ret1
 }
 
-// ListCreateAccountStatusRequest indicates an expected call of ListCreateAccountStatusRequest
+// ListCreateAccountStatusRequest indicates an expected call of ListCreateAccountStatusRequest.
 func (mr *MockOrganizationsAPIMockRecorder) ListCreateAccountStatusRequest(arg0 interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ListCreateAccountStatusRequest", reflect.TypeOf((*MockOrganizationsAPI)(nil).ListCreateAccountStatusRequest), arg0)
 }
 
-// ListCreateAccountStatusWithContext mocks base method
+// ListCreateAccountStatusWithContext mocks base method.
 func (m *MockOrganizationsAPI) ListCreateAccountStatusWithContext(arg0 context.Context, arg1 *organizations.ListCreateAccountStatusInput, arg2 ...request.Option) (*organizations.ListCreateAccountStatusOutput, error) {
 	m.ctrl.T.Helper()
 	varargs := []interface{}{arg0, arg1}
@@ -1793,14 +1844,180 @@ func (m *MockOrganizationsAPI) ListCreateAccountStatusWithContext(arg0 context.C
 	return ret0, ret1
 }
 
-// ListCreateAccountStatusWithContext indicates an expected call of ListCreateAccountStatusWithContext
+// ListCreateAccountStatusWithContext indicates an expected call of ListCreateAccountStatusWithContext.
 func (mr *MockOrganizationsAPIMockRecorder) ListCreateAccountStatusWithContext(arg0, arg1 interface{}, arg2 ...interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	varargs := append([]interface{}{arg0, arg1}, arg2...)
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ListCreateAccountStatusWithContext", reflect.TypeOf((*MockOrganizationsAPI)(nil).ListCreateAccountStatusWithContext), varargs...)
 }
 
-// ListHandshakesForAccount mocks base method
+// ListDelegatedAdministrators mocks base method.
+func (m *MockOrganizationsAPI) ListDelegatedAdministrators(arg0 *organizations.ListDelegatedAdministratorsInput) (*organizations.ListDelegatedAdministratorsOutput, error) {
+	m.ctrl.T.Helper()
+	ret := m.ctrl.Call(m, "ListDelegatedAdministrators", arg0)
+	ret0, _ := ret[0].(*organizations.ListDelegatedAdministratorsOutput)
+	ret1, _ := ret[1].(error)
+	return ret0, ret1
+}
+
+// ListDelegatedAdministrators indicates an expected call of ListDelegatedAdministrators.
+func (mr *MockOrganizationsAPIMockRecorder) ListDelegatedAdministrators(arg0 interface{}) *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ListDelegatedAdministrators", reflect.TypeOf((*MockOrganizationsAPI)(nil).ListDelegatedAdministrators), arg0)
+}
+
+// ListDelegatedAdministratorsPages mocks base method.
+func (m *MockOrganizationsAPI) ListDelegatedAdministratorsPages(arg0 *organizations.ListDelegatedAdministratorsInput, arg1 func(*organizations.ListDelegatedAdministratorsOutput, bool) bool) error {
+	m.ctrl.T.Helper()
+	ret := m.ctrl.Call(m, "ListDelegatedAdministratorsPages", arg0, arg1)
+	ret0, _ := ret[0].(error)
+	return ret0
+}
+
+// ListDelegatedAdministratorsPages indicates an expected call of ListDelegatedAdministratorsPages.
+func (mr *MockOrganizationsAPIMockRecorder) ListDelegatedAdministratorsPages(arg0, arg1 interface{}) *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ListDelegatedAdministratorsPages", reflect.TypeOf((*MockOrganizationsAPI)(nil).ListDelegatedAdministratorsPages), arg0, arg1)
+}
+
+// ListDelegatedAdministratorsPagesWithContext mocks base method.
+func (m *MockOrganizationsAPI) ListDelegatedAdministratorsPagesWithContext(arg0 context.Context, arg1 *organizations.ListDelegatedAdministratorsInput, arg2 func(*organizations.ListDelegatedAdministratorsOutput, bool) bool, arg3 ...request.Option) error {
+	m.ctrl.T.Helper()
+	varargs := []interface{}{arg0, arg1, arg2}
+	for _, a := range arg3 {
+		varargs = append(varargs, a)
+	}
+	ret := m.ctrl.Call(m, "ListDelegatedAdministratorsPagesWithContext", varargs...)
+	ret0, _ := ret[0].(error)
+	return ret0
+}
+
+// ListDelegatedAdministratorsPagesWithContext indicates an expected call of ListDelegatedAdministratorsPagesWithContext.
+func (mr *MockOrganizationsAPIMockRecorder) ListDelegatedAdministratorsPagesWithContext(arg0, arg1, arg2 interface{}, arg3 ...interface{}) *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	varargs := append([]interface{}{arg0, arg1, arg2}, arg3...)
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ListDelegatedAdministratorsPagesWithContext", reflect.TypeOf((*MockOrganizationsAPI)(nil).ListDelegatedAdministratorsPagesWithContext), varargs...)
+}
+
+// ListDelegatedAdministratorsRequest mocks base method.
+func (m *MockOrganizationsAPI) ListDelegatedAdministratorsRequest(arg0 *organizations.ListDelegatedAdministratorsInput) (*request.Request, *organizations.ListDelegatedAdministratorsOutput) {
+	m.ctrl.T.Helper()
+	ret := m.ctrl.Call(m, "ListDelegatedAdministratorsRequest", arg0)
+	ret0, _ := ret[0].(*request.Request)
+	ret1, _ := ret[1].(*organizations.ListDelegatedAdministratorsOutput)
+	return ret0, ret1
+}
+
+// ListDelegatedAdministratorsRequest indicates an expected call of ListDelegatedAdministratorsRequest.
+func (mr *MockOrganizationsAPIMockRecorder) ListDelegatedAdministratorsRequest(arg0 interface{}) *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ListDelegatedAdministratorsRequest", reflect.TypeOf((*MockOrganizationsAPI)(nil).ListDelegatedAdministratorsRequest), arg0)
+}
+
+// ListDelegatedAdministratorsWithContext mocks base method.
+func (m *MockOrganizationsAPI) ListDelegatedAdministratorsWithContext(arg0 context.Context, arg1 *organizations.ListDelegatedAdministratorsInput, arg2 ...request.Option) (*organizations.ListDelegatedAdministratorsOutput, error) {
+	m.ctrl.T.Helper()
+	varargs := []interface{}{arg0, arg1}
+	for _, a := range arg2 {
+		varargs = append(varargs, a)
+	}
+	ret := m.ctrl.Call(m, "ListDelegatedAdministratorsWithContext", varargs...)
+	ret0, _ := ret[0].(*organizations.ListDelegatedAdministratorsOutput)
+	ret1, _ := ret[1].(error)
+	return ret0, ret1
+}
+
+// ListDelegatedAdministratorsWithContext indicates an expected call of ListDelegatedAdministratorsWithContext.
+func (mr *MockOrganizationsAPIMockRecorder) ListDelegatedAdministratorsWithContext(arg0, arg1 interface{}, arg2 ...interface{}) *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	varargs := append([]interface{}{arg0, arg1}, arg2...)
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ListDelegatedAdministratorsWithContext", reflect.TypeOf((*MockOrganizationsAPI)(nil).ListDelegatedAdministratorsWithContext), varargs...)
+}
+
+// ListDelegatedServicesForAccount mocks base method.
+func (m *MockOrganizationsAPI) ListDelegatedServicesForAccount(arg0 *organizations.ListDelegatedServicesForAccountInput) (*organizations.ListDelegatedServicesForAccountOutput, error) {
+	m.ctrl.T.Helper()
+	ret := m.ctrl.Call(m, "ListDelegatedServicesForAccount", arg0)
+	ret0, _ := ret[0].(*organizations.ListDelegatedServicesForAccountOutput)
+	ret1, _ := ret[1].(error)
+	return ret0, ret1
+}
+
+// ListDelegatedServicesForAccount indicates an expected call of ListDelegatedServicesForAccount.
+func (mr *MockOrganizationsAPIMockRecorder) ListDelegatedServicesForAccount(arg0 interface{}) *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ListDelegatedServicesForAccount", reflect.TypeOf((*MockOrganizationsAPI)(nil).ListDelegatedServicesForAccount), arg0)
+}
+
+// ListDelegatedServicesForAccountPages mocks base method.
+func (m *MockOrganizationsAPI) ListDelegatedServicesForAccountPages(arg0 *organizations.ListDelegatedServicesForAccountInput, arg1 func(*organizations.ListDelegatedServicesForAccountOutput, bool) bool) error {
+	m.ctrl.T.Helper()
+	ret := m.ctrl.Call(m, "ListDelegatedServicesForAccountPages", arg0, arg1)
+	ret0, _ := ret[0].(error)
+	return ret0
+}
+
+// ListDelegatedServicesForAccountPages indicates an expected call of ListDelegatedServicesForAccountPages.
+func (mr *MockOrganizationsAPIMockRecorder) ListDelegatedServicesForAccountPages(arg0, arg1 interface{}) *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ListDelegatedServicesForAccountPages", reflect.TypeOf((*MockOrganizationsAPI)(nil).ListDelegatedServicesForAccountPages), arg0, arg1)
+}
+
+// ListDelegatedServicesForAccountPagesWithContext mocks base method.
+func (m *MockOrganizationsAPI) ListDelegatedServicesForAccountPagesWithContext(arg0 context.Context, arg1 *organizations.ListDelegatedServicesForAccountInput, arg2 func(*organizations.ListDelegatedServicesForAccountOutput, bool) bool, arg3 ...request.Option) error {
+	m.ctrl.T.Helper()
+	varargs := []interface{}{arg0, arg1, arg2}
+	for _, a := range arg3 {
+		varargs = append(varargs, a)
+	}
+	ret := m.ctrl.Call(m, "ListDelegatedServicesForAccountPagesWithContext", varargs...)
+	ret0, _ := ret[0].(error)
+	return ret0
+}
+
+// ListDelegatedServicesForAccountPagesWithContext indicates an expected call of ListDelegatedServicesForAccountPagesWithContext.
+func (mr *MockOrganizationsAPIMockRecorder) ListDelegatedServicesForAccountPagesWithContext(arg0, arg1, arg2 interface{}, arg3 ...interface{}) *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	varargs := append([]interface{}{arg0, arg1, arg2}, arg3...)
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ListDelegatedServicesForAccountPagesWithContext", reflect.TypeOf((*MockOrganizationsAPI)(nil).ListDelegatedServicesForAccountPagesWithContext), varargs...)
+}
+
+// ListDelegatedServicesForAccountRequest mocks base method.
+func (m *MockOrganizationsAPI) ListDelegatedServicesForAccountRequest(arg0 *organizations.ListDelegatedServicesForAccountInput) (*request.Request, *organizations.ListDelegatedServicesForAccountOutput) {
+	m.ctrl.T.Helper()
+	ret := m.ctrl.Call(m, "ListDelegatedServicesForAccountRequest", arg0)
+	ret0, _ := ret[0].(*request.Request)
+	ret1, _ := ret[1].(*organizations.ListDelegatedServicesForAccountOutput)
+	return ret0, ret1
+}
+
+// ListDelegatedServicesForAccountRequest indicates an expected call of ListDelegatedServicesForAccountRequest.
+func (mr *MockOrganizationsAPIMockRecorder) ListDelegatedServicesForAccountRequest(arg0 interface{}) *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ListDelegatedServicesForAccountRequest", reflect.TypeOf((*MockOrganizationsAPI)(nil).ListDelegatedServicesForAccountRequest), arg0)
+}
+
+// ListDelegatedServicesForAccountWithContext mocks base method.
+func (m *MockOrganizationsAPI) ListDelegatedServicesForAccountWithContext(arg0 context.Context, arg1 *organizations.ListDelegatedServicesForAccountInput, arg2 ...request.Option) (*organizations.ListDelegatedServicesForAccountOutput, error) {
+	m.ctrl.T.Helper()
+	varargs := []interface{}{arg0, arg1}
+	for _, a := range arg2 {
+		varargs = append(varargs, a)
+	}
+	ret := m.ctrl.Call(m, "ListDelegatedServicesForAccountWithContext", varargs...)
+	ret0, _ := ret[0].(*organizations.ListDelegatedServicesForAccountOutput)
+	ret1, _ := ret[1].(error)
+	return ret0, ret1
+}
+
+// ListDelegatedServicesForAccountWithContext indicates an expected call of ListDelegatedServicesForAccountWithContext.
+func (mr *MockOrganizationsAPIMockRecorder) ListDelegatedServicesForAccountWithContext(arg0, arg1 interface{}, arg2 ...interface{}) *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	varargs := append([]interface{}{arg0, arg1}, arg2...)
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ListDelegatedServicesForAccountWithContext", reflect.TypeOf((*MockOrganizationsAPI)(nil).ListDelegatedServicesForAccountWithContext), varargs...)
+}
+
+// ListHandshakesForAccount mocks base method.
 func (m *MockOrganizationsAPI) ListHandshakesForAccount(arg0 *organizations.ListHandshakesForAccountInput) (*organizations.ListHandshakesForAccountOutput, error) {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "ListHandshakesForAccount", arg0)
@@ -1809,13 +2026,13 @@ func (m *MockOrganizationsAPI) ListHandshakesForAccount(arg0 *organizations.List
 	return ret0, ret1
 }
 
-// ListHandshakesForAccount indicates an expected call of ListHandshakesForAccount
+// ListHandshakesForAccount indicates an expected call of ListHandshakesForAccount.
 func (mr *MockOrganizationsAPIMockRecorder) ListHandshakesForAccount(arg0 interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ListHandshakesForAccount", reflect.TypeOf((*MockOrganizationsAPI)(nil).ListHandshakesForAccount), arg0)
 }
 
-// ListHandshakesForAccountPages mocks base method
+// ListHandshakesForAccountPages mocks base method.
 func (m *MockOrganizationsAPI) ListHandshakesForAccountPages(arg0 *organizations.ListHandshakesForAccountInput, arg1 func(*organizations.ListHandshakesForAccountOutput, bool) bool) error {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "ListHandshakesForAccountPages", arg0, arg1)
@@ -1823,13 +2040,13 @@ func (m *MockOrganizationsAPI) ListHandshakesForAccountPages(arg0 *organizations
 	return ret0
 }
 
-// ListHandshakesForAccountPages indicates an expected call of ListHandshakesForAccountPages
+// ListHandshakesForAccountPages indicates an expected call of ListHandshakesForAccountPages.
 func (mr *MockOrganizationsAPIMockRecorder) ListHandshakesForAccountPages(arg0, arg1 interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ListHandshakesForAccountPages", reflect.TypeOf((*MockOrganizationsAPI)(nil).ListHandshakesForAccountPages), arg0, arg1)
 }
 
-// ListHandshakesForAccountPagesWithContext mocks base method
+// ListHandshakesForAccountPagesWithContext mocks base method.
 func (m *MockOrganizationsAPI) ListHandshakesForAccountPagesWithContext(arg0 context.Context, arg1 *organizations.ListHandshakesForAccountInput, arg2 func(*organizations.ListHandshakesForAccountOutput, bool) bool, arg3 ...request.Option) error {
 	m.ctrl.T.Helper()
 	varargs := []interface{}{arg0, arg1, arg2}
@@ -1841,14 +2058,14 @@ func (m *MockOrganizationsAPI) ListHandshakesForAccountPagesWithContext(arg0 con
 	return ret0
 }
 
-// ListHandshakesForAccountPagesWithContext indicates an expected call of ListHandshakesForAccountPagesWithContext
+// ListHandshakesForAccountPagesWithContext indicates an expected call of ListHandshakesForAccountPagesWithContext.
 func (mr *MockOrganizationsAPIMockRecorder) ListHandshakesForAccountPagesWithContext(arg0, arg1, arg2 interface{}, arg3 ...interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	varargs := append([]interface{}{arg0, arg1, arg2}, arg3...)
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ListHandshakesForAccountPagesWithContext", reflect.TypeOf((*MockOrganizationsAPI)(nil).ListHandshakesForAccountPagesWithContext), varargs...)
 }
 
-// ListHandshakesForAccountRequest mocks base method
+// ListHandshakesForAccountRequest mocks base method.
 func (m *MockOrganizationsAPI) ListHandshakesForAccountRequest(arg0 *organizations.ListHandshakesForAccountInput) (*request.Request, *organizations.ListHandshakesForAccountOutput) {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "ListHandshakesForAccountRequest", arg0)
@@ -1857,13 +2074,13 @@ func (m *MockOrganizationsAPI) ListHandshakesForAccountRequest(arg0 *organizatio
 	return ret0, ret1
 }
 
-// ListHandshakesForAccountRequest indicates an expected call of ListHandshakesForAccountRequest
+// ListHandshakesForAccountRequest indicates an expected call of ListHandshakesForAccountRequest.
 func (mr *MockOrganizationsAPIMockRecorder) ListHandshakesForAccountRequest(arg0 interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ListHandshakesForAccountRequest", reflect.TypeOf((*MockOrganizationsAPI)(nil).ListHandshakesForAccountRequest), arg0)
 }
 
-// ListHandshakesForAccountWithContext mocks base method
+// ListHandshakesForAccountWithContext mocks base method.
 func (m *MockOrganizationsAPI) ListHandshakesForAccountWithContext(arg0 context.Context, arg1 *organizations.ListHandshakesForAccountInput, arg2 ...request.Option) (*organizations.ListHandshakesForAccountOutput, error) {
 	m.ctrl.T.Helper()
 	varargs := []interface{}{arg0, arg1}
@@ -1876,14 +2093,14 @@ func (m *MockOrganizationsAPI) ListHandshakesForAccountWithContext(arg0 context.
 	return ret0, ret1
 }
 
-// ListHandshakesForAccountWithContext indicates an expected call of ListHandshakesForAccountWithContext
+// ListHandshakesForAccountWithContext indicates an expected call of ListHandshakesForAccountWithContext.
 func (mr *MockOrganizationsAPIMockRecorder) ListHandshakesForAccountWithContext(arg0, arg1 interface{}, arg2 ...interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	varargs := append([]interface{}{arg0, arg1}, arg2...)
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ListHandshakesForAccountWithContext", reflect.TypeOf((*MockOrganizationsAPI)(nil).ListHandshakesForAccountWithContext), varargs...)
 }
 
-// ListHandshakesForOrganization mocks base method
+// ListHandshakesForOrganization mocks base method.
 func (m *MockOrganizationsAPI) ListHandshakesForOrganization(arg0 *organizations.ListHandshakesForOrganizationInput) (*organizations.ListHandshakesForOrganizationOutput, error) {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "ListHandshakesForOrganization", arg0)
@@ -1892,13 +2109,13 @@ func (m *MockOrganizationsAPI) ListHandshakesForOrganization(arg0 *organizations
 	return ret0, ret1
 }
 
-// ListHandshakesForOrganization indicates an expected call of ListHandshakesForOrganization
+// ListHandshakesForOrganization indicates an expected call of ListHandshakesForOrganization.
 func (mr *MockOrganizationsAPIMockRecorder) ListHandshakesForOrganization(arg0 interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ListHandshakesForOrganization", reflect.TypeOf((*MockOrganizationsAPI)(nil).ListHandshakesForOrganization), arg0)
 }
 
-// ListHandshakesForOrganizationPages mocks base method
+// ListHandshakesForOrganizationPages mocks base method.
 func (m *MockOrganizationsAPI) ListHandshakesForOrganizationPages(arg0 *organizations.ListHandshakesForOrganizationInput, arg1 func(*organizations.ListHandshakesForOrganizationOutput, bool) bool) error {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "ListHandshakesForOrganizationPages", arg0, arg1)
@@ -1906,13 +2123,13 @@ func (m *MockOrganizationsAPI) ListHandshakesForOrganizationPages(arg0 *organiza
 	return ret0
 }
 
-// ListHandshakesForOrganizationPages indicates an expected call of ListHandshakesForOrganizationPages
+// ListHandshakesForOrganizationPages indicates an expected call of ListHandshakesForOrganizationPages.
 func (mr *MockOrganizationsAPIMockRecorder) ListHandshakesForOrganizationPages(arg0, arg1 interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ListHandshakesForOrganizationPages", reflect.TypeOf((*MockOrganizationsAPI)(nil).ListHandshakesForOrganizationPages), arg0, arg1)
 }
 
-// ListHandshakesForOrganizationPagesWithContext mocks base method
+// ListHandshakesForOrganizationPagesWithContext mocks base method.
 func (m *MockOrganizationsAPI) ListHandshakesForOrganizationPagesWithContext(arg0 context.Context, arg1 *organizations.ListHandshakesForOrganizationInput, arg2 func(*organizations.ListHandshakesForOrganizationOutput, bool) bool, arg3 ...request.Option) error {
 	m.ctrl.T.Helper()
 	varargs := []interface{}{arg0, arg1, arg2}
@@ -1924,14 +2141,14 @@ func (m *MockOrganizationsAPI) ListHandshakesForOrganizationPagesWithContext(arg
 	return ret0
 }
 
-// ListHandshakesForOrganizationPagesWithContext indicates an expected call of ListHandshakesForOrganizationPagesWithContext
+// ListHandshakesForOrganizationPagesWithContext indicates an expected call of ListHandshakesForOrganizationPagesWithContext.
 func (mr *MockOrganizationsAPIMockRecorder) ListHandshakesForOrganizationPagesWithContext(arg0, arg1, arg2 interface{}, arg3 ...interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	varargs := append([]interface{}{arg0, arg1, arg2}, arg3...)
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ListHandshakesForOrganizationPagesWithContext", reflect.TypeOf((*MockOrganizationsAPI)(nil).ListHandshakesForOrganizationPagesWithContext), varargs...)
 }
 
-// ListHandshakesForOrganizationRequest mocks base method
+// ListHandshakesForOrganizationRequest mocks base method.
 func (m *MockOrganizationsAPI) ListHandshakesForOrganizationRequest(arg0 *organizations.ListHandshakesForOrganizationInput) (*request.Request, *organizations.ListHandshakesForOrganizationOutput) {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "ListHandshakesForOrganizationRequest", arg0)
@@ -1940,13 +2157,13 @@ func (m *MockOrganizationsAPI) ListHandshakesForOrganizationRequest(arg0 *organi
 	return ret0, ret1
 }
 
-// ListHandshakesForOrganizationRequest indicates an expected call of ListHandshakesForOrganizationRequest
+// ListHandshakesForOrganizationRequest indicates an expected call of ListHandshakesForOrganizationRequest.
 func (mr *MockOrganizationsAPIMockRecorder) ListHandshakesForOrganizationRequest(arg0 interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ListHandshakesForOrganizationRequest", reflect.TypeOf((*MockOrganizationsAPI)(nil).ListHandshakesForOrganizationRequest), arg0)
 }
 
-// ListHandshakesForOrganizationWithContext mocks base method
+// ListHandshakesForOrganizationWithContext mocks base method.
 func (m *MockOrganizationsAPI) ListHandshakesForOrganizationWithContext(arg0 context.Context, arg1 *organizations.ListHandshakesForOrganizationInput, arg2 ...request.Option) (*organizations.ListHandshakesForOrganizationOutput, error) {
 	m.ctrl.T.Helper()
 	varargs := []interface{}{arg0, arg1}
@@ -1959,14 +2176,14 @@ func (m *MockOrganizationsAPI) ListHandshakesForOrganizationWithContext(arg0 con
 	return ret0, ret1
 }
 
-// ListHandshakesForOrganizationWithContext indicates an expected call of ListHandshakesForOrganizationWithContext
+// ListHandshakesForOrganizationWithContext indicates an expected call of ListHandshakesForOrganizationWithContext.
 func (mr *MockOrganizationsAPIMockRecorder) ListHandshakesForOrganizationWithContext(arg0, arg1 interface{}, arg2 ...interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	varargs := append([]interface{}{arg0, arg1}, arg2...)
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ListHandshakesForOrganizationWithContext", reflect.TypeOf((*MockOrganizationsAPI)(nil).ListHandshakesForOrganizationWithContext), varargs...)
 }
 
-// ListOrganizationalUnitsForParent mocks base method
+// ListOrganizationalUnitsForParent mocks base method.
 func (m *MockOrganizationsAPI) ListOrganizationalUnitsForParent(arg0 *organizations.ListOrganizationalUnitsForParentInput) (*organizations.ListOrganizationalUnitsForParentOutput, error) {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "ListOrganizationalUnitsForParent", arg0)
@@ -1975,13 +2192,13 @@ func (m *MockOrganizationsAPI) ListOrganizationalUnitsForParent(arg0 *organizati
 	return ret0, ret1
 }
 
-// ListOrganizationalUnitsForParent indicates an expected call of ListOrganizationalUnitsForParent
+// ListOrganizationalUnitsForParent indicates an expected call of ListOrganizationalUnitsForParent.
 func (mr *MockOrganizationsAPIMockRecorder) ListOrganizationalUnitsForParent(arg0 interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ListOrganizationalUnitsForParent", reflect.TypeOf((*MockOrganizationsAPI)(nil).ListOrganizationalUnitsForParent), arg0)
 }
 
-// ListOrganizationalUnitsForParentPages mocks base method
+// ListOrganizationalUnitsForParentPages mocks base method.
 func (m *MockOrganizationsAPI) ListOrganizationalUnitsForParentPages(arg0 *organizations.ListOrganizationalUnitsForParentInput, arg1 func(*organizations.ListOrganizationalUnitsForParentOutput, bool) bool) error {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "ListOrganizationalUnitsForParentPages", arg0, arg1)
@@ -1989,13 +2206,13 @@ func (m *MockOrganizationsAPI) ListOrganizationalUnitsForParentPages(arg0 *organ
 	return ret0
 }
 
-// ListOrganizationalUnitsForParentPages indicates an expected call of ListOrganizationalUnitsForParentPages
+// ListOrganizationalUnitsForParentPages indicates an expected call of ListOrganizationalUnitsForParentPages.
 func (mr *MockOrganizationsAPIMockRecorder) ListOrganizationalUnitsForParentPages(arg0, arg1 interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ListOrganizationalUnitsForParentPages", reflect.TypeOf((*MockOrganizationsAPI)(nil).ListOrganizationalUnitsForParentPages), arg0, arg1)
 }
 
-// ListOrganizationalUnitsForParentPagesWithContext mocks base method
+// ListOrganizationalUnitsForParentPagesWithContext mocks base method.
 func (m *MockOrganizationsAPI) ListOrganizationalUnitsForParentPagesWithContext(arg0 context.Context, arg1 *organizations.ListOrganizationalUnitsForParentInput, arg2 func(*organizations.ListOrganizationalUnitsForParentOutput, bool) bool, arg3 ...request.Option) error {
 	m.ctrl.T.Helper()
 	varargs := []interface{}{arg0, arg1, arg2}
@@ -2007,14 +2224,14 @@ func (m *MockOrganizationsAPI) ListOrganizationalUnitsForParentPagesWithContext(
 	return ret0
 }
 
-// ListOrganizationalUnitsForParentPagesWithContext indicates an expected call of ListOrganizationalUnitsForParentPagesWithContext
+// ListOrganizationalUnitsForParentPagesWithContext indicates an expected call of ListOrganizationalUnitsForParentPagesWithContext.
 func (mr *MockOrganizationsAPIMockRecorder) ListOrganizationalUnitsForParentPagesWithContext(arg0, arg1, arg2 interface{}, arg3 ...interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	varargs := append([]interface{}{arg0, arg1, arg2}, arg3...)
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ListOrganizationalUnitsForParentPagesWithContext", reflect.TypeOf((*MockOrganizationsAPI)(nil).ListOrganizationalUnitsForParentPagesWithContext), varargs...)
 }
 
-// ListOrganizationalUnitsForParentRequest mocks base method
+// ListOrganizationalUnitsForParentRequest mocks base method.
 func (m *MockOrganizationsAPI) ListOrganizationalUnitsForParentRequest(arg0 *organizations.ListOrganizationalUnitsForParentInput) (*request.Request, *organizations.ListOrganizationalUnitsForParentOutput) {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "ListOrganizationalUnitsForParentRequest", arg0)
@@ -2023,13 +2240,13 @@ func (m *MockOrganizationsAPI) ListOrganizationalUnitsForParentRequest(arg0 *org
 	return ret0, ret1
 }
 
-// ListOrganizationalUnitsForParentRequest indicates an expected call of ListOrganizationalUnitsForParentRequest
+// ListOrganizationalUnitsForParentRequest indicates an expected call of ListOrganizationalUnitsForParentRequest.
 func (mr *MockOrganizationsAPIMockRecorder) ListOrganizationalUnitsForParentRequest(arg0 interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ListOrganizationalUnitsForParentRequest", reflect.TypeOf((*MockOrganizationsAPI)(nil).ListOrganizationalUnitsForParentRequest), arg0)
 }
 
-// ListOrganizationalUnitsForParentWithContext mocks base method
+// ListOrganizationalUnitsForParentWithContext mocks base method.
 func (m *MockOrganizationsAPI) ListOrganizationalUnitsForParentWithContext(arg0 context.Context, arg1 *organizations.ListOrganizationalUnitsForParentInput, arg2 ...request.Option) (*organizations.ListOrganizationalUnitsForParentOutput, error) {
 	m.ctrl.T.Helper()
 	varargs := []interface{}{arg0, arg1}
@@ -2042,14 +2259,14 @@ func (m *MockOrganizationsAPI) ListOrganizationalUnitsForParentWithContext(arg0 
 	return ret0, ret1
 }
 
-// ListOrganizationalUnitsForParentWithContext indicates an expected call of ListOrganizationalUnitsForParentWithContext
+// ListOrganizationalUnitsForParentWithContext indicates an expected call of ListOrganizationalUnitsForParentWithContext.
 func (mr *MockOrganizationsAPIMockRecorder) ListOrganizationalUnitsForParentWithContext(arg0, arg1 interface{}, arg2 ...interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	varargs := append([]interface{}{arg0, arg1}, arg2...)
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ListOrganizationalUnitsForParentWithContext", reflect.TypeOf((*MockOrganizationsAPI)(nil).ListOrganizationalUnitsForParentWithContext), varargs...)
 }
 
-// ListParents mocks base method
+// ListParents mocks base method.
 func (m *MockOrganizationsAPI) ListParents(arg0 *organizations.ListParentsInput) (*organizations.ListParentsOutput, error) {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "ListParents", arg0)
@@ -2058,13 +2275,13 @@ func (m *MockOrganizationsAPI) ListParents(arg0 *organizations.ListParentsInput)
 	return ret0, ret1
 }
 
-// ListParents indicates an expected call of ListParents
+// ListParents indicates an expected call of ListParents.
 func (mr *MockOrganizationsAPIMockRecorder) ListParents(arg0 interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ListParents", reflect.TypeOf((*MockOrganizationsAPI)(nil).ListParents), arg0)
 }
 
-// ListParentsPages mocks base method
+// ListParentsPages mocks base method.
 func (m *MockOrganizationsAPI) ListParentsPages(arg0 *organizations.ListParentsInput, arg1 func(*organizations.ListParentsOutput, bool) bool) error {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "ListParentsPages", arg0, arg1)
@@ -2072,13 +2289,13 @@ func (m *MockOrganizationsAPI) ListParentsPages(arg0 *organizations.ListParentsI
 	return ret0
 }
 
-// ListParentsPages indicates an expected call of ListParentsPages
+// ListParentsPages indicates an expected call of ListParentsPages.
 func (mr *MockOrganizationsAPIMockRecorder) ListParentsPages(arg0, arg1 interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ListParentsPages", reflect.TypeOf((*MockOrganizationsAPI)(nil).ListParentsPages), arg0, arg1)
 }
 
-// ListParentsPagesWithContext mocks base method
+// ListParentsPagesWithContext mocks base method.
 func (m *MockOrganizationsAPI) ListParentsPagesWithContext(arg0 context.Context, arg1 *organizations.ListParentsInput, arg2 func(*organizations.ListParentsOutput, bool) bool, arg3 ...request.Option) error {
 	m.ctrl.T.Helper()
 	varargs := []interface{}{arg0, arg1, arg2}
@@ -2090,14 +2307,14 @@ func (m *MockOrganizationsAPI) ListParentsPagesWithContext(arg0 context.Context,
 	return ret0
 }
 
-// ListParentsPagesWithContext indicates an expected call of ListParentsPagesWithContext
+// ListParentsPagesWithContext indicates an expected call of ListParentsPagesWithContext.
 func (mr *MockOrganizationsAPIMockRecorder) ListParentsPagesWithContext(arg0, arg1, arg2 interface{}, arg3 ...interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	varargs := append([]interface{}{arg0, arg1, arg2}, arg3...)
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ListParentsPagesWithContext", reflect.TypeOf((*MockOrganizationsAPI)(nil).ListParentsPagesWithContext), varargs...)
 }
 
-// ListParentsRequest mocks base method
+// ListParentsRequest mocks base method.
 func (m *MockOrganizationsAPI) ListParentsRequest(arg0 *organizations.ListParentsInput) (*request.Request, *organizations.ListParentsOutput) {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "ListParentsRequest", arg0)
@@ -2106,13 +2323,13 @@ func (m *MockOrganizationsAPI) ListParentsRequest(arg0 *organizations.ListParent
 	return ret0, ret1
 }
 
-// ListParentsRequest indicates an expected call of ListParentsRequest
+// ListParentsRequest indicates an expected call of ListParentsRequest.
 func (mr *MockOrganizationsAPIMockRecorder) ListParentsRequest(arg0 interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ListParentsRequest", reflect.TypeOf((*MockOrganizationsAPI)(nil).ListParentsRequest), arg0)
 }
 
-// ListParentsWithContext mocks base method
+// ListParentsWithContext mocks base method.
 func (m *MockOrganizationsAPI) ListParentsWithContext(arg0 context.Context, arg1 *organizations.ListParentsInput, arg2 ...request.Option) (*organizations.ListParentsOutput, error) {
 	m.ctrl.T.Helper()
 	varargs := []interface{}{arg0, arg1}
@@ -2125,14 +2342,14 @@ func (m *MockOrganizationsAPI) ListParentsWithContext(arg0 context.Context, arg1
 	return ret0, ret1
 }
 
-// ListParentsWithContext indicates an expected call of ListParentsWithContext
+// ListParentsWithContext indicates an expected call of ListParentsWithContext.
 func (mr *MockOrganizationsAPIMockRecorder) ListParentsWithContext(arg0, arg1 interface{}, arg2 ...interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	varargs := append([]interface{}{arg0, arg1}, arg2...)
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ListParentsWithContext", reflect.TypeOf((*MockOrganizationsAPI)(nil).ListParentsWithContext), varargs...)
 }
 
-// ListPolicies mocks base method
+// ListPolicies mocks base method.
 func (m *MockOrganizationsAPI) ListPolicies(arg0 *organizations.ListPoliciesInput) (*organizations.ListPoliciesOutput, error) {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "ListPolicies", arg0)
@@ -2141,13 +2358,13 @@ func (m *MockOrganizationsAPI) ListPolicies(arg0 *organizations.ListPoliciesInpu
 	return ret0, ret1
 }
 
-// ListPolicies indicates an expected call of ListPolicies
+// ListPolicies indicates an expected call of ListPolicies.
 func (mr *MockOrganizationsAPIMockRecorder) ListPolicies(arg0 interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ListPolicies", reflect.TypeOf((*MockOrganizationsAPI)(nil).ListPolicies), arg0)
 }
 
-// ListPoliciesForTarget mocks base method
+// ListPoliciesForTarget mocks base method.
 func (m *MockOrganizationsAPI) ListPoliciesForTarget(arg0 *organizations.ListPoliciesForTargetInput) (*organizations.ListPoliciesForTargetOutput, error) {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "ListPoliciesForTarget", arg0)
@@ -2156,13 +2373,13 @@ func (m *MockOrganizationsAPI) ListPoliciesForTarget(arg0 *organizations.ListPol
 	return ret0, ret1
 }
 
-// ListPoliciesForTarget indicates an expected call of ListPoliciesForTarget
+// ListPoliciesForTarget indicates an expected call of ListPoliciesForTarget.
 func (mr *MockOrganizationsAPIMockRecorder) ListPoliciesForTarget(arg0 interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ListPoliciesForTarget", reflect.TypeOf((*MockOrganizationsAPI)(nil).ListPoliciesForTarget), arg0)
 }
 
-// ListPoliciesForTargetPages mocks base method
+// ListPoliciesForTargetPages mocks base method.
 func (m *MockOrganizationsAPI) ListPoliciesForTargetPages(arg0 *organizations.ListPoliciesForTargetInput, arg1 func(*organizations.ListPoliciesForTargetOutput, bool) bool) error {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "ListPoliciesForTargetPages", arg0, arg1)
@@ -2170,13 +2387,13 @@ func (m *MockOrganizationsAPI) ListPoliciesForTargetPages(arg0 *organizations.Li
 	return ret0
 }
 
-// ListPoliciesForTargetPages indicates an expected call of ListPoliciesForTargetPages
+// ListPoliciesForTargetPages indicates an expected call of ListPoliciesForTargetPages.
 func (mr *MockOrganizationsAPIMockRecorder) ListPoliciesForTargetPages(arg0, arg1 interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ListPoliciesForTargetPages", reflect.TypeOf((*MockOrganizationsAPI)(nil).ListPoliciesForTargetPages), arg0, arg1)
 }
 
-// ListPoliciesForTargetPagesWithContext mocks base method
+// ListPoliciesForTargetPagesWithContext mocks base method.
 func (m *MockOrganizationsAPI) ListPoliciesForTargetPagesWithContext(arg0 context.Context, arg1 *organizations.ListPoliciesForTargetInput, arg2 func(*organizations.ListPoliciesForTargetOutput, bool) bool, arg3 ...request.Option) error {
 	m.ctrl.T.Helper()
 	varargs := []interface{}{arg0, arg1, arg2}
@@ -2188,14 +2405,14 @@ func (m *MockOrganizationsAPI) ListPoliciesForTargetPagesWithContext(arg0 contex
 	return ret0
 }
 
-// ListPoliciesForTargetPagesWithContext indicates an expected call of ListPoliciesForTargetPagesWithContext
+// ListPoliciesForTargetPagesWithContext indicates an expected call of ListPoliciesForTargetPagesWithContext.
 func (mr *MockOrganizationsAPIMockRecorder) ListPoliciesForTargetPagesWithContext(arg0, arg1, arg2 interface{}, arg3 ...interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	varargs := append([]interface{}{arg0, arg1, arg2}, arg3...)
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ListPoliciesForTargetPagesWithContext", reflect.TypeOf((*MockOrganizationsAPI)(nil).ListPoliciesForTargetPagesWithContext), varargs...)
 }
 
-// ListPoliciesForTargetRequest mocks base method
+// ListPoliciesForTargetRequest mocks base method.
 func (m *MockOrganizationsAPI) ListPoliciesForTargetRequest(arg0 *organizations.ListPoliciesForTargetInput) (*request.Request, *organizations.ListPoliciesForTargetOutput) {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "ListPoliciesForTargetRequest", arg0)
@@ -2204,13 +2421,13 @@ func (m *MockOrganizationsAPI) ListPoliciesForTargetRequest(arg0 *organizations.
 	return ret0, ret1
 }
 
-// ListPoliciesForTargetRequest indicates an expected call of ListPoliciesForTargetRequest
+// ListPoliciesForTargetRequest indicates an expected call of ListPoliciesForTargetRequest.
 func (mr *MockOrganizationsAPIMockRecorder) ListPoliciesForTargetRequest(arg0 interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ListPoliciesForTargetRequest", reflect.TypeOf((*MockOrganizationsAPI)(nil).ListPoliciesForTargetRequest), arg0)
 }
 
-// ListPoliciesForTargetWithContext mocks base method
+// ListPoliciesForTargetWithContext mocks base method.
 func (m *MockOrganizationsAPI) ListPoliciesForTargetWithContext(arg0 context.Context, arg1 *organizations.ListPoliciesForTargetInput, arg2 ...request.Option) (*organizations.ListPoliciesForTargetOutput, error) {
 	m.ctrl.T.Helper()
 	varargs := []interface{}{arg0, arg1}
@@ -2223,14 +2440,14 @@ func (m *MockOrganizationsAPI) ListPoliciesForTargetWithContext(arg0 context.Con
 	return ret0, ret1
 }
 
-// ListPoliciesForTargetWithContext indicates an expected call of ListPoliciesForTargetWithContext
+// ListPoliciesForTargetWithContext indicates an expected call of ListPoliciesForTargetWithContext.
 func (mr *MockOrganizationsAPIMockRecorder) ListPoliciesForTargetWithContext(arg0, arg1 interface{}, arg2 ...interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	varargs := append([]interface{}{arg0, arg1}, arg2...)
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ListPoliciesForTargetWithContext", reflect.TypeOf((*MockOrganizationsAPI)(nil).ListPoliciesForTargetWithContext), varargs...)
 }
 
-// ListPoliciesPages mocks base method
+// ListPoliciesPages mocks base method.
 func (m *MockOrganizationsAPI) ListPoliciesPages(arg0 *organizations.ListPoliciesInput, arg1 func(*organizations.ListPoliciesOutput, bool) bool) error {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "ListPoliciesPages", arg0, arg1)
@@ -2238,13 +2455,13 @@ func (m *MockOrganizationsAPI) ListPoliciesPages(arg0 *organizations.ListPolicie
 	return ret0
 }
 
-// ListPoliciesPages indicates an expected call of ListPoliciesPages
+// ListPoliciesPages indicates an expected call of ListPoliciesPages.
 func (mr *MockOrganizationsAPIMockRecorder) ListPoliciesPages(arg0, arg1 interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ListPoliciesPages", reflect.TypeOf((*MockOrganizationsAPI)(nil).ListPoliciesPages), arg0, arg1)
 }
 
-// ListPoliciesPagesWithContext mocks base method
+// ListPoliciesPagesWithContext mocks base method.
 func (m *MockOrganizationsAPI) ListPoliciesPagesWithContext(arg0 context.Context, arg1 *organizations.ListPoliciesInput, arg2 func(*organizations.ListPoliciesOutput, bool) bool, arg3 ...request.Option) error {
 	m.ctrl.T.Helper()
 	varargs := []interface{}{arg0, arg1, arg2}
@@ -2256,14 +2473,14 @@ func (m *MockOrganizationsAPI) ListPoliciesPagesWithContext(arg0 context.Context
 	return ret0
 }
 
-// ListPoliciesPagesWithContext indicates an expected call of ListPoliciesPagesWithContext
+// ListPoliciesPagesWithContext indicates an expected call of ListPoliciesPagesWithContext.
 func (mr *MockOrganizationsAPIMockRecorder) ListPoliciesPagesWithContext(arg0, arg1, arg2 interface{}, arg3 ...interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	varargs := append([]interface{}{arg0, arg1, arg2}, arg3...)
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ListPoliciesPagesWithContext", reflect.TypeOf((*MockOrganizationsAPI)(nil).ListPoliciesPagesWithContext), varargs...)
 }
 
-// ListPoliciesRequest mocks base method
+// ListPoliciesRequest mocks base method.
 func (m *MockOrganizationsAPI) ListPoliciesRequest(arg0 *organizations.ListPoliciesInput) (*request.Request, *organizations.ListPoliciesOutput) {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "ListPoliciesRequest", arg0)
@@ -2272,13 +2489,13 @@ func (m *MockOrganizationsAPI) ListPoliciesRequest(arg0 *organizations.ListPolic
 	return ret0, ret1
 }
 
-// ListPoliciesRequest indicates an expected call of ListPoliciesRequest
+// ListPoliciesRequest indicates an expected call of ListPoliciesRequest.
 func (mr *MockOrganizationsAPIMockRecorder) ListPoliciesRequest(arg0 interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ListPoliciesRequest", reflect.TypeOf((*MockOrganizationsAPI)(nil).ListPoliciesRequest), arg0)
 }
 
-// ListPoliciesWithContext mocks base method
+// ListPoliciesWithContext mocks base method.
 func (m *MockOrganizationsAPI) ListPoliciesWithContext(arg0 context.Context, arg1 *organizations.ListPoliciesInput, arg2 ...request.Option) (*organizations.ListPoliciesOutput, error) {
 	m.ctrl.T.Helper()
 	varargs := []interface{}{arg0, arg1}
@@ -2291,14 +2508,14 @@ func (m *MockOrganizationsAPI) ListPoliciesWithContext(arg0 context.Context, arg
 	return ret0, ret1
 }
 
-// ListPoliciesWithContext indicates an expected call of ListPoliciesWithContext
+// ListPoliciesWithContext indicates an expected call of ListPoliciesWithContext.
 func (mr *MockOrganizationsAPIMockRecorder) ListPoliciesWithContext(arg0, arg1 interface{}, arg2 ...interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	varargs := append([]interface{}{arg0, arg1}, arg2...)
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ListPoliciesWithContext", reflect.TypeOf((*MockOrganizationsAPI)(nil).ListPoliciesWithContext), varargs...)
 }
 
-// ListRoots mocks base method
+// ListRoots mocks base method.
 func (m *MockOrganizationsAPI) ListRoots(arg0 *organizations.ListRootsInput) (*organizations.ListRootsOutput, error) {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "ListRoots", arg0)
@@ -2307,13 +2524,13 @@ func (m *MockOrganizationsAPI) ListRoots(arg0 *organizations.ListRootsInput) (*o
 	return ret0, ret1
 }
 
-// ListRoots indicates an expected call of ListRoots
+// ListRoots indicates an expected call of ListRoots.
 func (mr *MockOrganizationsAPIMockRecorder) ListRoots(arg0 interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ListRoots", reflect.TypeOf((*MockOrganizationsAPI)(nil).ListRoots), arg0)
 }
 
-// ListRootsPages mocks base method
+// ListRootsPages mocks base method.
 func (m *MockOrganizationsAPI) ListRootsPages(arg0 *organizations.ListRootsInput, arg1 func(*organizations.ListRootsOutput, bool) bool) error {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "ListRootsPages", arg0, arg1)
@@ -2321,13 +2538,13 @@ func (m *MockOrganizationsAPI) ListRootsPages(arg0 *organizations.ListRootsInput
 	return ret0
 }
 
-// ListRootsPages indicates an expected call of ListRootsPages
+// ListRootsPages indicates an expected call of ListRootsPages.
 func (mr *MockOrganizationsAPIMockRecorder) ListRootsPages(arg0, arg1 interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ListRootsPages", reflect.TypeOf((*MockOrganizationsAPI)(nil).ListRootsPages), arg0, arg1)
 }
 
-// ListRootsPagesWithContext mocks base method
+// ListRootsPagesWithContext mocks base method.
 func (m *MockOrganizationsAPI) ListRootsPagesWithContext(arg0 context.Context, arg1 *organizations.ListRootsInput, arg2 func(*organizations.ListRootsOutput, bool) bool, arg3 ...request.Option) error {
 	m.ctrl.T.Helper()
 	varargs := []interface{}{arg0, arg1, arg2}
@@ -2339,14 +2556,14 @@ func (m *MockOrganizationsAPI) ListRootsPagesWithContext(arg0 context.Context, a
 	return ret0
 }
 
-// ListRootsPagesWithContext indicates an expected call of ListRootsPagesWithContext
+// ListRootsPagesWithContext indicates an expected call of ListRootsPagesWithContext.
 func (mr *MockOrganizationsAPIMockRecorder) ListRootsPagesWithContext(arg0, arg1, arg2 interface{}, arg3 ...interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	varargs := append([]interface{}{arg0, arg1, arg2}, arg3...)
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ListRootsPagesWithContext", reflect.TypeOf((*MockOrganizationsAPI)(nil).ListRootsPagesWithContext), varargs...)
 }
 
-// ListRootsRequest mocks base method
+// ListRootsRequest mocks base method.
 func (m *MockOrganizationsAPI) ListRootsRequest(arg0 *organizations.ListRootsInput) (*request.Request, *organizations.ListRootsOutput) {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "ListRootsRequest", arg0)
@@ -2355,13 +2572,13 @@ func (m *MockOrganizationsAPI) ListRootsRequest(arg0 *organizations.ListRootsInp
 	return ret0, ret1
 }
 
-// ListRootsRequest indicates an expected call of ListRootsRequest
+// ListRootsRequest indicates an expected call of ListRootsRequest.
 func (mr *MockOrganizationsAPIMockRecorder) ListRootsRequest(arg0 interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ListRootsRequest", reflect.TypeOf((*MockOrganizationsAPI)(nil).ListRootsRequest), arg0)
 }
 
-// ListRootsWithContext mocks base method
+// ListRootsWithContext mocks base method.
 func (m *MockOrganizationsAPI) ListRootsWithContext(arg0 context.Context, arg1 *organizations.ListRootsInput, arg2 ...request.Option) (*organizations.ListRootsOutput, error) {
 	m.ctrl.T.Helper()
 	varargs := []interface{}{arg0, arg1}
@@ -2374,14 +2591,14 @@ func (m *MockOrganizationsAPI) ListRootsWithContext(arg0 context.Context, arg1 *
 	return ret0, ret1
 }
 
-// ListRootsWithContext indicates an expected call of ListRootsWithContext
+// ListRootsWithContext indicates an expected call of ListRootsWithContext.
 func (mr *MockOrganizationsAPIMockRecorder) ListRootsWithContext(arg0, arg1 interface{}, arg2 ...interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	varargs := append([]interface{}{arg0, arg1}, arg2...)
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ListRootsWithContext", reflect.TypeOf((*MockOrganizationsAPI)(nil).ListRootsWithContext), varargs...)
 }
 
-// ListTagsForResource mocks base method
+// ListTagsForResource mocks base method.
 func (m *MockOrganizationsAPI) ListTagsForResource(arg0 *organizations.ListTagsForResourceInput) (*organizations.ListTagsForResourceOutput, error) {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "ListTagsForResource", arg0)
@@ -2390,13 +2607,13 @@ func (m *MockOrganizationsAPI) ListTagsForResource(arg0 *organizations.ListTagsF
 	return ret0, ret1
 }
 
-// ListTagsForResource indicates an expected call of ListTagsForResource
+// ListTagsForResource indicates an expected call of ListTagsForResource.
 func (mr *MockOrganizationsAPIMockRecorder) ListTagsForResource(arg0 interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ListTagsForResource", reflect.TypeOf((*MockOrganizationsAPI)(nil).ListTagsForResource), arg0)
 }
 
-// ListTagsForResourcePages mocks base method
+// ListTagsForResourcePages mocks base method.
 func (m *MockOrganizationsAPI) ListTagsForResourcePages(arg0 *organizations.ListTagsForResourceInput, arg1 func(*organizations.ListTagsForResourceOutput, bool) bool) error {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "ListTagsForResourcePages", arg0, arg1)
@@ -2404,13 +2621,13 @@ func (m *MockOrganizationsAPI) ListTagsForResourcePages(arg0 *organizations.List
 	return ret0
 }
 
-// ListTagsForResourcePages indicates an expected call of ListTagsForResourcePages
+// ListTagsForResourcePages indicates an expected call of ListTagsForResourcePages.
 func (mr *MockOrganizationsAPIMockRecorder) ListTagsForResourcePages(arg0, arg1 interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ListTagsForResourcePages", reflect.TypeOf((*MockOrganizationsAPI)(nil).ListTagsForResourcePages), arg0, arg1)
 }
 
-// ListTagsForResourcePagesWithContext mocks base method
+// ListTagsForResourcePagesWithContext mocks base method.
 func (m *MockOrganizationsAPI) ListTagsForResourcePagesWithContext(arg0 context.Context, arg1 *organizations.ListTagsForResourceInput, arg2 func(*organizations.ListTagsForResourceOutput, bool) bool, arg3 ...request.Option) error {
 	m.ctrl.T.Helper()
 	varargs := []interface{}{arg0, arg1, arg2}
@@ -2422,14 +2639,14 @@ func (m *MockOrganizationsAPI) ListTagsForResourcePagesWithContext(arg0 context.
 	return ret0
 }
 
-// ListTagsForResourcePagesWithContext indicates an expected call of ListTagsForResourcePagesWithContext
+// ListTagsForResourcePagesWithContext indicates an expected call of ListTagsForResourcePagesWithContext.
 func (mr *MockOrganizationsAPIMockRecorder) ListTagsForResourcePagesWithContext(arg0, arg1, arg2 interface{}, arg3 ...interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	varargs := append([]interface{}{arg0, arg1, arg2}, arg3...)
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ListTagsForResourcePagesWithContext", reflect.TypeOf((*MockOrganizationsAPI)(nil).ListTagsForResourcePagesWithContext), varargs...)
 }
 
-// ListTagsForResourceRequest mocks base method
+// ListTagsForResourceRequest mocks base method.
 func (m *MockOrganizationsAPI) ListTagsForResourceRequest(arg0 *organizations.ListTagsForResourceInput) (*request.Request, *organizations.ListTagsForResourceOutput) {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "ListTagsForResourceRequest", arg0)
@@ -2438,13 +2655,13 @@ func (m *MockOrganizationsAPI) ListTagsForResourceRequest(arg0 *organizations.Li
 	return ret0, ret1
 }
 
-// ListTagsForResourceRequest indicates an expected call of ListTagsForResourceRequest
+// ListTagsForResourceRequest indicates an expected call of ListTagsForResourceRequest.
 func (mr *MockOrganizationsAPIMockRecorder) ListTagsForResourceRequest(arg0 interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ListTagsForResourceRequest", reflect.TypeOf((*MockOrganizationsAPI)(nil).ListTagsForResourceRequest), arg0)
 }
 
-// ListTagsForResourceWithContext mocks base method
+// ListTagsForResourceWithContext mocks base method.
 func (m *MockOrganizationsAPI) ListTagsForResourceWithContext(arg0 context.Context, arg1 *organizations.ListTagsForResourceInput, arg2 ...request.Option) (*organizations.ListTagsForResourceOutput, error) {
 	m.ctrl.T.Helper()
 	varargs := []interface{}{arg0, arg1}
@@ -2457,14 +2674,14 @@ func (m *MockOrganizationsAPI) ListTagsForResourceWithContext(arg0 context.Conte
 	return ret0, ret1
 }
 
-// ListTagsForResourceWithContext indicates an expected call of ListTagsForResourceWithContext
+// ListTagsForResourceWithContext indicates an expected call of ListTagsForResourceWithContext.
 func (mr *MockOrganizationsAPIMockRecorder) ListTagsForResourceWithContext(arg0, arg1 interface{}, arg2 ...interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	varargs := append([]interface{}{arg0, arg1}, arg2...)
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ListTagsForResourceWithContext", reflect.TypeOf((*MockOrganizationsAPI)(nil).ListTagsForResourceWithContext), varargs...)
 }
 
-// ListTargetsForPolicy mocks base method
+// ListTargetsForPolicy mocks base method.
 func (m *MockOrganizationsAPI) ListTargetsForPolicy(arg0 *organizations.ListTargetsForPolicyInput) (*organizations.ListTargetsForPolicyOutput, error) {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "ListTargetsForPolicy", arg0)
@@ -2473,13 +2690,13 @@ func (m *MockOrganizationsAPI) ListTargetsForPolicy(arg0 *organizations.ListTarg
 	return ret0, ret1
 }
 
-// ListTargetsForPolicy indicates an expected call of ListTargetsForPolicy
+// ListTargetsForPolicy indicates an expected call of ListTargetsForPolicy.
 func (mr *MockOrganizationsAPIMockRecorder) ListTargetsForPolicy(arg0 interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ListTargetsForPolicy", reflect.TypeOf((*MockOrganizationsAPI)(nil).ListTargetsForPolicy), arg0)
 }
 
-// ListTargetsForPolicyPages mocks base method
+// ListTargetsForPolicyPages mocks base method.
 func (m *MockOrganizationsAPI) ListTargetsForPolicyPages(arg0 *organizations.ListTargetsForPolicyInput, arg1 func(*organizations.ListTargetsForPolicyOutput, bool) bool) error {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "ListTargetsForPolicyPages", arg0, arg1)
@@ -2487,13 +2704,13 @@ func (m *MockOrganizationsAPI) ListTargetsForPolicyPages(arg0 *organizations.Lis
 	return ret0
 }
 
-// ListTargetsForPolicyPages indicates an expected call of ListTargetsForPolicyPages
+// ListTargetsForPolicyPages indicates an expected call of ListTargetsForPolicyPages.
 func (mr *MockOrganizationsAPIMockRecorder) ListTargetsForPolicyPages(arg0, arg1 interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ListTargetsForPolicyPages", reflect.TypeOf((*MockOrganizationsAPI)(nil).ListTargetsForPolicyPages), arg0, arg1)
 }
 
-// ListTargetsForPolicyPagesWithContext mocks base method
+// ListTargetsForPolicyPagesWithContext mocks base method.
 func (m *MockOrganizationsAPI) ListTargetsForPolicyPagesWithContext(arg0 context.Context, arg1 *organizations.ListTargetsForPolicyInput, arg2 func(*organizations.ListTargetsForPolicyOutput, bool) bool, arg3 ...request.Option) error {
 	m.ctrl.T.Helper()
 	varargs := []interface{}{arg0, arg1, arg2}
@@ -2505,14 +2722,14 @@ func (m *MockOrganizationsAPI) ListTargetsForPolicyPagesWithContext(arg0 context
 	return ret0
 }
 
-// ListTargetsForPolicyPagesWithContext indicates an expected call of ListTargetsForPolicyPagesWithContext
+// ListTargetsForPolicyPagesWithContext indicates an expected call of ListTargetsForPolicyPagesWithContext.
 func (mr *MockOrganizationsAPIMockRecorder) ListTargetsForPolicyPagesWithContext(arg0, arg1, arg2 interface{}, arg3 ...interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	varargs := append([]interface{}{arg0, arg1, arg2}, arg3...)
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ListTargetsForPolicyPagesWithContext", reflect.TypeOf((*MockOrganizationsAPI)(nil).ListTargetsForPolicyPagesWithContext), varargs...)
 }
 
-// ListTargetsForPolicyRequest mocks base method
+// ListTargetsForPolicyRequest mocks base method.
 func (m *MockOrganizationsAPI) ListTargetsForPolicyRequest(arg0 *organizations.ListTargetsForPolicyInput) (*request.Request, *organizations.ListTargetsForPolicyOutput) {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "ListTargetsForPolicyRequest", arg0)
@@ -2521,13 +2738,13 @@ func (m *MockOrganizationsAPI) ListTargetsForPolicyRequest(arg0 *organizations.L
 	return ret0, ret1
 }
 
-// ListTargetsForPolicyRequest indicates an expected call of ListTargetsForPolicyRequest
+// ListTargetsForPolicyRequest indicates an expected call of ListTargetsForPolicyRequest.
 func (mr *MockOrganizationsAPIMockRecorder) ListTargetsForPolicyRequest(arg0 interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ListTargetsForPolicyRequest", reflect.TypeOf((*MockOrganizationsAPI)(nil).ListTargetsForPolicyRequest), arg0)
 }
 
-// ListTargetsForPolicyWithContext mocks base method
+// ListTargetsForPolicyWithContext mocks base method.
 func (m *MockOrganizationsAPI) ListTargetsForPolicyWithContext(arg0 context.Context, arg1 *organizations.ListTargetsForPolicyInput, arg2 ...request.Option) (*organizations.ListTargetsForPolicyOutput, error) {
 	m.ctrl.T.Helper()
 	varargs := []interface{}{arg0, arg1}
@@ -2540,14 +2757,14 @@ func (m *MockOrganizationsAPI) ListTargetsForPolicyWithContext(arg0 context.Cont
 	return ret0, ret1
 }
 
-// ListTargetsForPolicyWithContext indicates an expected call of ListTargetsForPolicyWithContext
+// ListTargetsForPolicyWithContext indicates an expected call of ListTargetsForPolicyWithContext.
 func (mr *MockOrganizationsAPIMockRecorder) ListTargetsForPolicyWithContext(arg0, arg1 interface{}, arg2 ...interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	varargs := append([]interface{}{arg0, arg1}, arg2...)
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ListTargetsForPolicyWithContext", reflect.TypeOf((*MockOrganizationsAPI)(nil).ListTargetsForPolicyWithContext), varargs...)
 }
 
-// MoveAccount mocks base method
+// MoveAccount mocks base method.
 func (m *MockOrganizationsAPI) MoveAccount(arg0 *organizations.MoveAccountInput) (*organizations.MoveAccountOutput, error) {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "MoveAccount", arg0)
@@ -2556,13 +2773,13 @@ func (m *MockOrganizationsAPI) MoveAccount(arg0 *organizations.MoveAccountInput)
 	return ret0, ret1
 }
 
-// MoveAccount indicates an expected call of MoveAccount
+// MoveAccount indicates an expected call of MoveAccount.
 func (mr *MockOrganizationsAPIMockRecorder) MoveAccount(arg0 interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "MoveAccount", reflect.TypeOf((*MockOrganizationsAPI)(nil).MoveAccount), arg0)
 }
 
-// MoveAccountRequest mocks base method
+// MoveAccountRequest mocks base method.
 func (m *MockOrganizationsAPI) MoveAccountRequest(arg0 *organizations.MoveAccountInput) (*request.Request, *organizations.MoveAccountOutput) {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "MoveAccountRequest", arg0)
@@ -2571,13 +2788,13 @@ func (m *MockOrganizationsAPI) MoveAccountRequest(arg0 *organizations.MoveAccoun
 	return ret0, ret1
 }
 
-// MoveAccountRequest indicates an expected call of MoveAccountRequest
+// MoveAccountRequest indicates an expected call of MoveAccountRequest.
 func (mr *MockOrganizationsAPIMockRecorder) MoveAccountRequest(arg0 interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "MoveAccountRequest", reflect.TypeOf((*MockOrganizationsAPI)(nil).MoveAccountRequest), arg0)
 }
 
-// MoveAccountWithContext mocks base method
+// MoveAccountWithContext mocks base method.
 func (m *MockOrganizationsAPI) MoveAccountWithContext(arg0 context.Context, arg1 *organizations.MoveAccountInput, arg2 ...request.Option) (*organizations.MoveAccountOutput, error) {
 	m.ctrl.T.Helper()
 	varargs := []interface{}{arg0, arg1}
@@ -2590,14 +2807,64 @@ func (m *MockOrganizationsAPI) MoveAccountWithContext(arg0 context.Context, arg1
 	return ret0, ret1
 }
 
-// MoveAccountWithContext indicates an expected call of MoveAccountWithContext
+// MoveAccountWithContext indicates an expected call of MoveAccountWithContext.
 func (mr *MockOrganizationsAPIMockRecorder) MoveAccountWithContext(arg0, arg1 interface{}, arg2 ...interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	varargs := append([]interface{}{arg0, arg1}, arg2...)
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "MoveAccountWithContext", reflect.TypeOf((*MockOrganizationsAPI)(nil).MoveAccountWithContext), varargs...)
 }
 
-// RemoveAccountFromOrganization mocks base method
+// RegisterDelegatedAdministrator mocks base method.
+func (m *MockOrganizationsAPI) RegisterDelegatedAdministrator(arg0 *organizations.RegisterDelegatedAdministratorInput) (*organizations.RegisterDelegatedAdministratorOutput, error) {
+	m.ctrl.T.Helper()
+	ret := m.ctrl.Call(m, "RegisterDelegatedAdministrator", arg0)
+	ret0, _ := ret[0].(*organizations.RegisterDelegatedAdministratorOutput)
+	ret1, _ := ret[1].(error)
+	return ret0, ret1
+}
+
+// RegisterDelegatedAdministrator indicates an expected call of RegisterDelegatedAdministrator.
+func (mr *MockOrganizationsAPIMockRecorder) RegisterDelegatedAdministrator(arg0 interface{}) *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "RegisterDelegatedAdministrator", reflect.TypeOf((*MockOrganizationsAPI)(nil).RegisterDelegatedAdministrator), arg0)
+}
+
+// RegisterDelegatedAdministratorRequest mocks base method.
+func (m *MockOrganizationsAPI) RegisterDelegatedAdministratorRequest(arg0 *organizations.RegisterDelegatedAdministratorInput) (*request.Request, *organizations.RegisterDelegatedAdministratorOutput) {
+	m.ctrl.T.Helper()
+	ret := m.ctrl.Call(m, "RegisterDelegatedAdministratorRequest", arg0)
+	ret0, _ := ret[0].(*request.Request)
+	ret1, _ := ret[1].(*organizations.RegisterDelegatedAdministratorOutput)
+	return ret0, ret1
+}
+
+// RegisterDelegatedAdministratorRequest indicates an expected call of RegisterDelegatedAdministratorRequest.
+func (mr *MockOrganizationsAPIMockRecorder) RegisterDelegatedAdministratorRequest(arg0 interface{}) *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "RegisterDelegatedAdministratorRequest", reflect.TypeOf((*MockOrganizationsAPI)(nil).RegisterDelegatedAdministratorRequest), arg0)
+}
+
+// RegisterDelegatedAdministratorWithContext mocks base method.
+func (m *MockOrganizationsAPI) RegisterDelegatedAdministratorWithContext(arg0 context.Context, arg1 *organizations.RegisterDelegatedAdministratorInput, arg2 ...request.Option) (*organizations.RegisterDelegatedAdministratorOutput, error) {
+	m.ctrl.T.Helper()
+	varargs := []interface{}{arg0, arg1}
+	for _, a := range arg2 {
+		varargs = append(varargs, a)
+	}
+	ret := m.ctrl.Call(m, "RegisterDelegatedAdministratorWithContext", varargs...)
+	ret0, _ := ret[0].(*organizations.RegisterDelegatedAdministratorOutput)
+	ret1, _ := ret[1].(error)
+	return ret0, ret1
+}
+
+// RegisterDelegatedAdministratorWithContext indicates an expected call of RegisterDelegatedAdministratorWithContext.
+func (mr *MockOrganizationsAPIMockRecorder) RegisterDelegatedAdministratorWithContext(arg0, arg1 interface{}, arg2 ...interface{}) *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	varargs := append([]interface{}{arg0, arg1}, arg2...)
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "RegisterDelegatedAdministratorWithContext", reflect.TypeOf((*MockOrganizationsAPI)(nil).RegisterDelegatedAdministratorWithContext), varargs...)
+}
+
+// RemoveAccountFromOrganization mocks base method.
 func (m *MockOrganizationsAPI) RemoveAccountFromOrganization(arg0 *organizations.RemoveAccountFromOrganizationInput) (*organizations.RemoveAccountFromOrganizationOutput, error) {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "RemoveAccountFromOrganization", arg0)
@@ -2606,13 +2873,13 @@ func (m *MockOrganizationsAPI) RemoveAccountFromOrganization(arg0 *organizations
 	return ret0, ret1
 }
 
-// RemoveAccountFromOrganization indicates an expected call of RemoveAccountFromOrganization
+// RemoveAccountFromOrganization indicates an expected call of RemoveAccountFromOrganization.
 func (mr *MockOrganizationsAPIMockRecorder) RemoveAccountFromOrganization(arg0 interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "RemoveAccountFromOrganization", reflect.TypeOf((*MockOrganizationsAPI)(nil).RemoveAccountFromOrganization), arg0)
 }
 
-// RemoveAccountFromOrganizationRequest mocks base method
+// RemoveAccountFromOrganizationRequest mocks base method.
 func (m *MockOrganizationsAPI) RemoveAccountFromOrganizationRequest(arg0 *organizations.RemoveAccountFromOrganizationInput) (*request.Request, *organizations.RemoveAccountFromOrganizationOutput) {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "RemoveAccountFromOrganizationRequest", arg0)
@@ -2621,13 +2888,13 @@ func (m *MockOrganizationsAPI) RemoveAccountFromOrganizationRequest(arg0 *organi
 	return ret0, ret1
 }
 
-// RemoveAccountFromOrganizationRequest indicates an expected call of RemoveAccountFromOrganizationRequest
+// RemoveAccountFromOrganizationRequest indicates an expected call of RemoveAccountFromOrganizationRequest.
 func (mr *MockOrganizationsAPIMockRecorder) RemoveAccountFromOrganizationRequest(arg0 interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "RemoveAccountFromOrganizationRequest", reflect.TypeOf((*MockOrganizationsAPI)(nil).RemoveAccountFromOrganizationRequest), arg0)
 }
 
-// RemoveAccountFromOrganizationWithContext mocks base method
+// RemoveAccountFromOrganizationWithContext mocks base method.
 func (m *MockOrganizationsAPI) RemoveAccountFromOrganizationWithContext(arg0 context.Context, arg1 *organizations.RemoveAccountFromOrganizationInput, arg2 ...request.Option) (*organizations.RemoveAccountFromOrganizationOutput, error) {
 	m.ctrl.T.Helper()
 	varargs := []interface{}{arg0, arg1}
@@ -2640,14 +2907,14 @@ func (m *MockOrganizationsAPI) RemoveAccountFromOrganizationWithContext(arg0 con
 	return ret0, ret1
 }
 
-// RemoveAccountFromOrganizationWithContext indicates an expected call of RemoveAccountFromOrganizationWithContext
+// RemoveAccountFromOrganizationWithContext indicates an expected call of RemoveAccountFromOrganizationWithContext.
 func (mr *MockOrganizationsAPIMockRecorder) RemoveAccountFromOrganizationWithContext(arg0, arg1 interface{}, arg2 ...interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	varargs := append([]interface{}{arg0, arg1}, arg2...)
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "RemoveAccountFromOrganizationWithContext", reflect.TypeOf((*MockOrganizationsAPI)(nil).RemoveAccountFromOrganizationWithContext), varargs...)
 }
 
-// TagResource mocks base method
+// TagResource mocks base method.
 func (m *MockOrganizationsAPI) TagResource(arg0 *organizations.TagResourceInput) (*organizations.TagResourceOutput, error) {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "TagResource", arg0)
@@ -2656,13 +2923,13 @@ func (m *MockOrganizationsAPI) TagResource(arg0 *organizations.TagResourceInput)
 	return ret0, ret1
 }
 
-// TagResource indicates an expected call of TagResource
+// TagResource indicates an expected call of TagResource.
 func (mr *MockOrganizationsAPIMockRecorder) TagResource(arg0 interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "TagResource", reflect.TypeOf((*MockOrganizationsAPI)(nil).TagResource), arg0)
 }
 
-// TagResourceRequest mocks base method
+// TagResourceRequest mocks base method.
 func (m *MockOrganizationsAPI) TagResourceRequest(arg0 *organizations.TagResourceInput) (*request.Request, *organizations.TagResourceOutput) {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "TagResourceRequest", arg0)
@@ -2671,13 +2938,13 @@ func (m *MockOrganizationsAPI) TagResourceRequest(arg0 *organizations.TagResourc
 	return ret0, ret1
 }
 
-// TagResourceRequest indicates an expected call of TagResourceRequest
+// TagResourceRequest indicates an expected call of TagResourceRequest.
 func (mr *MockOrganizationsAPIMockRecorder) TagResourceRequest(arg0 interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "TagResourceRequest", reflect.TypeOf((*MockOrganizationsAPI)(nil).TagResourceRequest), arg0)
 }
 
-// TagResourceWithContext mocks base method
+// TagResourceWithContext mocks base method.
 func (m *MockOrganizationsAPI) TagResourceWithContext(arg0 context.Context, arg1 *organizations.TagResourceInput, arg2 ...request.Option) (*organizations.TagResourceOutput, error) {
 	m.ctrl.T.Helper()
 	varargs := []interface{}{arg0, arg1}
@@ -2690,14 +2957,14 @@ func (m *MockOrganizationsAPI) TagResourceWithContext(arg0 context.Context, arg1
 	return ret0, ret1
 }
 
-// TagResourceWithContext indicates an expected call of TagResourceWithContext
+// TagResourceWithContext indicates an expected call of TagResourceWithContext.
 func (mr *MockOrganizationsAPIMockRecorder) TagResourceWithContext(arg0, arg1 interface{}, arg2 ...interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	varargs := append([]interface{}{arg0, arg1}, arg2...)
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "TagResourceWithContext", reflect.TypeOf((*MockOrganizationsAPI)(nil).TagResourceWithContext), varargs...)
 }
 
-// UntagResource mocks base method
+// UntagResource mocks base method.
 func (m *MockOrganizationsAPI) UntagResource(arg0 *organizations.UntagResourceInput) (*organizations.UntagResourceOutput, error) {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "UntagResource", arg0)
@@ -2706,13 +2973,13 @@ func (m *MockOrganizationsAPI) UntagResource(arg0 *organizations.UntagResourceIn
 	return ret0, ret1
 }
 
-// UntagResource indicates an expected call of UntagResource
+// UntagResource indicates an expected call of UntagResource.
 func (mr *MockOrganizationsAPIMockRecorder) UntagResource(arg0 interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "UntagResource", reflect.TypeOf((*MockOrganizationsAPI)(nil).UntagResource), arg0)
 }
 
-// UntagResourceRequest mocks base method
+// UntagResourceRequest mocks base method.
 func (m *MockOrganizationsAPI) UntagResourceRequest(arg0 *organizations.UntagResourceInput) (*request.Request, *organizations.UntagResourceOutput) {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "UntagResourceRequest", arg0)
@@ -2721,13 +2988,13 @@ func (m *MockOrganizationsAPI) UntagResourceRequest(arg0 *organizations.UntagRes
 	return ret0, ret1
 }
 
-// UntagResourceRequest indicates an expected call of UntagResourceRequest
+// UntagResourceRequest indicates an expected call of UntagResourceRequest.
 func (mr *MockOrganizationsAPIMockRecorder) UntagResourceRequest(arg0 interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "UntagResourceRequest", reflect.TypeOf((*MockOrganizationsAPI)(nil).UntagResourceRequest), arg0)
 }
 
-// UntagResourceWithContext mocks base method
+// UntagResourceWithContext mocks base method.
 func (m *MockOrganizationsAPI) UntagResourceWithContext(arg0 context.Context, arg1 *organizations.UntagResourceInput, arg2 ...request.Option) (*organizations.UntagResourceOutput, error) {
 	m.ctrl.T.Helper()
 	varargs := []interface{}{arg0, arg1}
@@ -2740,14 +3007,14 @@ func (m *MockOrganizationsAPI) UntagResourceWithContext(arg0 context.Context, ar
 	return ret0, ret1
 }
 
-// UntagResourceWithContext indicates an expected call of UntagResourceWithContext
+// UntagResourceWithContext indicates an expected call of UntagResourceWithContext.
 func (mr *MockOrganizationsAPIMockRecorder) UntagResourceWithContext(arg0, arg1 interface{}, arg2 ...interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	varargs := append([]interface{}{arg0, arg1}, arg2...)
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "UntagResourceWithContext", reflect.TypeOf((*MockOrganizationsAPI)(nil).UntagResourceWithContext), varargs...)
 }
 
-// UpdateOrganizationalUnit mocks base method
+// UpdateOrganizationalUnit mocks base method.
 func (m *MockOrganizationsAPI) UpdateOrganizationalUnit(arg0 *organizations.UpdateOrganizationalUnitInput) (*organizations.UpdateOrganizationalUnitOutput, error) {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "UpdateOrganizationalUnit", arg0)
@@ -2756,13 +3023,13 @@ func (m *MockOrganizationsAPI) UpdateOrganizationalUnit(arg0 *organizations.Upda
 	return ret0, ret1
 }
 
-// UpdateOrganizationalUnit indicates an expected call of UpdateOrganizationalUnit
+// UpdateOrganizationalUnit indicates an expected call of UpdateOrganizationalUnit.
 func (mr *MockOrganizationsAPIMockRecorder) UpdateOrganizationalUnit(arg0 interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "UpdateOrganizationalUnit", reflect.TypeOf((*MockOrganizationsAPI)(nil).UpdateOrganizationalUnit), arg0)
 }
 
-// UpdateOrganizationalUnitRequest mocks base method
+// UpdateOrganizationalUnitRequest mocks base method.
 func (m *MockOrganizationsAPI) UpdateOrganizationalUnitRequest(arg0 *organizations.UpdateOrganizationalUnitInput) (*request.Request, *organizations.UpdateOrganizationalUnitOutput) {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "UpdateOrganizationalUnitRequest", arg0)
@@ -2771,13 +3038,13 @@ func (m *MockOrganizationsAPI) UpdateOrganizationalUnitRequest(arg0 *organizatio
 	return ret0, ret1
 }
 
-// UpdateOrganizationalUnitRequest indicates an expected call of UpdateOrganizationalUnitRequest
+// UpdateOrganizationalUnitRequest indicates an expected call of UpdateOrganizationalUnitRequest.
 func (mr *MockOrganizationsAPIMockRecorder) UpdateOrganizationalUnitRequest(arg0 interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "UpdateOrganizationalUnitRequest", reflect.TypeOf((*MockOrganizationsAPI)(nil).UpdateOrganizationalUnitRequest), arg0)
 }
 
-// UpdateOrganizationalUnitWithContext mocks base method
+// UpdateOrganizationalUnitWithContext mocks base method.
 func (m *MockOrganizationsAPI) UpdateOrganizationalUnitWithContext(arg0 context.Context, arg1 *organizations.UpdateOrganizationalUnitInput, arg2 ...request.Option) (*organizations.UpdateOrganizationalUnitOutput, error) {
 	m.ctrl.T.Helper()
 	varargs := []interface{}{arg0, arg1}
@@ -2790,14 +3057,14 @@ func (m *MockOrganizationsAPI) UpdateOrganizationalUnitWithContext(arg0 context.
 	return ret0, ret1
 }
 
-// UpdateOrganizationalUnitWithContext indicates an expected call of UpdateOrganizationalUnitWithContext
+// UpdateOrganizationalUnitWithContext indicates an expected call of UpdateOrganizationalUnitWithContext.
 func (mr *MockOrganizationsAPIMockRecorder) UpdateOrganizationalUnitWithContext(arg0, arg1 interface{}, arg2 ...interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	varargs := append([]interface{}{arg0, arg1}, arg2...)
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "UpdateOrganizationalUnitWithContext", reflect.TypeOf((*MockOrganizationsAPI)(nil).UpdateOrganizationalUnitWithContext), varargs...)
 }
 
-// UpdatePolicy mocks base method
+// UpdatePolicy mocks base method.
 func (m *MockOrganizationsAPI) UpdatePolicy(arg0 *organizations.UpdatePolicyInput) (*organizations.UpdatePolicyOutput, error) {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "UpdatePolicy", arg0)
@@ -2806,13 +3073,13 @@ func (m *MockOrganizationsAPI) UpdatePolicy(arg0 *organizations.UpdatePolicyInpu
 	return ret0, ret1
 }
 
-// UpdatePolicy indicates an expected call of UpdatePolicy
+// UpdatePolicy indicates an expected call of UpdatePolicy.
 func (mr *MockOrganizationsAPIMockRecorder) UpdatePolicy(arg0 interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "UpdatePolicy", reflect.TypeOf((*MockOrganizationsAPI)(nil).UpdatePolicy), arg0)
 }
 
-// UpdatePolicyRequest mocks base method
+// UpdatePolicyRequest mocks base method.
 func (m *MockOrganizationsAPI) UpdatePolicyRequest(arg0 *organizations.UpdatePolicyInput) (*request.Request, *organizations.UpdatePolicyOutput) {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "UpdatePolicyRequest", arg0)
@@ -2821,13 +3088,13 @@ func (m *MockOrganizationsAPI) UpdatePolicyRequest(arg0 *organizations.UpdatePol
 	return ret0, ret1
 }
 
-// UpdatePolicyRequest indicates an expected call of UpdatePolicyRequest
+// UpdatePolicyRequest indicates an expected call of UpdatePolicyRequest.
 func (mr *MockOrganizationsAPIMockRecorder) UpdatePolicyRequest(arg0 interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "UpdatePolicyRequest", reflect.TypeOf((*MockOrganizationsAPI)(nil).UpdatePolicyRequest), arg0)
 }
 
-// UpdatePolicyWithContext mocks base method
+// UpdatePolicyWithContext mocks base method.
 func (m *MockOrganizationsAPI) UpdatePolicyWithContext(arg0 context.Context, arg1 *organizations.UpdatePolicyInput, arg2 ...request.Option) (*organizations.UpdatePolicyOutput, error) {
 	m.ctrl.T.Helper()
 	varargs := []interface{}{arg0, arg1}
@@ -2840,7 +3107,7 @@ func (m *MockOrganizationsAPI) UpdatePolicyWithContext(arg0 context.Context, arg
 	return ret0, ret1
 }
 
-// UpdatePolicyWithContext indicates an expected call of UpdatePolicyWithContext
+// UpdatePolicyWithContext indicates an expected call of UpdatePolicyWithContext.
 func (mr *MockOrganizationsAPIMockRecorder) UpdatePolicyWithContext(arg0, arg1 interface{}, arg2 ...interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	varargs := append([]interface{}{arg0, arg1}, arg2...)
