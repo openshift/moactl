@@ -26,8 +26,18 @@ import (
 	"github.com/aws/aws-sdk-go/service/cloudformation"
 	"github.com/sirupsen/logrus"
 
+	"github.com/openshift/rosa/assets"
 	rprtr "github.com/openshift/rosa/pkg/reporter"
 )
+
+func readCloudFormationTemplate(path string) (string, error) {
+	cfTemplate, err := assets.Asset(path)
+	if err != nil {
+		return "", fmt.Errorf("Unable to read cloudformation template: %s", err)
+	}
+
+	return string(cfTemplate), nil
+}
 
 // Validations will validate if CF stack/users exist
 func CheckStackReadyForCreateCluster(reporter *rprtr.Object, logger *logrus.Logger) {

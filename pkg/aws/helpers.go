@@ -14,6 +14,13 @@ import (
 	rprtr "github.com/openshift/rosa/pkg/reporter"
 )
 
+// JumpAccounts are the various of AWS accounts used for the installer jump role in the various OCM environments
+var JumpAccounts = map[string]string{
+	"production":  "710019948333",
+	"staging":     "644306948063",
+	"integration": "896164604406",
+}
+
 // GetRegion will return a region selected by the user or given as a default to the AWS client.
 // If the region given is empty, it will first attempt to use the default, and, failing that, will
 // prompt for user input.

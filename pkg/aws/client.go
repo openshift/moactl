@@ -73,6 +73,9 @@ type Client interface {
 	ValidateQuota() (bool, error)
 	TagUserRegion(username string, region string) error
 	GetClusterRegionTagForUser(username string) (string, error)
+	EnsureRole(name string, policy string) error
+	PutRolePolicy(roleName string, policyName string, policy string) error
+	EnsurePolicy(name string, document string) error
 }
 
 // ClientBuilder contains the information and logic needed to build a new AWS client.

@@ -23,7 +23,10 @@ func (c *awsClient) ValidateSCP(target *string) (bool, error) {
 	}
 
 	// Read installer permissions and OSD SCP Policy permissions
-	osdPolicyDocument := readPolicyDocument(scpPolicyPath)
+	osdPolicyDocument, err := parsePolicyDocument(scpPolicyPath)
+	if err != nil {
+		return false, err
+	}
 	policyDocuments := []PolicyDocument{osdPolicyDocument}
 
 	// Get Creator details

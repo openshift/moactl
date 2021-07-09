@@ -44,6 +44,7 @@ func Confirm(q string, v ...interface{}) bool {
 		Message: fmt.Sprintf("Are you sure you want to %s?", fmt.Sprintf(q, v...)),
 		Default: false,
 	}
-	survey.AskOne(prompt, &yes, survey.WithValidator(survey.Required))
-	return yes
+	response := false
+	survey.AskOne(prompt, &response, survey.WithValidator(survey.Required))
+	return response
 }
