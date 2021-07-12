@@ -61,6 +61,7 @@ const (
 // Client defines a client interface
 type Client interface {
 	CheckAdminUserNotExisting(userName string) (err error)
+	CheckAdminUserExists(userName string) (err error)
 	CheckStackReadyOrNotExisting(stackName string) (stackReady bool, stackStatus *string, err error)
 	GetIAMCredentials() (credentials.Value, error)
 	GetRegion() string
@@ -335,6 +336,30 @@ func (c *awsClient) ValidateCredentials() (bool, bool, error) {
 
 // Ensure osdCcsAdmin IAM user is created
 func (c *awsClient) EnsureOsdCcsAdminUser(stackName string, adminUserName string, awsRegion string) (bool, error) {
+	userExists := true
+	regionForInit, err := c.GetClusterRegionTagForUser(adminUserName)
+	if err != nil {
+		//If user doesnt exists proceed normally
+		//If users exists and tag is not present then add the tag
+		//if user exists and tag is present then proceed normally
+		if aerr, ok := err.(awserr.Error); ok {
+			switch aerr.Code() {
+			case iam.ErrCodeNoSuchEntityException:
+				userExists = false
+			default:
+				return false, err
+			}
+		}
+	}
+	if userExists {
+		if regionForInit == "" {
+			err = c.TagUserRegion(adminUserName, DefaultRegion)
+			if err != nil {
+				return false, err
+			}
+		}
+		return false, nil
+	}
 	// Check already existing cloudformation stack status
 	stackReady, stackStatus, err := c.CheckStackReadyOrNotExisting(stackName)
 	if err != nil {
@@ -480,6 +505,14 @@ func (c *awsClient) CheckAdminUserNotExisting(userName string) (err error) {
 				"rosa init",
 				*user.UserName, *user.UserName)
 		}
+	}
+	return nil
+}
+
+func (c *awsClient) CheckAdminUserExists(userName string) (err error) {
+	_, err = c.iamClient.GetUser(&iam.GetUserInput{UserName: aws.String(userName)})
+	if err != nil {
+		return err
 	}
 	return nil
 }

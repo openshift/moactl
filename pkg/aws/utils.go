@@ -128,7 +128,7 @@ func GetAWSClientForUserRegion(reporter *rprtr.Object, logger *logrus.Logger) Cl
 		os.Exit(1)
 	}
 	regionUsedForInit, err := client.GetClusterRegionTagForUser(AdminUserName)
-	if err != nil {
+	if err != nil || regionUsedForInit == "" {
 		return client
 	}
 
@@ -146,18 +146,6 @@ func GetAWSClientForUserRegion(reporter *rprtr.Object, logger *logrus.Logger) Cl
 		return awsClient
 	}
 	return client
-}
-
-// Validations will validate if CF stack/users exist
-func CheckStackReadyForCreateCluster(reporter *rprtr.Object, logger *logrus.Logger) {
-	client := GetAWSClientForUserRegion(reporter, logger)
-	reporter.Debugf("Validating cloudformation stack exists")
-	stackExist, _, err := client.CheckStackReadyOrNotExisting(OsdCcsAdminStackName)
-	if !stackExist || err != nil {
-		reporter.Errorf("Cloudformation stack does not exist. Run `rosa init` first")
-		os.Exit(1)
-	}
-	reporter.Debugf("cloudformation stack is valid!")
 }
 
 func isSTS(ARN arn.ARN) bool {

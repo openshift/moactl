@@ -363,9 +363,9 @@ func run(cmd *cobra.Command, _ []string) {
 		}
 	}()
 
-	tempAWSClient := aws.GetAWSClientForUserRegion(reporter, logger)
+	awsClient := aws.GetAWSClientForUserRegion(reporter, logger)
 
-	awsCreator, err := tempAWSClient.GetCreator()
+	awsCreator, err := awsClient.GetCreator()
 	if err != nil {
 		reporter.Errorf("Unable to get IAM credentials: %v", err)
 		os.Exit(1)
@@ -442,7 +442,12 @@ func run(cmd *cobra.Command, _ []string) {
 			os.Exit(1)
 		}
 	} else {
-		aws.CheckStackReadyForCreateCluster(reporter, logger)
+		err := awsClient.CheckAdminUserExists(aws.AdminUserName)
+		if err != nil {
+			reporter.Errorf("IAM user '%s' does not exist. Run `rosa init` first", aws.AdminUserName)
+			os.Exit(1)
+		}
+		reporter.Debugf("IAM user is valid!")
 	}
 
 	externalID := args.externalID
@@ -714,7 +719,7 @@ func run(cmd *cobra.Command, _ []string) {
 		}
 	}
 
-	awsClient, err := aws.NewClient().
+	awsClient, err = aws.NewClient().
 		Region(region).
 		Logger(logger).
 		Build()
