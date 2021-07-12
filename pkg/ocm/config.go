@@ -54,6 +54,21 @@ type Config struct {
 	URL          string   `json:"url,omitempty"`
 }
 
+func GetEnv() (string, error) {
+	cfg, err := Load()
+	if err != nil {
+		return "", err
+	}
+
+	for env, api := range URLAliases {
+		if api == cfg.URL {
+			return env, nil
+		}
+	}
+
+	return "", fmt.Errorf("Invalid OCM API")
+}
+
 // Load loads the configuration from the configuration file. If the configuration file doesn't exist
 // it will return an empty configuration object.
 func Load() (cfg *Config, err error) {

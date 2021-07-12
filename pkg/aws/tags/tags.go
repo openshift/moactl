@@ -30,3 +30,13 @@ const ClusterID = prefix + "cluster_id"
 
 // ClusterID is the name of the tag that will contain the identifier of the cluster.
 const ClusterRegion = prefix + "region"
+
+// OpenShiftVersion is the name of the tag that will contain
+// the version of OpenShift that the resources are used for
+const OpenShiftVersion = prefix + "openshift_version"
+
+// RoleType is the name of the tag that will contain the purpose of the role (installer, support, etc.)
+const RoleType = prefix + "role_type"
+
+// RolePrefix is the name of the tag that will contain the user-set prefix of the role (installer, support, etc.)
+const RolePrefix = prefix + "role_prefix"

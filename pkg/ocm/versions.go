@@ -28,6 +28,7 @@ import (
 const DefaultChannelGroup = "stable"
 
 const LowestSTSSupport = "4.7.11"
+const LowestSTSMinor = "4.7"
 
 func (c *Client) GetVersions(channelGroup string) (versions []*cmv1.Version, err error) {
 	collection := c.ocm.ClustersMgmt().V1().Versions()
@@ -83,6 +84,16 @@ func HasSTSSupport(rawID string, channelGroup string) bool {
 	b, errb := ver.NewVersion(LowestSTSSupport)
 	if erra != nil || errb != nil {
 		return rawID >= LowestSTSSupport
+	}
+
+	return a.GreaterThanOrEqual(b)
+}
+
+func HasSTSSupportMinor(minor string) bool {
+	a, erra := ver.NewVersion(minor)
+	b, errb := ver.NewVersion(LowestSTSMinor)
+	if erra != nil || errb != nil {
+		return minor >= LowestSTSMinor
 	}
 
 	return a.GreaterThanOrEqual(b)

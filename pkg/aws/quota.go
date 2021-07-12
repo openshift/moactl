@@ -85,6 +85,32 @@ var serviceQuotaServices = []quota{
 	},
 }
 
+// ValidateQuota
+func (c *awsClient) ValidateQuota() (bool, error) {
+	for _, quota := range serviceQuotaServices {
+		serviceQuotas, err := ListServiceQuotas(c, quota.ServiceCode)
+		if err != nil {
+			return false, fmt.Errorf("Error listing AWS service quotas: %s %v", quota.ServiceCode, err)
+		}
+
+		serviceQuota, err := GetServiceQuota(serviceQuotas, quota.QuotaCode)
+		if err != nil || serviceQuota == nil || (*serviceQuota).Value == nil {
+			return false, fmt.Errorf("Error getting AWS service quota: %s %v", quota.ServiceCode, err)
+		}
+
+		if *serviceQuota.Value < *quota.DesiredValue {
+			return false, fmt.Errorf(
+				"Service %s quota code %s %s not valid, expected quota of at least %d, but got %d",
+				quota.ServiceCode, quota.QuotaCode, quota.QuotaName,
+				int(*quota.DesiredValue), int(*serviceQuota.Value))
+		}
+
+		c.logger.Debug(fmt.Sprintf("Service %s quota code %s is ok", quota.ServiceCode, quota.QuotaCode))
+	}
+
+	return true, nil
+}
+
 // ListServiceQuotas list available quotas for service
 func ListServiceQuotas(client *awsClient, serviceCode string) ([]*servicequotas.ServiceQuota, error) {
 	var serviceQuotas []*servicequotas.ServiceQuota
