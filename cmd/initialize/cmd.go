@@ -23,12 +23,13 @@ import (
 
 	"github.com/spf13/cobra"
 
+	"github.com/openshift/rosa/cmd/initialize/account"
 	"github.com/openshift/rosa/cmd/login"
 	"github.com/openshift/rosa/cmd/verify/oc"
 	"github.com/openshift/rosa/cmd/verify/permissions"
 	"github.com/openshift/rosa/cmd/verify/quota"
-	"github.com/openshift/rosa/pkg/arguments"
 
+	"github.com/openshift/rosa/pkg/arguments"
 	"github.com/openshift/rosa/pkg/aws"
 	"github.com/openshift/rosa/pkg/aws/region"
 	"github.com/openshift/rosa/pkg/interactive/confirm"
@@ -58,6 +59,8 @@ var Cmd = &cobra.Command{
 }
 
 func init() {
+	Cmd.AddCommand(account.Cmd)
+
 	flags := Cmd.Flags()
 	flags.SortFlags = false
 
